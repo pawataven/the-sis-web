@@ -1,11 +1,29 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from "vue";
+import DoorLoader from "~/components/DoorLoader.vue";
+
+const loaded = ref(false);
+</script>
 
 <template>
   <div class="bg-[#472809] min-h-screen w-full overflow-x-hidden font-sans">
-    <NuxtRouteAnnouncer />
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    
+    <DoorLoader @done="loaded = true" />
+
+    <div
+      :class="
+        loaded ? 'blur-0 scale-100 opacity-100' : 'blur-xl scale-110 opacity-60'
+      "
+      class="transition-all duration-[2000ms]"
+    >
+      <NuxtRouteAnnouncer />
+
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+
+    </div>
+
   </div>
 </template>
 
