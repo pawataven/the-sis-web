@@ -1,30 +1,43 @@
 <script setup>
-import { ref, onMounted } from "vue"
+import { ref, onMounted, onUnmounted } from "vue"
 
 const visible = ref(true)
 const open = ref(false)
 
 const emit = defineEmits(["done"])
 
-onMounted(() => {
+const openDoor = () => {
+  if (open.value) return
 
-  setTimeout(() => {
-    open.value = true
-  }, 700)
+  open.value = true
 
   setTimeout(() => {
     emit("done")
     visible.value = false
-  }, 2500)
+  }, 1800)
+}
 
+const keyHandler = (e) => {
+  if (e.code === "Space" || e.code === "Enter") {
+    openDoor()
+  }
+}
+
+onMounted(() => {
+  window.addEventListener("click", openDoor)
+  window.addEventListener("keydown", keyHandler)
+})
+
+onUnmounted(() => {
+  window.removeEventListener("click", openDoor)
+  window.removeEventListener("keydown", keyHandler)
 })
 </script>
 
 <template>
   <div
     v-if="visible"
-    class="fixed inset-0 z-[99999] flex overflow-hidden bg-black transition-transform duration-[2200ms]"
-    :class="open ? 'scale-110' : 'scale-100'"
+    class="fixed inset-0 z-[99999] flex overflow-hidden bg-black"
   >
 
     <!-- left door -->
@@ -34,8 +47,7 @@ onMounted(() => {
     >
       <img
         src="/Door/door.jpg"
-        class="h-full w-[200%] object-cover object-left pointer-events-none"
-        format="webp"
+        class="h-full w-[200%] object-cover object-left"
       />
     </div>
 
@@ -46,8 +58,7 @@ onMounted(() => {
     >
       <img
         src="/Door/door.jpg"
-        class="h-full w-[200%] object-cover object-right scale-x-[-1] pointer-events-none"
-        format="webp"
+        class="h-full w-[200%] object-cover object-right scale-x-[-1]"
       />
     </div>
 
