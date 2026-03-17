@@ -1,16 +1,13 @@
 <script setup lang="ts">
-import NavigationBar from './NavigationBar.vue';
+import NavigationBar from "./NavigationBar.vue";
 
+const route = useRoute();
 </script>
 
 <template>
-  <NavigationBar />
-  <div class="w-full min-h-screen ">
-
-    
+  <div class="w-full min-h-screen">
     <main>
       <slot />
     </main>
-
   </div>
 </template>
