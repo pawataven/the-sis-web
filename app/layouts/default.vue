@@ -4,9 +4,10 @@ import NavigationBar from './NavigationBar.vue';
 </script>
 
 <template>
-  <div class="w-full min-h-screen bg-[#472809]">
+  <NavigationBar />
+  <div class="w-full min-h-screen ">
 
-    <NavigationBar />
+    
     <main>
       <slot />
     </main>
