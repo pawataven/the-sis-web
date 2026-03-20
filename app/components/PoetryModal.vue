@@ -11,14 +11,14 @@ const emit = defineEmits(["close"]);
 
 <template>
   <Teleport to="body">
-    <Transition name="fade">
+    <Transition name="modal">
       <div
         v-if="isOpen && data"
         class="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
         @click.self="emit('close')"
       >
         <div
-          class="relative w-full max-w-[626px] max-h-[805px] h-[95vh] bg-[#FDFBF7]  shadow-2xl flex flex-col overflow-hidden"
+          class="modal-card relative w-full max-w-[626px] max-h-[805px] h-[95vh] bg-[#FDFBF7] shadow-2xl flex flex-col overflow-hidden"
         >
           <img
             src="/poetry/leaves-bg.png"
@@ -43,7 +43,7 @@ const emit = defineEmits(["close"]);
               </h2>
               <img
                 src="/poetry/butterfly.gif"
-                class="absolute right-0 top-0 w-[50px] scale-x-[-1]"
+                class="absolute -right-[60px] -top-[20px] w-[120px] scale-x-[-1] pointer-events-none"
               />
             </div>
 
@@ -89,3 +89,44 @@ const emit = defineEmits(["close"]);
     </Transition>
   </Teleport>
 </template>
+<style scoped>
+/* Backdrop */
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.3s ease;
+}
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+
+/* Card */
+.modal-enter-active .modal-card {
+  animation: modalOpen 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.modal-leave-active .modal-card {
+  animation: modalClose 0.25s ease forwards;
+}
+
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes modalClose {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+}
+</style>
