@@ -1,7 +1,7 @@
 export interface Poetry {
   id: string;
   title: string;
-  subtitle?: string;  
+  subtitle?: string;
   author: string;
   imageSrc: string;
   poem: string;
@@ -39,7 +39,7 @@ export const poetryList: Poetry[] = [
   {
     id: "khun-chang-khun-phaen",
     title: "ขุนช้างขุนแผน",
-    subtitle: 'ตอน กำเนิดพลายงาม',
+    subtitle: "ตอน กำเนิดพลายงาม",
     author: "สุนทรภู่",
     imageSrc: "/poetry/image-3.png",
     poem: `แม่รักลูกลูกก็รู้อยู่ว่ารักคนอื่นสักหมื่นแสนไม่แม้นเหมือน<br/>
@@ -47,5 +47,16 @@ export const poetryList: Poetry[] = [
             จะจากเรือนร้างแม่ไปแต่ตัว<br/>`,
     meaning:
       " ไม่มีรักของใครยิ่งใหญ่และจริงใจเท่ารักของแม่ แม้ยามแม่ดุด่าว่ากล่าวก็ทำด้วยความเมตตา แต่วันนี้ลูกมีความจำเป็นต้องจากแม่ไปเพียงลำพัง",
+  },
+  {
+    id: "Phra Aphai Mani",
+    title: "พระอภัยมณี",
+    author: "สุนทรภู่",
+    imageSrc: "/warning/Phra Aphai Mani-flower.png",
+    poem: `แล้วสอนว่าอย่าไว้ใจมนุษย์
+          มันแสนสุดลึกล้ำเหลือกำหนด<br>
+          ถึงเถาวัลย์พันเกี่ยวที่เลี้ยวลด<br>
+          ก็ไม่คดเหมือนหนึ่งในน้ำใจคน`,
+    meaning: `เปรียบเปรยว่าเถาวัลย์ที่เลี้ยวลด คดเคี้ยวตามธรรมชาติ ยังไม่น่ากลัวเท่าจิตใจมนุษย์ที่ยากแท้หยั่งถึง ไม่ควรประมาทในการคบคนเพราะอาจเปลี่ยนไปได้ตลอดเวลา`,
   },
 ];
