@@ -20,7 +20,9 @@ function closePoem() {
 
 <template>
   <div>
-    <div class="relative bg-[#F3EBDC] overflow-hidden min-h-screen">
+    <div
+      class="relative bg-[#F3EBDC] overflow-hidden flex flex-col h-[vh] md:h-screen"
+    >
       <img
         src="/poetry/red-flower-bg.png"
         class="absolute left-0 top-0 h-full w-auto z-[10] pointer-events-none"
@@ -34,34 +36,35 @@ function closePoem() {
       />
 
       <!-- Navbar -->
-      <div class="relative z-[50]">
+      <div class="relative z-[50] px-[5vw] md:px-0 scale-[0.85] md:scale-100 origin-top">
         <NavigationBar />
       </div>
 
       <!-- Poetry + Parent -->
       <div
-        class="relative z-[20] flex flex-col items-center justify-center"
-        style="min-height: calc(100vh - 200px)"
+        class="relative z-[20] flex flex-col items-center justify-center flex-1 px-[5vw] md:px-0"
       >
         <img
           src="/poetry/Layer_1.png"
-          class="w-[28.611vw] h-[14.861vw] pointer-events-none pb-20px"
+          class="pointer-events-none h-auto w-[clamp(150px,28vw,580px)] md:w-[28.611vw] md:h-[14.861vw] "
         />
         <div
-          class="border border-[#5A3716] rounded-[150%] text-[#5A3716] bg-white"
-          style="padding: clamp(6px, 0.7vw, 10px) clamp(24px, 4vw, 56px)"
+          class="border border-[#000000] rounded-[160%] text-[#000000] bg-white mt-1 md:mt-5 mb:pt-5  mb-[5vw]"
+          style="padding: clamp(4px, 0.7vw, 10px) clamp(16px, 4vw, 56px)"
         >
-          <p style="font-size: clamp(18px, 2.5vw, 70px)">Parent</p>
+          <p style="font-size: clamp(14px, 4vw, 70px)">Parent</p>
         </div>
       </div>
     </div>
     <!-- CONTENT SECTION -->
     <section class="w-full py-[10vw]">
       <div class="text-center mb-[10vw]">
-        <h2 class="text-[4vw] text-[#F6EBDD] italic font-serif">
+        <h2 class="text-[8vw] md:text-[96px] text-[#F6EBDD] italic font-serif">
           Poetry – Parent
         </h2>
-        <p class="text-[#F6EBDD] text-[1.2vw] mt-[1vw] leading-relaxed">
+        <p
+          class="text-[#F6EBDD] text-[3.5vw] md:text-[28px] mt-[1vw] leading-relaxed"
+        >
           ขอต้อนรับสู่พื้นที่แห่งความสัมพันธ์ ในหมวดหมู่ ครอบครัว <br />
           <span>ที่ได้ค้นหาไปจนถึงการ กลั่นกรองบทกวี และภาษาดอกไม้</span>
           ที่มีความหมายเกี่ยวข้อง
