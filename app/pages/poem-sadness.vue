@@ -21,20 +21,25 @@ function closePoem() {
 <template>
   <div>
     <div
-      class="relative bg-[#F3EBDC] overflow-hidden flex flex-col h-[vh] md:h-screen"
+      class="relative bg-[#F3EBDC] overflow-visible flex flex-col h-[60vh] md:h-screen"
     >
+      <!-- ดอกไม้ซ้าย -->
       <img
         src="/sadness/sadness-bg.png"
-        class="absolute left-0  w-auto z-[10] pointer-events-none"
-        style="min-width: 120px; max-width: min(45%, 600px)"
+        class="absolute left-0 bottom-0 w-auto z-[20] pointer-events-none translate-y-[6.5%]"
+        style="
+          height: min(90%, 650px);
+          width: clamp(200px, 32%, 520px);
+          max-width: none;
+        "
       />
 
+      <!-- ใบไม้ขวา -->
       <img
         src="/poetry/leaves-bg.png"
-        class="absolute right-0 top-0 h-full w-auto z-[10] pointer-events-none"
-        style="min-width: 100px; max-width: min(45%, 650px)"
+        class="absolute right-0 bottom-0 w-auto z-[10] pointer-events-none translate-y-[0.5%]"
+        style="height: min(90%, 650px); max-width: min(45%, 650px)"
       />
-
       <!-- Navbar -->
       <div
         class="relative z-[50] px-[5vw] md:px-0 scale-[0.85] md:scale-100 origin-top"
@@ -74,19 +79,19 @@ function closePoem() {
       </div>
       <!-- บทที่ 1 -->
       <div
-        class="flex items-center gap-[6vw] max-w-[1400px] mx-auto px-[5vw] mb-[10vw]"
+        class="flex items-center gap-[4vw] max-w-[1400px] mx-auto px-[5vw] mb-[10vw]"
       >
-        <div class="w-1/2 flex justify-start">
+        <div class="w-[55%] flex justify-start">
           <img
             src="/sadness/sadness-img-1.png"
-            class="w-[60vw] pointer-events-none"
+            class="w-full max-w-[45vw] pointer-events-none"
           />
         </div>
-        <div class="w-1/2 flex flex-col items-end text-right text-[#F6EBDD]">
+        <div class="w-[45%] flex flex-col items-end text-right text-[#F6EBDD]">
           <h3 class="text-[3.2vw] mb-[0.2vw]">นิราศอิเหนา</h3>
           <p class="text-[1.6vw] mb-[1.5vw]">ผู้แต่ง: สุนทรภู่</p>
           <button
-            @click="openPoem(poetryList[3])"
+            @click="openPoem(poetryList[4])"
             class="bg-[#E76A87] text-white px-[2vw] py-[0.5vw] rounded-full text-[1vw] shadow-md hover:scale-105 transition-transform"
           >
             Read more
@@ -96,22 +101,22 @@ function closePoem() {
 
       <!-- บทที่ 2 -->
       <div
-        class="flex items-center justify-between max-w-[1400px] mx-auto px-[5vw] mb-[10vw]"
+        class="flex items-center justify-between gap-[4vw] max-w-[1400px] mx-auto px-[5vw] mb-[10vw]"
       >
-        <div class="w-1/2 flex flex-col items-start text-left text-[#F6EBDD]">
+        <div class="w-[45%] flex flex-col items-start text-left text-[#F6EBDD]">
           <h3 class="text-[3.2vw] mb-[0.2vw]">สวัสดิรักษา</h3>
           <p class="text-[1.6vw] mb-[1.5vw]">ผู้แต่ง: สุนทรภู่</p>
           <button
-            @click="openPoem(poetryList[4])"
+            @click="openPoem(poetryList[5])"
             class="bg-[#E76A87] text-white px-[2vw] py-[0.5vw] rounded-full text-[1vw] shadow-md hover:scale-105 transition-transform"
           >
             Read more
           </button>
         </div>
-        <div class="w-1/2 flex justify-end">
+        <div class="w-[55%] flex justify-end">
           <img
             src="/sadness/sadness-img-2.png"
-            class="w-[35vw] pointer-events-none"
+            class="w-full max-w-[45vw] pointer-events-none"
           />
         </div>
       </div>
