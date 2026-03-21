@@ -10,10 +10,10 @@ const loaded = ref(false);
     
     <DoorLoader @done="loaded = true" />
 
-    <div
+    <!-- <div
       :class="loaded ? 'blur-0 scale-100 opacity-100' : 'blur-xl scale-110 opacity-60'"
       class="transition-all duration-[2000ms]"
-    >
+    > -->
       <NuxtRouteAnnouncer />
 
       <NuxtLayout>
@@ -24,7 +24,7 @@ const loaded = ref(false);
       </NuxtLayout>
 
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <style>
