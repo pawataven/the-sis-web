@@ -19,9 +19,9 @@ function closePoem() {
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col min-h-screen">
     <div
-      class="relative bg-[#F3EBDC] overflow-visible flex flex-col h-[60vh] md:h-screen"
+      class="relative bg-[#F3EBDC] overflow-hidden flex flex-col h-[60vh] md:h-screen"
     >
       <!-- ดอกไม้ซ้าย -->
       <img
@@ -64,7 +64,7 @@ function closePoem() {
       </div>
     </div>
     <!-- CONTENT SECTION -->
-    <section class="w-full py-[10vw]">
+    <section class="w-full py-[10vw] flex-1">
       <div class="text-center mb-[10vw]">
         <h2 class="text-[8vw] md:text-[96px] text-[#F6EBDD] italic font-serif">
           Poetry – sadness
@@ -122,7 +122,7 @@ function closePoem() {
       </div>
     </section>
 
-    <div class="w-full flex justify-center mt-[-5vw]">
+    <div class="w-full">
       <img
         src="/poetry/the sis 2.png"
         class="w-full h-auto object-cover pointer-events-none"
