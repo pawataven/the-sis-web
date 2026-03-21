@@ -7,6 +7,7 @@ export interface Poetry {
   poem: string;
   meaning: string;
   hasUnderline?: boolean;
+  titleColor?: string
 }
 
 export const poetryList: Poetry[] = [

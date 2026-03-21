@@ -37,7 +37,9 @@ const emit = defineEmits(["close"]);
           >
             <div class="relative inline-block pr-14">
               <h2
-                class="text-[6vw] sm:text-[42px] lg:text-[48px] text-[#F17E6A] italic font-serif leading-tight"
+                class="text-[6vw] sm:text-[42px] lg:text-[48px] italic font-serif leading-tight"
+                :style="{ color: data.titleColor ?? '#F17E6A' }"
+                :class="{ 'underline underline-offset-4': data.hasUnderline }"
               >
                 {{ data.title }}
               </h2>
