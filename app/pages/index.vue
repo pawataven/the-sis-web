@@ -2,23 +2,46 @@
 import DecorationComp from "~/components/DecorationComp.vue";
 import ArchCards from "~/components/home/ArchCards.vue";
 import NavigationBar from "~/layouts/NavigationBar.vue";
- 
-import { ref } from "vue";
+
+import { ref, onMounted, onUnmounted } from "vue";
 const hovered = ref(false);
+
+let autoTimer: ReturnType<typeof setInterval> | null = null;
+
+const startAutoSwitch = () => {
+  autoTimer = setInterval(() => {
+    hovered.value = !hovered.value;
+  }, 10000);
+};
+
+const resetTimer = () => {
+  if (autoTimer) clearInterval(autoTimer);
+  startAutoSwitch();
+};
+
+const handleClick = () => {
+  hovered.value = !hovered.value;
+  resetTimer();
+};
+
+onMounted(() => startAutoSwitch());
+onUnmounted(() => {
+  if (autoTimer) clearInterval(autoTimer);
+});
 </script>
- 
+
 <template>
   <div class="min-h-screen w-full overflow-x-hidden">
     <div
       class="relative w-full bg-[#7DB2D3] rounded-b-[650px] pb-60 z-0 flex flex-col items-center overflow-hidden"
     >
       <DecorationComp />
- 
+
       <div class="relative w-full max-w-[1440px]">
         <div class="relative z-10 pt-4 sm:pt-6 md:pt-10 px-4">
           <NavigationBar />
         </div>
- 
+
         <div
           class="relative -mt-5 sm:mt-32 lg:mt-50 w-full flex justify-center items-center"
         >
@@ -35,7 +58,7 @@ const hovered = ref(false);
             </div>
           </div>
         </div>
- 
+
         <div
           class="relative w-full px-4 -mt-[1%] sm:-mt-[3%] md:-mt-[5%] lg:-mt-[1%] z-20"
         >
@@ -46,20 +69,31 @@ const hovered = ref(false);
             />
           </div>
         </div>
- 
+
         <div
           class="relative w-full px-6 mt-1 sm:-mt-5 md:-mt-10 lg:-mt-[3%] pb-10 z-20"
         >
           <div class="flex justify-center w-full">
             <div
-              class="relative w-full max-w-[922px] aspect-[3/1.2] sm:aspect-[3/1] rounded-[100%] bg-white border border-black drop-shadow-lg overflow-hidden cursor-default"
-              @mouseenter="hovered = true"
-              @mouseleave="hovered = false"
+              class="relative w-full max-w-[922px] aspect-[3/1.2] sm:aspect-[3/1] bg-white border border-black drop-shadow-lg cursor-default"
+              style="border-radius: 50%; clip-path: ellipse(50% 50% at 50% 50%)"
+              @mouseenter="
+                hovered = true;
+                resetTimer();
+              "
+              @mouseleave="
+                hovered = false;
+                resetTimer();
+              "
+              @click="handleClick"
             >
-              <!-- Content A: Default -->
               <div
-                class="absolute inset-0 flex flex-col justify-center items-center text-center p-[5%] sm:p-8 md:p-12 transition-opacity duration-500"
-                :class="hovered ? 'opacity-0 pointer-events-none' : 'opacity-100'"
+                class="absolute inset-0 flex flex-col justify-center items-center text-center p-[5%] sm:p-8 md:p-12 transition-all duration-500 ease-in-out"
+                :class="
+                  hovered
+                    ? 'opacity-0 -translate-y-3 pointer-events-none'
+                    : 'opacity-100 translate-y-0'
+                "
               >
                 <h1
                   class="font-serif text-[#472809] text-[clamp(1.5rem,4vw,3.75rem)] leading-tight mb-[2%]"
@@ -76,11 +110,14 @@ const hovered = ref(false);
                   <span class="font-bold">ภาษาดอกไม้</span>
                 </p>
               </div>
- 
-              <!-- Content B: On Hover -->
+
               <div
-                class="absolute inset-0 flex flex-col justify-center items-center text-center p-[5%] sm:p-8 md:p-12 transition-opacity duration-500"
-                :class="hovered ? 'opacity-100' : 'opacity-0 pointer-events-none'"
+                class="absolute inset-0 flex flex-col justify-center items-center text-center p-[5%] sm:p-8 md:p-12 transition-all duration-500 ease-in-out"
+                :class="
+                  hovered
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-3 pointer-events-none'
+                "
               >
                 <p
                   class="text-[#472809] text-[clamp(10px,1.5vw,1.125rem)] max-w-[85%] leading-relaxed"
@@ -101,7 +138,7 @@ const hovered = ref(false);
             </div>
           </div>
         </div>
- 
+
         <div
           class="relative w-full px-4 -mt-[10%] sm:-mt-[8%] md:-mt-[5%] lg:-mt-[3%] z-20"
         >
@@ -112,9 +149,9 @@ const hovered = ref(false);
             />
           </div>
         </div>
- 
+
         <ArchCards class="relative z-10 mt-5" />
- 
+
         <div class="relative w-full px-4 -mt-[15%] z-0">
           <div class="flex justify-center">
             <NuxtImg
@@ -125,20 +162,16 @@ const hovered = ref(false);
         </div>
       </div>
     </div>
- 
-    <!--พื้นที่ส่วนน้ำตาล-->
+
     <div class="relative w-full">
-      <!-- ดอกไม้ขวา — ซ่อนบน mobile -->
       <NuxtImg
         src="/home/flower-footer.png"
-        class="absolute right-[-5%] select-none pointer-events-none sm:h-[50vw] md:h-[60vw] lg:h-[80vw] max-h-[1000px]"
-        style="bottom: 7%"
+        class="absolute right-[-5%] bottom-[6%] md:right-[1%] md:bottom-[6%] lg:bottom-[12%] select-none pointer-events-none sm:h-[50vw] md:h-[55vw] lg:h-[55vw] max-h-[800px] w-auto object-cover"
       />
-      <!-- layout -->
+
       <div
         class="relative z-20 flex items-center justify-center min-h-[400px] sm:min-h-[500px] px-[5%] sm:px-[6%] lg:px-[8%] py-[5%]"
       >
-        <!-- ข้อความ + ปุ่ม -->
         <div class="w-full sm:w-[45%] flex flex-col sm:items-center">
           <p
             class="text-white leading-[2.2] text-center sm:text-center text-[clamp(0.9rem,1.5vw,2rem)]"
@@ -156,15 +189,13 @@ const hovered = ref(false);
             </NuxtLink>
           </div>
         </div>
- 
-        <!-- spacer ขวา -->
+
         <div class="hidden sm:block sm:w-[40%]" />
       </div>
- 
-      <!-- หญ้า -->
+
       <NuxtImg
         src="/home/grass.png"
-        class="relative w-full h-auto select-none pointer-events-none z-10"
+        class="relative w-full h-auto select-none pointer-events-none z-10 -mt-[8%]"
       />
     </div>
   </div>
