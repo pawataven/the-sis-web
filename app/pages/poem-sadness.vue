@@ -1,9 +1,14 @@
 <script setup lang="ts">
 import PoetryModal from "@/components/PoetryModal.vue";
-import NavigationBar from "@/layouts/NavigationBar.vue";
 import { poetryList } from "@/data/poetryData";
 import type { Poetry } from "@/data/poetryData";
 import { ref } from "vue";
+
+// set ค่าให้ layout
+const flowerSrc = useState("flowerSrc");
+const label = useState("label");
+flowerSrc.value = "/sadness/sadness-bg.png";
+label.value = "sadness";
 
 const selectedPoem = ref<Poetry | null>(null);
 
@@ -19,50 +24,7 @@ function closePoem() {
 </script>
 
 <template>
-  <div class="flex flex-col min-h-screen">
-    <div
-      class="relative bg-[#F3EBDC] overflow-hidden flex flex-col h-[60vh] md:h-screen"
-    >
-      <!-- ดอกไม้ซ้าย -->
-      <img
-        src="/sadness/sadness-bg.png"
-        class="absolute left-0 bottom-0 w-auto z-[20] pointer-events-none translate-y-[6.5%]"
-        style="
-          height: min(90%, 650px);
-          width: clamp(200px, 32%, 520px);
-          max-width: none;
-        "
-      />
-
-      <!-- ใบไม้ขวา -->
-      <img
-        src="/poetry/leaves-bg.png"
-        class="absolute right-0 bottom-0 w-auto z-[10] pointer-events-none translate-y-[0.5%]"
-        style="height: min(90%, 650px); max-width: min(45%, 650px)"
-      />
-      <!-- Navbar -->
-      <div
-        class="relative z-[50] px-[5vw] md:px-0 scale-[0.85] md:scale-100 origin-top"
-      >
-        <NavigationBar />
-      </div>
-
-      <!-- Poetry + Parent -->
-      <div
-        class="relative z-[20] flex flex-col items-center justify-center flex-1 px-[5vw] md:px-0"
-      >
-        <img
-          src="/poetry/Layer_1.png"
-          class="pointer-events-none h-auto w-[clamp(150px,28vw,580px)] md:w-[28.611vw] md:h-[14.861vw]"
-        />
-        <div
-          class="border border-[#000000] rounded-[160%] text-[#000000] bg-white mt-1 md:mt-5 mb:pt-5 mb-[5vw]"
-          style="padding: clamp(4px, 0.7vw, 10px) clamp(16px, 4vw, 56px)"
-        >
-          <p style="font-size: clamp(14px, 4vw, 70px)">Sadness</p>
-        </div>
-      </div>
-    </div>
+  <div>
     <!-- CONTENT SECTION -->
     <section class="w-full py-[10vw] flex-1">
       <div class="text-center mb-[10vw]">
