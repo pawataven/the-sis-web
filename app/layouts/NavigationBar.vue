@@ -1,71 +1,38 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-import { onClickOutside } from "@vueuse/core";
+import { ref, onMounted, onUnmounted } from "vue";
+import type { NavItem } from "~/types/navItems";
+import { NAV_ITEMS } from "~/data/navItems";
+import { useNavDropdown } from "~/composables/useNavItems";
 
-// ---- Types ----
-interface NavDropdownItem {
-  readonly label: string;
-  readonly to: string;
-}
+const isMobile = ref(false);
 
-interface NavItem {
-  readonly label: string;
-  readonly to: string;
-  readonly icon: string;
-  readonly alt: string;
-  readonly dropdown?: NavDropdownItem[];
-}
+const checkMobile = () => {
+  isMobile.value = window.innerWidth < 768;
+};
 
-// ---- Constants ----
-const NAV_ITEMS: readonly NavItem[] = [
-  {
-    label: "HOME",
-    to: "/",
-    icon: "/Navbar/door-icon.png",
-    alt: "Home icon",
-  },
-  {
-    label: "POETRY",
-    to: "/poetry",
-    icon: "/Navbar/Group32.png",
-    alt: "Poetry icon",
-    dropdown: [
-      { label: "PARENT", to: "/poem-parent" },
-      { label: "WARNING", to: "/poem-warning" },
-      { label: "SADNESS", to: "/poem-sadness" },
-      { label: "LOVE", to: "/poem-love" },
-    ],
-  },
-  {
-    label: "FLOWERS",
-    to: "/flowers",
-    icon: "/Navbar/IMG_82421.png",
-    alt: "Flowers icon",
-  },
-  {
-    label: "FIND YOUR BLOOM",
-    to: "/find-your-bloom",
-    icon: "/Navbar/Untitled_Artwork41.png",
-    alt: "Find your bloom icon",
-  },
-] as const;
+onMounted(() => {
+  checkMobile();
+  window.addEventListener('resize', checkMobile);
+});
 
-// ---- Logic ----
-const openLabel = ref<string | null>(null);
-const navRef = ref<HTMLElement | null>(null);
+onUnmounted(() => {
+  window.removeEventListener('resize', checkMobile);
+});
+
+const { navRef, openLabel, toggle, close, isOpen, cancelClose } = useNavDropdown();
 
 const toggleDropdown = (item: NavItem): void => {
   if (!item.dropdown) return;
-  openLabel.value = openLabel.value === item.label ? null : item.label;
+  if (isMobile.value) {
+    toggle(item.label);
+  }
 };
 
-const closeDropdown = (): void => {
-  openLabel.value = null;
+const handleMouseEnter = (item: NavItem) => {
+  if (!isMobile.value) {
+    openLabel.value = item.label;
+  }
 };
-
-const isOpen = (label: string): boolean => openLabel.value === label;
-
-onClickOutside(navRef, closeDropdown);
 </script>
 
 <template>
@@ -77,6 +44,8 @@ onClickOutside(navRef, closeDropdown);
       <div
         v-if="item.dropdown"
         class="relative flex flex-col items-center gap-2 sm:gap-3"
+        @mouseenter="handleMouseEnter(item)"
+        @mouseleave="close"
       >
         <button
           :aria-expanded="isOpen(item.label)"
@@ -128,6 +97,7 @@ onClickOutside(navRef, closeDropdown);
             :id="`dropdown-${item.label}`"
             role="menu"
             class="absolute top-full mt-2 w-[140px] sm:w-[160px] lg:w-[180px] bg-white rounded-2xl border border-[#8C7662] shadow-md overflow-hidden z-50"
+            @mouseenter="cancelClose"
           >
             <NuxtLink
               v-for="child in item.dropdown"
@@ -135,7 +105,7 @@ onClickOutside(navRef, closeDropdown);
               :to="child.to"
               role="menuitem"
               class="relative inline-block px-5 py-3 sm:py-4 text-[10px] sm:text-[12px] lg:text-[14px] font-serif text-[#6B4A34] after:absolute after:bottom-2 after:left-5 after:h-[1px] after:w-0 after:bg-[#6B4A34] after:transition-all after:duration-300 after:ease-out hover:after:w-[calc(100%-2.5rem)]"
-              @click="closeDropdown"
+              @click="close"
             >
               {{ child.label }}
             </NuxtLink>
