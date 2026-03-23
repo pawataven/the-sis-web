@@ -1,93 +1,47 @@
 <script setup lang="ts">
-import PoetryModal from "@/components/PoetryModal.vue";
-import NavigationBar from "@/layouts/NavigationBar.vue";
-import { poetryList } from "@/data/poetryData";
-import type { Poetry } from "@/data/poetryData";
-import { ref } from "vue";
+import PoetryModal from "@/components/PoetryModal.vue"
+import { poetryList } from "@/data/poetryData"
+import type { Poetry } from "@/data/poetryData"
+import { ref } from "vue"
 
-const selectedPoem = ref<Poetry | null>(null);
+// set ค่าให้ layout
+const flowerSrc = useState('flowerSrc')
+const label = useState('label')
+flowerSrc.value = '/warning/yellow.png'
+label.value = 'Warning'
+
+const selectedPoem = ref<Poetry | null>(null)
 
 function openPoem(poem: Poetry) {
-  selectedPoem.value = poem;
-  document.body.style.overflow = "hidden";
+  selectedPoem.value = poem
+  document.body.style.overflow = "hidden"
 }
 
 function closePoem() {
-  selectedPoem.value = null;
-  document.body.style.overflow = "";
+  selectedPoem.value = null
+  document.body.style.overflow = ""
 }
 </script>
 
 <template>
-  <div>
-    <div
-      class="relative bg-[#F3EBDC] overflow-hidden flex flex-col h-[vh] md:h-screen"
-    >
-      <img
-        src="/warning/yellow.png"
-        class="absolute left-0 top-0 h-full w-auto z-[10] pointer-events-none"
-        style="min-width: 120px; max-width: min(35%, 500px)"
-      />
+  <div class="flex flex-col min-h-screen">
 
-      <img
-        src="/poetry/leaves-bg.png"
-        class="absolute right-0 top-0 h-full w-auto z-[10] pointer-events-none"
-        style="min-width: 100px; max-width: min(45%, 650px)"
-      />
 
-      <!-- Navbar -->
-      <div
-        class="relative z-[50] px-[5vw] md:px-0 scale-[0.85] md:scale-100 origin-top"
-      >
-        <NavigationBar />
-      </div>
-
-      <!-- Poetry + Parent -->
-      <div
-        class="relative z-[20] flex flex-col items-center justify-center flex-1 px-[5vw] md:px-0"
-      >
-        <img
-          src="/poetry/Layer_1.png"
-          class="pointer-events-none h-auto w-[clamp(150px,28vw,580px)] md:w-[28.611vw] md:h-[14.861vw]"
-        />
-        <div
-          class="border border-[#000000] rounded-[160%] text-[#000000] bg-white mt-1 md:mt-5 mb:pt-5 mb-[5vw]"
-          style="padding: clamp(4px, 0.7vw, 10px) clamp(16px, 4vw, 56px)"
-        >
-          <p style="font-size: clamp(14px, 4vw, 70px)">Warning</p>
-        </div>
-      </div>
-    </div>
-    <!-- CONTENT SECTION -->
-    <section class="w-full py-[10vw] px-[5vw] md:px-0">
+    <section class="w-full py-[10vw] px-[5vw] md:px-0 flex-1">
       <div class="text-center mb-[10vw] max-w-[920px] mx-auto px-[5vw]">
-        <h2
-          class="text-[#F6EBDD] italic font-serif"
-          style="font-size: clamp(24px, 6vw, 14.861vw)"
-        >
+        <h2 class="text-[#F6EBDD] italic font-serif" style="font-size: clamp(24px, 6vw, 14.861vw)">
           Poetry - Warning
         </h2>
-        <p
-          class="text-[#F6EBDD] text-[3.5vw] md:text-[28px] mt-[1vw] leading-relaxed"
-          style="font-size: clamp(14px, 3.5vw, 28px)"
-        >
+        <p class="text-[#F6EBDD] mt-[1vw] leading-relaxed" style="font-size: clamp(14px, 3.5vw, 28px)">
           ขอต้อนรับสู่พื้นที่แห่ง คติธรรมและเครื่องเตือนใจ <br />
-          <span
-            >เพราะบทกวีมิได้ร้อยเรียงเพียงเพื่อความเพ้อฝัน และภาษาดอกไม้</span
-          >
+          <span>เพราะบทกวีมิได้ร้อยเรียงเพียงเพื่อความเพ้อฝัน และภาษาดอกไม้</span>
           ไม่ได้มีไว้เพียงเพื่อบอกรัก เช่นเดียวกัน
         </p>
       </div>
 
-      <!-- บทที่ 1 -->
-      <div
-        class="flex items-center gap-[6vw] max-w-[1400px] mx-auto px-[5vw] mb-[10vw]"
-      >
+      <div class="flex items-center gap-[6vw] max-w-[1400px] mx-auto px-[5vw] mb-[10vw]">
         <div class="w-1/2 flex justify-start">
-          <img
-            src="/warning/warning 1 1.png"
-            class="w-[35vw] pointer-events-none"
-          />
+          <img src="/warning/warning 1 1.png" class="w-[35vw] pointer-events-none" />
         </div>
         <div class="w-1/2 flex flex-col items-end text-right text-[#F6EBDD]">
           <h3 class="text-[2.5vw] mb-[0.2vw]">พระอภัยมณี</h3>
@@ -103,14 +57,9 @@ function closePoem() {
       </div>
     </section>
 
-    <div class="absolute bottom-0 left-0 w-full">
-      <img
-        src="/poetry/the sis 2.png"
-        class="w-full h-auto object-cover pointer-events-none"
-      />
+    <div class="w-full mt-auto">
+      <img src="/poetry/the sis 2.png" class="w-full h-auto object-cover pointer-events-none" />
     </div>
-
-    <!-- Modal — อันเดียวพอ -->
 
     <PoetryModal
       :is-open="selectedPoem !== null"
