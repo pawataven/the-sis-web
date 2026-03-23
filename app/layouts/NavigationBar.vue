@@ -38,7 +38,7 @@ const handleMouseEnter = (item: NavItem) => {
 <template>
   <nav
     ref="navRef"
-    class="sticky top-0 z-50 w-full flex justify-center gap-3 sm:gap-6 md:gap-10 lg:gap-14.5 pt-5 pb-20 px-2"
+    class="sticky top-0 z-50 w-full flex justify-center gap-3 sm:gap-6 md:gap-10 lg:gap-14.5 pt-5 pb-20 px-2 hidden lg:flex"
   >
     <template v-for="item in NAV_ITEMS" :key="item.label">
       <div

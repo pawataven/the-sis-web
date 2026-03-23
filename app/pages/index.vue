@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import DecorationComp from "~/components/home/DecorationComp.vue";
+
 import ArchCards from "~/components/home/ArchCards.vue";
 import TheNavigationBar from "~/layouts/NavigationBar.vue";
 import { useAutoSwitch } from "~/composables/useAutoSwitch";
 import { POETRY_MESSAGE, FOOTER_CONTENT } from "~/data/homeContent";
+import DecorationComp from "~/components/home/DecorationComp.vue";
+
 
 const { hovered, resetTimer, handleClick } = useAutoSwitch(10000);
 </script>
@@ -13,17 +15,17 @@ const { hovered, resetTimer, handleClick } = useAutoSwitch(10000);
     <div
       class="relative w-full bg-[#7DB2D3] rounded-b-[650px] pb-60 z-0 flex flex-col items-center overflow-hidden"
     >
-      <DecorationComp />
+      <DecorationComp/>
 
       <div class="relative w-full max-w-[1440px]">
-        <div class="relative z-10 pt-4 sm:pt-6 md:pt-10 px-4">
+        <div class="relative z-10 pt-85 sm:pt-6 md:pt-10 px-4">
           <TheNavigationBar />
         </div>
 
         <div
           class="relative -mt-5 sm:mt-32 lg:mt-50 w-full flex justify-center items-center"
         >
-          <div class="relative w-full">
+          <div class="relative w-full z-20">
             <NuxtImg
               src="/home/skyflower.png"
               class="w-full h-auto select-none block"

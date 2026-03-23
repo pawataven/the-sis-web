@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import DoorLoader from "~/components/DoorLoader.vue";
+import MobileMenu from "~/components/MobileMenu.vue";
 
 const loaded = ref(false);
 </script>
 
 <template>
+  <MobileMenu />
   <div class="bg-[#472809] min-h-screen w-full overflow-x-hidden font-sans">
     
     <DoorLoader @done="loaded = true" />
