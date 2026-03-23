@@ -14,7 +14,7 @@ const emit = defineEmits(["close"]);
     <Transition name="modal">
       <div
         v-if="isOpen && data"
-        class="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+        class="fixed inset-0 z-[10000] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
         @click.self="emit('close')"
       >
         <div
