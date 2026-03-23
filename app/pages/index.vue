@@ -1,33 +1,11 @@
 <script setup lang="ts">
-import DecorationComp from "~/components/DecorationComp.vue";
+import DecorationComp from "~/components/home/DecorationComp.vue";
 import ArchCards from "~/components/home/ArchCards.vue";
-import NavigationBar from "~/layouts/NavigationBar.vue";
+import TheNavigationBar from "~/layouts/NavigationBar.vue";
+import { useAutoSwitch } from "~/composables/useAutoSwitch";
+import { POETRY_MESSAGE, FOOTER_CONTENT } from "~/data/homeContent";
 
-import { ref, onMounted, onUnmounted } from "vue";
-const hovered = ref(false);
-
-let autoTimer: ReturnType<typeof setInterval> | null = null;
-
-const startAutoSwitch = () => {
-  autoTimer = setInterval(() => {
-    hovered.value = !hovered.value;
-  }, 10000);
-};
-
-const resetTimer = () => {
-  if (autoTimer) clearInterval(autoTimer);
-  startAutoSwitch();
-};
-
-const handleClick = () => {
-  hovered.value = !hovered.value;
-  resetTimer();
-};
-
-onMounted(() => startAutoSwitch());
-onUnmounted(() => {
-  if (autoTimer) clearInterval(autoTimer);
-});
+const { hovered, resetTimer, handleClick } = useAutoSwitch(10000);
 </script>
 
 <template>
@@ -39,7 +17,7 @@ onUnmounted(() => {
 
       <div class="relative w-full max-w-[1440px]">
         <div class="relative z-10 pt-4 sm:pt-6 md:pt-10 px-4">
-          <NavigationBar />
+          <TheNavigationBar />
         </div>
 
         <div
@@ -98,16 +76,16 @@ onUnmounted(() => {
                 <h1
                   class="font-serif text-[#472809] text-[clamp(1.5rem,4vw,3.75rem)] leading-tight mb-[2%]"
                 >
-                  Message in Flowers
+                  {{ POETRY_MESSAGE.title }}
                 </h1>
                 <p
                   class="text-[#472809] text-[clamp(10px,1.5vw,1.125rem)] max-w-[85%] leading-relaxed"
                 >
-                  ปลดล็อกความหมายที่ซ่อนเร้นในบทกวี สู่ถ้อยคำแห่งมวลดอกไม้
+                  {{ POETRY_MESSAGE.description[0] }}
                   <br class="hidden sm:block" />
-                  ยินดีต้อนรับเข้าสู่แหล่งเรียนรู้
-                  <br class="hidden sm:block" />ที่จะเชื่อมคุณกับบทกลอนด้วย
-                  <span class="font-bold">ภาษาดอกไม้</span>
+                  {{ POETRY_MESSAGE.description[1] }}
+                  <br class="hidden sm:block" />{{ POETRY_MESSAGE.description[2] }}
+                  <span class="font-bold">{{ POETRY_MESSAGE.description[3] }}</span>
                 </p>
               </div>
 
@@ -122,17 +100,19 @@ onUnmounted(() => {
                 <p
                   class="text-[#472809] text-[clamp(10px,1.5vw,1.125rem)] max-w-[85%] leading-relaxed"
                 >
-                  <span class="font-bold">ภาษาดอกไม้ หรือ FLORIOGRAPHY</span>
+                  <span class="font-bold">{{ POETRY_MESSAGE.florigraphy[0] }}</span>
                   <br />
-                  คือ การสื่อสารอีกรูปแบบหนึ่งในยุควิคตอเรียโดย
-                  ใช้ดอกไม้ในการสื่อสาร
+                  {{ POETRY_MESSAGE.florigraphy[1] }}
                   <br class="hidden sm:block" />
-                  แสดงถึงความรู้สึกส่วนตัวที่ไม่สามารถบอกออกมาเป็นคำพูดได้
-                  โดยในแต่ละชนิดของดอกไม้จะมี
+                  {{ POETRY_MESSAGE.florigraphy[2] }}
                   <br class="hidden sm:block" />
-                  ความหมายแตกต่างกัน ซึ่งสามารถใช้แทนความรู้สึก
+                  {{ POETRY_MESSAGE.florigraphy[3] }}
                   <br class="hidden sm:block" />
-                  ความคิด หรือข้อความที่ต้องการสื่อได้
+                  {{ POETRY_MESSAGE.florigraphy[4] }}
+                  <br class="hidden sm:block" />
+                  {{ POETRY_MESSAGE.florigraphy[5] }}
+                  <br class="hidden sm:block" />
+                  {{ POETRY_MESSAGE.florigraphy[6] }}
                 </p>
               </div>
             </div>
@@ -176,16 +156,16 @@ onUnmounted(() => {
           <p
             class="text-white leading-[2.2] text-center sm:text-center text-[clamp(0.9rem,1.5vw,2rem)]"
           >
-            เปิดบทเรียนสู่โลก <span class="font-bold">วรรณคดีไทย</span>
-            <br />ที่จะพาไปพบกับการถอดรหัสบทกลอน <br />ให้กลับมามีชีวิตชีวา
-            <br />ด้วยถ้อยคำจาก <span class="font-bold italic">ดอกไม้</span>
+            {{ FOOTER_CONTENT.description[0] }} <span class="font-bold">{{ FOOTER_CONTENT.description[1] }}</span>
+            <br />{{ FOOTER_CONTENT.description[2] }} <br />{{ FOOTER_CONTENT.description[3] }}
+            <br />{{ FOOTER_CONTENT.description[4] }} <span class="font-bold italic">{{ FOOTER_CONTENT.description[5] }}</span>
           </p>
           <div class="flex justify-center sm:justify-start mt-6 sm:mt-8">
             <NuxtLink
-              to="/poetry"
+              :to="FOOTER_CONTENT.buttonLink"
               class="bg-[#E86686] hover:bg-[#df4b6d] text-white rounded-full transition-colors duration-200 text-[clamp(1rem,1.5vw,2rem)] px-10 sm:px-14 py-2 sm:py-3"
             >
-              Go
+              {{ FOOTER_CONTENT.buttonText }}
             </NuxtLink>
           </div>
         </div>
