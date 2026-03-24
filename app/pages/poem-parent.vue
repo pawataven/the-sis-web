@@ -5,11 +5,8 @@ import { poetryList } from "@/data/poetryData";
 import type { Poetry } from "@/data/poetryData";
 import { ref } from "vue";
 
-// set ค่าให้ layout
-const flowerSrc = useState('flowerSrc')
-const label = useState('label')
-flowerSrc.value = '/poetry/red-flower-bg.png'
-label.value = 'Parent'
+
+
 
 const selectedPoem = ref<Poetry | null>(null);
 
