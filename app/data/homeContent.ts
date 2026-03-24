@@ -27,5 +27,5 @@ export const FOOTER_CONTENT = {
     "ดอกไม้",
   ],
   buttonText: "Go",
-  buttonLink: "/poetry",
+  buttonLink: "/poem-parent",
 };
