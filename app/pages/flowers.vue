@@ -7,18 +7,15 @@ import NavigationBar from "@/layouts/NavigationBar.vue";
   <div class="flex flex-col min-h-screen">
     <!-- Hero -->
     <div
-      class="relative bg-[#F3EBDC] overflow-hidden flex flex-col"
-      style="min-height: clamp(300px, 60vh, 700px)"
+      class="relative bg-[#F3EBDC] overflow-visible flex flex-col h-[60vw] md:h-screen"
     >
       <img
         src="/flowers/flower-bg.png"
         class="absolute left-0 top-0 h-full w-auto z-[10] pointer-events-none"
-        style="max-width: min(35%, 400px)"
       />
       <img
         src="/poetry/leaves-bg.png"
         class="absolute right-0 top-0 h-full w-auto z-[10] pointer-events-none"
-        style="max-width: min(45%, 500px)"
       />
 
       <!-- Navbar -->

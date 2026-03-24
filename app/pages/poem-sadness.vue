@@ -4,11 +4,7 @@ import { poetryList } from "@/data/poetryData";
 import type { Poetry } from "@/data/poetryData";
 import { ref } from "vue";
 
-// set ค่าให้ layout
-const flowerSrc = useState("flowerSrc");
-const label = useState("label");
-flowerSrc.value = "/sadness/sadness-bg.png";
-label.value = "sadness";
+
 
 const selectedPoem = ref<Poetry | null>(null);
 
@@ -113,13 +109,3 @@ function closePoem() {
   </div>
 </template>
 
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
