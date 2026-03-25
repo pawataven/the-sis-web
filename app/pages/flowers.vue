@@ -7,7 +7,7 @@ import NavigationBar from "@/layouts/NavigationBar.vue";
   <div class="flex flex-col min-h-screen">
     <!-- Hero -->
     <div
-      class="relative bg-[#F3EBDC] overflow-visible flex flex-col h-[60vw] md:h-screen"
+      class="relative bg-[#F3EBDC] overflow-visible flex flex-col h-[60vw]"
     >
       <img
         src="/flowers/flower-bg.png"
