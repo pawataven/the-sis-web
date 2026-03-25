@@ -35,7 +35,7 @@ import NavigationBar from "@/layouts/NavigationBar.vue";
     </div>
 
     <!-- Flower list -->
-    <section class="w-full bg-[#472809] py-[5vw] flex-1">
+    <section class="w-full py-[5vw] flex-1">
       <div class="max-w-[900px] mx-auto px-[5vw]">
         <div
           v-for="flower in flowersList"

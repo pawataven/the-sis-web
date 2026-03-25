@@ -15,6 +15,7 @@ onMounted(() => {
   }
   sessionStorage.setItem("hasVisited", "true");
   visible.value = true;
+  document.body.style.overflow = "hidden";
 });
 
 function handleClick() {
@@ -28,6 +29,7 @@ function handleClick() {
   setTimeout(() => {
     emit("done");
     visible.value = false;
+    document.body.style.overflow = ""; 
   }, 2000);
 }
 </script>

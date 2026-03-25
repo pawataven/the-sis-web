@@ -42,7 +42,7 @@ const current = computed(
 <template>
   <div>
     <div
-      class="relative bg-[#F3EBDC] overflow-visible flex flex-col h-[60vw] md:h-screen"
+      class="relative bg-[#F3EBDC] overflow-visible flex flex-col h-[60vw]"
     >
       <Transition name="flower" mode="out-in">
         <img
