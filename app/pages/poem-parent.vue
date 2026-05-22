@@ -22,7 +22,7 @@ function closePoem() {
 
 <template>
   <!-- CONTENT -->
-  <section class="w-full py-[10vw]">
+  <section class="w-full pt-[10vw] pb-0">
     <div class="text-center mb-[10vw]">
       <h2 class="text-[8vw] md:text-[96px] text-[#F6EBDD] italic font-serif">
         Poetry – Parent
@@ -37,7 +37,7 @@ function closePoem() {
     </div>
 
     <!-- บทที่ 1 -->
-    <div class="relative max-w-[900px] mx-auto mb-16 md:mb-[8vw] px-6 md:px-[5vw]">
+    <div class="relative max-w-[900px] mx-auto mb-16 md:mb-[24vw] px-6 md:px-[5vw]">
       <div class="bg-white rounded-2xl shadow-md py-10 pr-8 md:pr-12" style="padding-left: 44%;">
         <div class="flex flex-col items-end text-right">
           <h3 class="text-[#2c1a0e] text-[22px] lg:text-[36px] mb-1">เพลงยาวถวายโอวาท</h3>
@@ -54,7 +54,7 @@ function closePoem() {
     </div>
 
     <!-- บทที่ 2 -->
-    <div class="relative max-w-[900px] mx-auto mb-16 md:mb-[8vw] px-6 md:px-[5vw]">
+    <div class="relative max-w-[900px] mx-auto mb-16 md:mb-[24vw] px-6 md:px-[5vw]">
       <div class="bg-white rounded-2xl shadow-md py-10 pr-8 md:pr-12" style="padding-left: 44%;">
         <div class="flex flex-col items-end text-right">
           <h3 class="text-[#2c1a0e] text-[22px] lg:text-[36px] mb-1">สวัสดิรักษา</h3>
@@ -71,7 +71,7 @@ function closePoem() {
     </div>
 
     <!-- บทที่ 3 -->
-    <div class="relative max-w-[900px] mx-auto mb-16 md:mb-[8vw] px-6 md:px-[5vw]">
+    <div class="relative max-w-[900px] mx-auto mb-8 md:mb-[4vw] px-6 md:px-[5vw]">
       <div class="bg-white rounded-2xl shadow-md py-10 pr-8 md:pr-12" style="padding-left: 44%;">
         <div class="flex flex-col items-end text-right">
           <h3 class="text-[#2c1a0e] text-[22px] lg:text-[36px] mb-1">ขุนช้างขุนแผน</h3>
