@@ -81,11 +81,9 @@ function handleClick() {
       class="absolute inset-0 flex items-end justify-center pb-[5vh] z-10 transition-opacity duration-300"
       :class="clicked ? 'opacity-0' : 'opacity-100'"
     >
-      <p
-        class="text-white text-[clamp(14px,2vw,24px)] animate-pulse tracking-widest drop-shadow-lg"
-      >
-        Click to Enter
-      </p>
+<p class="text-white text-[clamp(14px,2vw,24px)] font-normal animate-pulse tracking-widest drop-shadow-lg [text-shadow:1px_1px_0_black,-1px_1px_0_black,1px_-1px_0_black,-1px_-1px_0_black]">
+  Click to Enter
+</p>
     </div>
   </div>
 </template>

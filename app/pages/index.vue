@@ -6,7 +6,6 @@ import { useAutoSwitch } from "~/composables/useAutoSwitch";
 import { POETRY_MESSAGE, FOOTER_CONTENT } from "~/data/homeContent";
 import DecorationComp from "~/components/home/DecorationComp.vue";
 
-
 const { hovered, resetTimer, handleClick } = useAutoSwitch(10000);
 </script>
 

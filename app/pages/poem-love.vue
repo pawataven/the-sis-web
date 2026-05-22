@@ -5,7 +5,6 @@ import { poetryList } from "@/data/poetryData";
 import type { Poetry } from "@/data/poetryData";
 import { ref } from "vue";
 
-
 const selectedPoem = ref<Poetry | null>(null);
 
 function openPoem(poem: Poetry) {
