@@ -39,32 +39,29 @@ function closePoem() {
         </p>
       </div>
 
-      <div
-        class="flex items-center gap-[6vw] max-w-[1400px] mx-auto px-[5vw] mb-[10vw]"
-      >
-        <div class="w-1/2 flex justify-start">
-          <img
-            src="/warning/warning 1 1.png"
-            class="w-[35vw] pointer-events-none"
-          />
+      <div class="relative max-w-[900px] mx-auto mb-16 md:mb-[8vw] px-6 md:px-[5vw]">
+        <div class="bg-white rounded-2xl shadow-md py-10 pr-8 md:pr-12" style="padding-left: 44%;">
+          <div class="flex flex-col items-end text-right">
+            <h3 class="text-[#2c1a0e] text-[22px] lg:text-[36px] mb-1">พระอภัยมณี</h3>
+            <h3 class="text-[#2c1a0e] text-[18px] lg:text-[28px] mb-1">ตอนสุดสาครเข้าเมืองการะเวก</h3>
+            <p class="text-[#2c1a0e] text-[16px] lg:text-[24px] mb-6">ผู้แต่ง: สุนทรภู่</p>
+            <button
+              @click="poetryList[3] && openPoem(poetryList[3])"
+              class="bg-[#E76A87] text-white px-6 py-2 rounded-full text-[14px] shadow-md hover:scale-105 transition-transform"
+            >
+              Read more
+            </button>
+          </div>
         </div>
-        <div class="w-1/2 flex flex-col items-end text-right text-[#F6EBDD]">
-          <h3 class="text-[2.5vw] mb-[0.2vw]">พระอภัยมณี</h3>
-          <h3 class="text-[2.5vw] mb-[0.2vw]">ตอนสุดสาครเข้าเมืองการะเวก</h3>
-          <p class="text-[1.6vw] mb-[1.5vw]">ผู้แต่ง: สุนทรภู่</p>
-          <button
-            @click="openPoem(poetryList[3])"
-            class="bg-[#E76A87] text-white px-[2vw] py-[0.5vw] rounded-full text-[1vw] shadow-md hover:scale-105 transition-transform"
-          >
-            Read more
-          </button>
-        </div>
+        <img src="/warning/warning 1 1.png"
+          class="absolute top-1/2 -translate-y-1/2 pointer-events-none z-10"
+          style="left: -2%; width: 50%;" />
       </div>
     </section>
 
     <div class="w-full mt-auto">
       <img
-        src="/poetry/the sis 2.png"
+        src="/poetry/ท่าเรือ.png"
         class="w-full h-auto object-cover pointer-events-none"
       />
     </div>

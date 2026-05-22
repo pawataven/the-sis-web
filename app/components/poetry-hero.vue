@@ -42,7 +42,13 @@ const current = computed(
 <template>
   <div>
     <div
-      class="relative bg-[#F3EBDC] overflow-visible flex flex-col h-[60vw]"
+      class="relative overflow-visible flex flex-col h-[60vw]"
+      style="
+        background-image: url('/Learnmore/painted-relief-texture (1).jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      "
     >
       <Transition name="flower" mode="out-in">
         <img

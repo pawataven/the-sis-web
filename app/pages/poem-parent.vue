@@ -37,90 +37,60 @@ function closePoem() {
     </div>
 
     <!-- บทที่ 1 -->
-    <!-- บทที่ 1 -->
-    <div
-      class="flex flex-col md:flex-row items-center gap-6 md:gap-[6vw] max-w-[1400px] mx-auto px-6 md:px-[5vw] mb-16 md:mb-[10vw]"
-    >
-      <div class="w-full md:w-1/2 flex justify-center md:justify-start">
-        <img
-          src="/poetry/family-1.png"
-          class="w-[250px] lg:w-[600px] pointer-events-none"
-        />
+    <div class="relative max-w-[900px] mx-auto mb-16 md:mb-[8vw] px-6 md:px-[5vw]">
+      <div class="bg-white rounded-2xl shadow-md py-10 pr-8 md:pr-12" style="padding-left: 44%;">
+        <div class="flex flex-col items-end text-right">
+          <h3 class="text-[#2c1a0e] text-[22px] lg:text-[36px] mb-1">เพลงยาวถวายโอวาท</h3>
+          <p class="text-[#2c1a0e] text-[16px] lg:text-[24px] mb-6">ผู้แต่ง: สุนทรภู่</p>
+          <button @click="poetryList[0] && openPoem(poetryList[0])"
+            class="bg-[#E76A87] text-white px-6 py-2 rounded-full text-[14px] shadow-md hover:scale-105 transition-transform">
+            Read more
+          </button>
+        </div>
       </div>
-      <div
-        class="w-full md:w-1/2 flex flex-col items-center md:items-end text-center md:text-right text-[#F6EBDD]"
-      >
-        <h3 class="text-[24px] lg:text-[40px] mb-1">เพลงยาวถวายโอวาท</h3>
-        <p class="text-[16px] lg:text-[32px] mb-4 md:mb-[1.5vw]">
-          ผู้แต่ง: สุนทรภู่
-        </p>
-        <button
-          @click="openPoem(poetryList[0])"
-          class="bg-[#E76A87] text-white px-6 py-2 md:px-[2vw] md:py-[0.5vw] rounded-full text-[14px] shadow-md hover:scale-105 transition-transform"
-        >
-          Read more
-        </button>
-      </div>
+      <img src="/poetry/family-1.png"
+        class="absolute top-1/2 -translate-y-1/2 pointer-events-none z-10"
+        style="left: -2%; width: 50%;" />
     </div>
 
     <!-- บทที่ 2 -->
-    <div
-      class="flex flex-col md:flex-row items-center gap-6 md:gap-[6vw] max-w-[1400px] mx-auto px-6 md:px-[5vw] mb-16 md:mb-[10vw]"
-    >
-      <div
-        class="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left text-[#F6EBDD] order-2 md:order-1"
-      >
-        <h3 class="text-[24px] lg:text-[40px] mb-1">สวัสดิรักษา</h3>
-        <p class="text-[16px] lg:text-[32px] mb-4 md:mb-[1.5vw]">
-          ผู้แต่ง: สุนทรภู่
-        </p>
-        <button
-          @click="openPoem(poetryList[1])"
-          class="bg-[#E76A87] text-white px-6 py-2 md:px-[2vw] md:py-[0.5vw] rounded-full text-[14px] shadow-md hover:scale-105 transition-transform"
-        >
-          Read more
-        </button>
+    <div class="relative max-w-[900px] mx-auto mb-16 md:mb-[8vw] px-6 md:px-[5vw]">
+      <div class="bg-white rounded-2xl shadow-md py-10 pr-8 md:pr-12" style="padding-left: 44%;">
+        <div class="flex flex-col items-end text-right">
+          <h3 class="text-[#2c1a0e] text-[22px] lg:text-[36px] mb-1">สวัสดิรักษา</h3>
+          <p class="text-[#2c1a0e] text-[16px] lg:text-[24px] mb-6">ผู้แต่ง: สุนทรภู่</p>
+          <button @click="poetryList[1] && openPoem(poetryList[1])"
+            class="bg-[#E76A87] text-white px-6 py-2 rounded-full text-[14px] shadow-md hover:scale-105 transition-transform">
+            Read more
+          </button>
+        </div>
       </div>
-      <div
-        class="w-full md:w-1/2 flex justify-center md:justify-end order-1 md:order-2"
-      >
-        <img
-          src="/poetry/family-2.png"
-          class="w-[250px] lg:w-[600px] pointer-events-none"
-        />
-      </div>
+      <img src="/poetry/family-2.png"
+        class="absolute top-1/2 -translate-y-1/2 pointer-events-none z-10"
+        style="left: -2%; width: 50%;" />
     </div>
 
     <!-- บทที่ 3 -->
-    <div
-      class="flex flex-col md:flex-row items-center gap-6 md:gap-[6vw] max-w-[1400px] mx-auto px-6 md:px-[5vw] mb-16 md:mb-[10vw]"
-    >
-      <div class="w-full md:w-1/2 flex justify-center md:justify-start">
-        <img
-          src="/poetry/family-3.png"
-          class="w-[250px] lg:w-[600px] pointer-events-none"
-        />
+    <div class="relative max-w-[900px] mx-auto mb-16 md:mb-[8vw] px-6 md:px-[5vw]">
+      <div class="bg-white rounded-2xl shadow-md py-10 pr-8 md:pr-12" style="padding-left: 44%;">
+        <div class="flex flex-col items-end text-right">
+          <h3 class="text-[#2c1a0e] text-[22px] lg:text-[36px] mb-1">ขุนช้างขุนแผน</h3>
+          <p class="text-[#2c1a0e] text-[16px] lg:text-[24px] mb-6">ผู้แต่ง: สุนทรภู่</p>
+          <button @click="poetryList[2] && openPoem(poetryList[2])"
+            class="bg-[#E76A87] text-white px-6 py-2 rounded-full text-[14px] shadow-md hover:scale-105 transition-transform">
+            Read more
+          </button>
+        </div>
       </div>
-      <div
-        class="w-full md:w-1/2 flex flex-col items-center md:items-end text-center md:text-right text-[#F6EBDD]"
-      >
-        <h3 class="text-[24px] lg:text-[40px] mb-1">ขุนช้างขุนแผน</h3>
-        <p class="text-[16px] lg:text-[32px] mb-4 md:mb-[1.5vw]">
-          ผู้แต่ง: สุนทรภู่
-        </p>
-        <button
-          @click="openPoem(poetryList[2])"
-          class="bg-[#E76A87] text-white px-6 py-2 md:px-[2vw] md:py-[0.5vw] rounded-full text-[14px] shadow-md hover:scale-105 transition-transform"
-        >
-          Read more
-        </button>
-      </div>
+      <img src="/poetry/family-3.png"
+        class="absolute top-1/2 -translate-y-1/2 pointer-events-none z-10"
+        style="left: -2%; width: 50%;" />
     </div>
   </section>
 
   <div class="w-full mt-auto">
     <img
-      src="/poetry/the sis 2.png"
+      src="/poetry/ท่าเรือ.png"
       class="w-full h-auto object-cover pointer-events-none"
     />
   </div>
