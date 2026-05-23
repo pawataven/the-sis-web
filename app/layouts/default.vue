@@ -5,8 +5,8 @@ const route = useRoute()
 const flowerSrc = useState('flowerSrc', () => '/poetry/red-flower-bg.png')
 const label = useState('label', () => 'Parent')
 
-const isPoetryPage = computed(() => 
-  route.path.startsWith('/poem-')
+const isPoetryPage = computed(() =>
+  route.path.startsWith('/poem-') || route.path === '/flowers'
 )
 </script>
 

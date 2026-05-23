@@ -10,10 +10,11 @@ const heroMap: Record<
     label: string;
     flowerClass?: string;
     flowerStyle?: string;
+    titleSrc?: string;
   }
 > = {
   "/poem-parent": {
-    flowerSrc: "/poetry/red-flower-bg.png",
+    flowerSrc: "/poetry/ดอกหน้า Poetry.png",
     label: "Parent",
   },
   "/poem-warning": {
@@ -28,6 +29,11 @@ const heroMap: Record<
     flowerSrc: "/sadness/sadness-bg.png",
     label: "Sadness",
     flowerStyle: "top:6.4%;",
+  },
+  "/flowers": {
+    flowerSrc: "/flowers/Flowers.png",
+    label: "Flowers",
+    titleSrc: "/flowers/Group 34.png",
   },
 };
 const current = computed(
@@ -73,20 +79,33 @@ const current = computed(
       <div
         class="relative z-[20] flex flex-col items-center justify-center flex-1 px-[5vw] md:px-0"
       >
-        <img
-          src="/poetry/Layer_1.png"
-          class="pointer-events-none h-auto w-[clamp(150px,28vw,580px)]"
-        />
+        <!-- custom title image (e.g. /flowers) -->
+        <template v-if="current.titleSrc">
+          <Transition name="label" mode="out-in">
+            <img
+              :key="current.titleSrc"
+              :src="current.titleSrc"
+              class="pointer-events-none h-auto w-[clamp(150px,28vw,580px)]"
+            />
+          </Transition>
+        </template>
 
-        <Transition name="label" mode="out-in">
-          <div
-            :key="current.label"
-            class="border border-[#000000] rounded-[160%] text-[#000000] bg-white mt-1 md:mt-5 mb-[5vw]"
-            style="padding: clamp(4px, 0.7vw, 10px) clamp(16px, 4vw, 56px)"
-          >
-            <p style="font-size: clamp(14px, 4vw, 70px)">{{ current.label }}</p>
-          </div>
-        </Transition>
+        <!-- default: Poetry title + oval label badge -->
+        <template v-else>
+          <img
+            src="/poetry/Layer_1.png"
+            class="pointer-events-none h-auto w-[clamp(150px,28vw,580px)]"
+          />
+          <Transition name="label" mode="out-in">
+            <div
+              :key="current.label"
+              class="border border-[#000000] rounded-[160%] text-[#000000] bg-white mt-1 md:mt-5 mb-[5vw]"
+              style="padding: clamp(4px, 0.7vw, 10px) clamp(16px, 4vw, 56px)"
+            >
+              <p style="font-size: clamp(14px, 4vw, 70px)">{{ current.label }}</p>
+            </div>
+          </Transition>
+        </template>
       </div>
     </div>
     <slot />
