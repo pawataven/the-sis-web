@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import PoetryModal from "@/components/PoetryModal.vue";
-
 import { poetryList } from "@/data/poetryData";
 import type { Poetry } from "@/data/poetryData";
 import { ref } from "vue";
@@ -21,7 +20,7 @@ function closePoem() {
 <template>
   <div class="flex flex-col min-h-screen">
     <!-- CONTENT SECTION -->
-    <section class="w-full py-[10vw] px-[5vw] md:px-0">
+    <section class="w-full py-[10vw] flex-1">
       <div class="text-center mb-[10vw] max-w-[920px] mx-auto px-[5vw]">
         <h2
           class="text-[#F6EBDD] italic font-serif"
@@ -30,44 +29,43 @@ function closePoem() {
           Poetry - Love
         </h2>
         <p
-          class="text-[#F6EBDD] text-[3.5vw] md:text-[28px] mt-[1vw] leading-relaxed"
+          class="text-[#F6EBDD] mt-[1vw] leading-relaxed"
           style="font-size: clamp(14px, 3.5vw, 28px)"
         >
-          ขอต้อนรับสู่พื้นที่แห่งความสัมพันธ์ ในหมวดหมู่ <span class="font-bold">ความรัก</span> <br />
+          ขอต้อนรับสู่พื้นที่แห่งความสัมพันธ์ ในหมวดหมู่ <span class="font-bold">ความรัก</span> <br />
           ที่ได้ค้นหาไปจนถึงการ กลั่นกรองบทกวี และภาษาดอกไม้<br />
           ที่มีความหมายเกี่ยวข้อง
         </p>
       </div>
 
-      <!-- บทที่ 1 -->
-      <div class="relative max-w-[900px] mx-auto mb-16 md:mb-[8vw] px-6 md:px-[5vw]">
-        <div class="bg-white rounded-2xl shadow-md py-10 pr-8 md:pr-12" style="padding-left: 44%;">
-          <div class="flex flex-col items-end text-right">
-            <h3 class="text-[#2c1a0e] text-[22px] lg:text-[36px] mb-1">พระอภัยมณี</h3>
-            <h3 class="text-[#2c1a0e] text-[18px] lg:text-[28px] mb-1">ตอนพระอภัยมณีเกี้ยวนางละเวง</h3>
-            <p class="text-[#2c1a0e] text-[16px] lg:text-[24px] mb-6">ผู้แต่ง: สุนทรภู่</p>
-            <button
-              @click="poetryList[6] && openPoem(poetryList[6])"
-              class="bg-[#E76A87] text-white px-6 py-2 rounded-full text-[14px] shadow-md hover:scale-105 transition-transform"
-            >
-              Read more
-            </button>
+      <div class="max-w-275 mx-auto px-[3vw]">
+
+        <!-- บทที่ 1 — รูปซ้าย ข้อความขวา -->
+        <div class="relative mb-[6vw]">
+          <img src="/love/romance 1.png" class="w-full h-auto pointer-events-none" />
+          <div class="absolute inset-0 flex items-center pl-[42%] pr-[10%]">
+            <div class="flex flex-col items-end text-right gap-[0.6em] w-full">
+              <h3 class="italic font-serif text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 42px)">พระอภัยมณี</h3>
+              <h3 class="italic font-serif text-[#2c1a0e]" style="font-size: clamp(12px, 2vw, 30px)">ตอนพระอภัยมณีเกี้ยวนางละเวง</h3>
+              <p class="text-[#2c1a0e]" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
+              <button @click="poetryList[6] && openPoem(poetryList[6])"
+                class="bg-[#E76A87] text-white rounded-full shadow-md hover:scale-105 transition-transform"
+                style="font-size: clamp(10px, 1.1vw, 16px); padding: clamp(4px,0.5vw,8px) clamp(12px,1.8vw,26px)">
+                Read more
+              </button>
+            </div>
           </div>
         </div>
-        <NuxtImg src="/love/love.png" format="webp"
-          class="absolute top-1/2 -translate-y-1/2 pointer-events-none z-10"
-          style="left: -2%; width: 50%;" />
+
       </div>
     </section>
 
     <div class="w-full mt-auto">
-      <NuxtImg
+      <img
         src="/poetry/ท่าเรือ.png"
-        class="w-full h-auto object-contain pointer-events-none"
-        format="webp"
+        class="w-full h-auto object-cover pointer-events-none"
       />
     </div>
-    <!-- Modal — อันเดียวพอ -->
 
     <PoetryModal
       :is-open="selectedPoem !== null"

@@ -1,37 +1,5 @@
-<script setup lang="ts">
-import NavigationBar from "@/layouts/NavigationBar.vue";
-</script>
-
 <template>
   <div class="flex flex-col min-h-screen">
-    <!-- Hero -->
-    <div
-      class="relative bg-[#F3EBDC] overflow-visible flex flex-col h-[60vw]"
-    >
-      <img
-        src="/flowers/Flowers.png"
-        class="absolute left-0 top-0 h-full w-auto z-[10] pointer-events-none"
-      />
-      <img
-        src="/flowers/กรอบใบไม้.png"
-        class="absolute right-0 top-0 h-full w-auto z-[10] pointer-events-none"
-      />
-
-      <!-- Navbar -->
-      <div
-        class="relative z-[50] px-[5vw] md:px-0 scale-[0.85] md:scale-100 origin-top"
-      >
-        <NavigationBar />
-      </div>
-
-      <!-- Flowers title -->
-      <div class="relative z-[20] flex items-center justify-center flex-1">
-        <img
-          src="/flowers/Group 34.png"
-          class="pointer-events-none h-auto w-[clamp(150px,28vw,580px)]"
-        />
-      </div>
-    </div>
 
     <!-- Flower list -->
     <section class="w-full py-[5vw] flex-1">
