@@ -8,7 +8,7 @@ const loaded = ref(false);
 
 <template>
   <MobileMenu />
-  <div class="bg-[#472809] min-h-screen w-full overflow-x-hidden font-sans">
+  <div class=" min-h-screen w-full overflow-x-hidden font-sans">
     <DoorLoader @done="loaded = true" />
     <NuxtRouteAnnouncer />
     <NuxtLayout>
