@@ -6,7 +6,7 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
   <div
     class="min-h-screen flex flex-col"
     style="
-      background-image: url(&quot;/Learnmore/painted-relief-texture (1).jpg&quot;);
+      background-image: url('/Learnmore/painted-relief-texture (1).jpg');
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;

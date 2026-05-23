@@ -5,18 +5,6 @@
   >
     <NuxtImg
       src="/home/cloud1.png"
-      class="absolute -top-[3%] -left-[50%] sm:-top-[10%] sm:-left-[39%] lg:-top-[11%] lg:-left-[39%] w-[80vw] sm:w-[70vw] lg:w-[65vw] max-w-[934px]"
-      aria-hidden="true"
-    />
-
-    <NuxtImg
-      src="/home/cloud1.png"
-      class="absolute -top-[4%] -left-[-50%] sm:-top-[23%] sm:-left-[-50%] md:-top-[20%] md:-left-[-50%] lg:-top-[12%] lg:-left-[-60%] w-[60vw] sm:w-[100vw] lg:w-[54vw] max-w-[775px]"
-      aria-hidden="true"
-    />
-
-    <NuxtImg
-      src="/home/cloud1.png"
       class="absolute -top-[-7%] -left-[20%] sm:-top-[-8%] sm:-left-[20%] md:-top-[-5%] md:-left-[15%] lg:-top-[-4%] lg:-left-[10%] w-[60vw] sm:w-[60vw] md:w-[60vw] lg:w-[50vw] max-w-[934px] scale-x-[-1]"
       aria-hidden="true"
     />
