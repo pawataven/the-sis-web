@@ -17,7 +17,7 @@ export const flowersList: Flower[] = [
   {
     id: "passion",
     name: "Passion Flower",
-    imageSrc: "/flowers/passion.png",
+    imageSrc: "/flowers/passion flower.png",
 
     meaning:
       '"ศรัทธาและความเชื่อมั่น" (FAITH) แสดงถึงความเชื่อมั่นในกุญแจความ ความรักที่ที่มั่นคง และความเชื่อมั่นที่ยึดเกิดผ่านจากจิตใจ',
@@ -33,7 +33,7 @@ export const flowersList: Flower[] = [
   {
     id: "rose",
     name: "Rose Flower",
-    imageSrc: "/flowers/rose.png",
+    imageSrc: "/flowers/apple blossom.png",
 
     meaning:
       '"ความรัก" (LOVE) ดอกกุหลาบสีแดงเป็นสัญลักษณ์ที่เป็นที่นิยมที่สุดในการแสดงออกถึงความรักและความโรแมนติก',
