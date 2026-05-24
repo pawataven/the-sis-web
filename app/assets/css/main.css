@@ -35,7 +35,7 @@
 
 
 @font-face {
-  font-family: "DisplayFont";
+  font-family: "SiteUI";
   src: url("/fonts/Relationship-of-melodrame.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -89,4 +89,11 @@ body,
     "NavbarFont",
     var(--font-ui);
   font-weight: 500;
+}
+
+.font-display {
+  font-family:
+    "DisplayFont",
+    var(--font-ui);
+  font-weight: 400;
 }

@@ -31,10 +31,10 @@ import DecorationComp from "~/components/home/DecorationComp.vue";
         class="relative z-30 mx-auto flex min-h-[400px] max-w-[1200px] flex-col items-center justify-center px-[5%] py-[5%] sm:min-h-[500px] lg:min-h-[560px] lg:items-start lg:justify-start lg:px-[8%] lg:pt-16"
       >
         <div
-          class="flex w-full max-w-[464px] flex-col items-center justify-center rounded-[43px] border border-[#472809] bg-white px-6 py-8 sm:h-[283px] sm:px-10 lg:ml-[4%] xl:ml-[-10%]"
+          class="flex w-full max-w-[260px] flex-col items-center justify-center rounded-[32px] border border-[#472809] bg-white px-5 py-6 sm:max-w-[400px] sm:rounded-[38px] sm:h-[283px] sm:px-8 sm:py-7 lg:max-w-[464px] lg:rounded-[43px] lg:px-10 lg:py-8 lg:ml-[4%] xl:ml-[-10%]"
         >
           <p
-            class="text-[#472809] leading-[1.7] text-center text-[clamp(0.9rem,1.5vw,1.5rem)]"
+            class="text-[#472809] leading-[1.55] text-center text-[clamp(0.78rem,1.15vw,1.5rem)] sm:leading-[1.65] sm:text-[clamp(0.85rem,1.35vw,1.35rem)] lg:leading-[1.7] lg:text-[clamp(0.9rem,1.5vw,1.5rem)]"
           >
             {{ FOOTER_CONTENT.description[0] }}
             <span class="font-bold">{{ FOOTER_CONTENT.description[1] }}</span>
@@ -46,10 +46,10 @@ import DecorationComp from "~/components/home/DecorationComp.vue";
               FOOTER_CONTENT.description[5]
             }}</span>
           </p>
-          <div class="mt-6 flex justify-center">
+          <div class="mt-5 flex justify-center sm:mt-6">
             <NuxtLink
               :to="FOOTER_CONTENT.buttonLink"
-              class="inline-flex h-[37px] w-[108px] items-center justify-center rounded-full border border-black bg-[#E86686] text-lg leading-none text-white transition-colors duration-200 hover:bg-[#df4b6d]"
+              class="inline-flex h-[34px] w-[96px] items-center justify-center rounded-full border border-black bg-[#E86686] text-base leading-none text-white transition-colors duration-200 hover:bg-[#df4b6d] sm:h-[36px] sm:w-[104px] sm:text-[1rem] lg:h-[37px] lg:w-[108px] lg:text-lg"
             >
               {{ FOOTER_CONTENT.buttonText }}
             </NuxtLink>
@@ -63,7 +63,7 @@ import DecorationComp from "~/components/home/DecorationComp.vue";
       />
 
       <NuxtImg
-        src="/poetry/ท่าเรือ.png"
+        src="/home/ท่าเรือ2.png"
         class="relative z-20 -mt-[45%] h-auto w-full select-none pointer-events-none"
       />
     </div>

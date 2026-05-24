@@ -115,7 +115,7 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
               class="border border-[#c9b49a] shadow-sm"
               style="height: clamp(250px, 35vw, 480px); width: auto;"
             />
-            <figcaption class="mt-5.75 text-center text-[clamp(9px,0.9vw,14px)] text-[#000000] font-sans font-light tracking-[0.15em] uppercase">
+            <figcaption class="mt-5.75 text-center text-[clamp(9px,0.9vw,14px)] text-[#000000] font-sans font-light tracking-[1%] uppercase">
               Lady Mary Wortley Montagu
             </figcaption>
           </figure>
@@ -180,7 +180,6 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
           </p>
         </div>
       </div>
-      <!-- /max-w content -->
     </main>
   </div>
 </template>

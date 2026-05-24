@@ -31,7 +31,7 @@ function closePoem() {
           Poetry - Love
         </h2>
         <p
-          class="text-[#F6EBDD] text-[3.5vw] font-light md:text-[24px] mt-[1vw] leading-relaxed">
+          class="text-[#F6EBDD] text-[3.5vw] font-sans font-light md:text-[24px] mt-[1vw] leading-relaxed">
           ขอต้อนรับสู่พื้นที่แห่งความสัมพันธ์ ในหมวดหมู่ <span class="font-medium">ความรัก</span> <br />
           ที่ได้ค้นหาไปจนถึงการ กลั่นกรองบทกวี และภาษาดอกไม้<br />
           ที่มีความหมายเกี่ยวข้อง
