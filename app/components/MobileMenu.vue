@@ -5,6 +5,7 @@ import { NAV_ITEMS } from "~/data/navItems";
 
 const isOpen = ref(false);
 const openSubmenu = ref<string | null>(null);
+const isPoetryModalOpen = useState("poetry-modal-open", () => false);
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
@@ -26,6 +27,7 @@ const closeMenu = () => {
 <template>
      <button
       @click="toggleMenu"
+      v-if="!isPoetryModalOpen"
       class="fixed top-4 right-4 z-[10000] p-3 hover:scale-110 transition-transform duration-300 lg:hidden"
       aria-label="Toggle menu"
     >
@@ -75,7 +77,7 @@ const closeMenu = () => {
                     :alt="item.alt"
                     class="w-12 h-12 object-contain"
                   />
-                  <span class="flex-1 text-left text-xl font-serif text-[#6B4A34]">
+                  <span class="flex-1 text-left text-xl font-navbar text-[#6B4A34]">
                     {{ item.label }}
                   </span>
                   <svg
@@ -105,7 +107,7 @@ const closeMenu = () => {
                       :key="child.label"
                       :to="child.to"
                       @click="closeMenu"
-                      class="block px-4 py-3 rounded-xl border border-[#8C7662] bg-white hover:bg-[#f5f5f5] transition-colors duration-200 text-lg font-serif text-[#6B4A34]"
+                      class="block px-4 py-3 rounded-xl border border-[#8C7662] bg-white hover:bg-[#f5f5f5] transition-colors duration-200 text-lg font-navbar text-[#6B4A34]"
                     >
                       {{ child.label }}
                     </NuxtLink>
@@ -125,7 +127,7 @@ const closeMenu = () => {
                     :alt="item.alt"
                     class="w-12 h-12 object-contain"
                   />
-                  <span class="text-xl font-serif text-[#6B4A34]">
+                  <span class="text-xl font-navbar text-[#6B4A34]">
                     {{ item.label }}
                   </span>
                 </div>

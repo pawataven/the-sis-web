@@ -4,6 +4,12 @@ import DoorLoader from "~/components/DoorLoader.vue";
 import MobileMenu from "~/components/MobileMenu.vue";
 
 const loaded = ref(false);
+
+useHead({
+  htmlAttrs: {
+    lang: "th",
+  },
+});
 </script>
 
 <template>

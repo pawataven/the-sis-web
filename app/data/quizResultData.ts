@@ -1,5 +1,7 @@
+import type { AnswerType } from "~/data/findBloomQuiz"
+
 export interface QuizResult {
-  id: "sadness" | "love" | "parent" | "warning"
+  id: AnswerType
   label: string        // "BOUQUET PERSONALITY"
   bouquetTitle: string // "LOVER BOUQUET"
   flowerImage: string  // รูปช่อดอกไม้กลางหน้า
@@ -33,7 +35,7 @@ export const quizResults: QuizResult[] = [
     poemPath: "/poem-sadness",
   },
   {
-    id: "parent",
+    id: "family",
     label: "BOUQUET PERSONALITY",
     bouquetTitle: "FAMILY BOUQUET",
     flowerImage: "/quiz/result-parent.png",
