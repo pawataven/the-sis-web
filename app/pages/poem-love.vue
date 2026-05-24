@@ -5,14 +5,17 @@ import type { Poetry } from "@/data/poetryData";
 import { ref } from "vue";
 
 const selectedPoem = ref<Poetry | null>(null);
+const isPoetryModalOpen = useState("poetry-modal-open", () => false);
 
 function openPoem(poem: Poetry) {
   selectedPoem.value = poem;
+  isPoetryModalOpen.value = true;
   document.body.style.overflow = "hidden";
 }
 
 function closePoem() {
   selectedPoem.value = null;
+  isPoetryModalOpen.value = false;
   document.body.style.overflow = "";
 }
 </script>

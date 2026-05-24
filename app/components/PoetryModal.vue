@@ -27,7 +27,7 @@ const emit = defineEmits(["close"]);
 
           <button
             @click="emit('close')"
-            class="absolute top-4 right-6 text-gray-400 hover:text-black text-2xl z-50"
+            class="absolute top-4 right-6 cursor-pointer text-gray-400 hover:text-black text-2xl z-50"
           >
             ✕
           </button>
@@ -57,7 +57,7 @@ const emit = defineEmits(["close"]);
             </p>
 
             <div
-              class="mt-2 border border-gray-400 rounded-full px-4 py-1 text-[14px] text-gray-600 inline-block"
+              class="mt-2 border border-black rounded-full px-4 py-1 text-[16px] text-[#472809] inline-block"
             >
               ผู้แต่ง {{ data.author }}
             </div>
@@ -74,12 +74,12 @@ const emit = defineEmits(["close"]);
             class="relative z-10 flex flex-col flex-1 overflow-y-auto px-6 sm:px-10 pb-6"
           >
             <div
-              class="italic text-[#472809] text-[20px] leading-[1.9] font-serif mt-5"
+              class="italic text-[#472809] text-[20px] leading-[1.9] font-medium mt-5"
               v-html="data.poem"
             />
             <div class="mt-4 text-[#472809]">
-              <p class="text-[18px] leading-relaxed">
-                <span class="font-bold border-b border-[#472809] mr-2"
+              <p class="text-[16px] leading-relaxed">
+                <span class="font-medium border-b border-[#472809] mr-2"
                   >ความหมาย:</span
                 >
                 {{ data.meaning }}

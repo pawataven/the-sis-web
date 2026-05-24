@@ -52,6 +52,7 @@ export const poetryList: Poetry[] = [
   {
     id: "Phra Aphai Mani",
     title: "พระอภัยมณี",
+    subtitle: "ตอน ตอนสุดสาครเข้าเมืองการะเวก",
     author: "สุนทรภู่",
     imageSrc: "/warning/Phra Aphai Mani-flower.png",
     poem: `แล้วสอนว่าอย่าไว้ใจมนุษย์

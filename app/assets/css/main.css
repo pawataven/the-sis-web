@@ -1,1 +1,98 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "SiteUI";
+  src: url("/fonts/Kanit-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0E00-0E7F,
+    U+200B-200D;
+}
+
+@font-face {
+  font-family: "SiteUI";
+  src: url("/fonts/Kanit-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0E00-0E7F,
+    U+200B-200D;
+}
+
+@font-face {
+  font-family: "SiteUI";
+  src: url("/fonts/Kanit-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0E00-0E7F,
+    U+200B-200D;
+}
+
+
+@font-face {
+  font-family: "SiteUI";
+  src: url("/fonts/Relationship-of-melodrame.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF,
+    U+0100-024F,
+    U+1E00-1EFF,
+    U+2000-206F,
+    U+20A0-20CF;
+}
+
+@font-face {
+  font-family: "NavbarFont";
+  src: url("/fonts/CormorantUnicase-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NavbarFont";
+  src: url("/fonts/CormorantUnicase-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-ui:
+    "SiteUI",
+    "Kanit",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    "Noto Sans Thai",
+    Tahoma,
+    sans-serif;
+}
+
+html,
+body,
+.font-sans,
+.font-serif {
+  font-family: var(--font-ui);
+}
+
+.font-navbar {
+  font-family:
+    "NavbarFont",
+    var(--font-ui);
+  font-weight: 600;
+}
+
+.font-readmore {
+  font-family:
+    "NavbarFont",
+    var(--font-ui);
+  font-weight: 500;
+}

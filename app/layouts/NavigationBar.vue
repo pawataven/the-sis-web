@@ -43,7 +43,7 @@ const handleMouseEnter = (item: NavItem) => {
     <template v-for="item in NAV_ITEMS" :key="item.label">
       <div
         v-if="item.dropdown"
-        class="relative flex flex-col items-center gap-2 sm:gap-3"
+        class="relative flex flex-col font-medium items-center gap-2 sm:gap-3"
         @mouseenter="handleMouseEnter(item)"
         @mouseleave="close"
       >
@@ -61,7 +61,7 @@ const handleMouseEnter = (item: NavItem) => {
             :class="{ '-translate-y-[7px]': isOpen(item.label) }"
           />
           <div
-            class="flex items-center gap-1 sm:gap-2 whitespace-nowrap rounded-full bg-white cursor-pointer border border-[#8C7662] px-3 py-1 sm:px-4 sm:py-1.5 lg:px-[23px] lg:py-[6px] text-[9px] sm:text-[12px] lg:text-[14px] font-serif text-[#6B4A34] shadow-sm transition-colors duration-200"
+            class="flex items-center gap-1 sm:gap-2 whitespace-nowrap rounded-full bg-white cursor-pointer border border-[#8C7662] px-3 py-1 sm:px-4 sm:py-1.5 lg:px-[23px] lg:py-[6px] text-[9px] sm:text-[12px] lg:text-[14px] font-navbar text-[#6B4A34] shadow-sm transition-colors duration-200"
             :class="item.label"
           >
             {{ item.label }}
@@ -96,7 +96,7 @@ const handleMouseEnter = (item: NavItem) => {
             v-if="isOpen(item.label)"
             :id="`dropdown-${item.label}`"
             role="menu"
-            class="absolute top-full mt-2 w-[140px] sm:w-[160px] lg:w-[180px] bg-white rounded-2xl border border-[#8C7662] shadow-md overflow-hidden z-50"
+            class="absolute top-full mt-2 w-[140px] font-medium sm:w-[160px] lg:w-[180px] bg-white rounded-2xl border border-[#8C7662] shadow-md overflow-hidden z-50"
             @mouseenter="cancelClose"
           >
             <NuxtLink
@@ -104,7 +104,7 @@ const handleMouseEnter = (item: NavItem) => {
               :key="child.label"
               :to="child.to"
               role="menuitem"
-              class="relative inline-block px-5 py-3 sm:py-4 text-[10px] sm:text-[12px] lg:text-[14px] font-serif text-[#6B4A34] after:absolute after:bottom-2 after:left-5 after:h-[1px] after:w-0 after:bg-[#6B4A34] after:transition-all after:duration-300 after:ease-out hover:after:w-[calc(100%-2.5rem)]"
+              class="relative block px-5 py-3 sm:py-4 text-[10px] sm:text-[12px] lg:text-[14px] font-navbar text-[#6B4A34] after:absolute after:bottom-2 after:left-5 after:h-[1px] after:w-0 after:bg-[#6B4A34] after:transition-all after:duration-300 after:ease-out hover:after:w-[4.2rem]"
               @click="close"
             >
               {{ child.label }}
@@ -129,7 +129,7 @@ const handleMouseEnter = (item: NavItem) => {
           "
         />
         <div
-          class="whitespace-nowrap rounded-full border border-[#8C7662] bg-white px-3 py-1 sm:px-4 sm:py-1.5 lg:px-[23px] lg:py-[6px] text-[9px] sm:text-[12px] lg:text-[14px] font-serif text-[#6B4A34] shadow-sm"
+          class="whitespace-nowrap rounded-full border border-[#8C7662] bg-white px-3 py-1 sm:px-4 sm:py-1.5 lg:px-[23px] lg:py-[6px] text-[9px] sm:text-[12px] lg:text-[14px] font-navbar text-[#6B4A34] shadow-sm"
         >
           {{ item.label }}
         </div>
