@@ -43,7 +43,7 @@ function closePoem() {
 
       <!-- บทที่ 1 — รูปซ้าย ข้อความขวา -->
       <div class="relative mb-[6vw]">
-        <img src="/poetry/family 1.png" class="w-full h-auto pointer-events-none" />
+        <img src="/poetry/family 1.png" loading="lazy" alt="ภาพประกอบบทกวีเพลงยาวถวายโอวาท ของสุนทรภู่ สื่อถึงความกตัญญูต่อบิดามารดา และคุณค่าของครอบครัวในวรรณคดีไทย" class="w-full h-auto pointer-events-none" />
         <div class="absolute inset-0 flex items-center pl-[42%] pr-[10%] -translate-y-[5%]">
           <div class="flex flex-col items-end text-right gap-[0.6em] w-full">
             <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 40px)">เพลงยาวถวายโอวาท</h3>
@@ -59,7 +59,7 @@ function closePoem() {
 
       <!-- บทที่ 2 — รูปขวา ข้อความซ้าย -->
       <div class="relative mb-[6vw]">
-        <img src="/poetry/fam 2.png" class="w-full h-auto pointer-events-none" />
+        <img src="/poetry/fam 2.png" loading="lazy" alt="ภาพประกอบบทกวีสวัสดิรักษา ของสุนทรภู่ สื่อถึงการอบรมสั่งสอนของผู้ใหญ่ และมารยาทอันดีงามในครอบครัว" class="w-full h-auto pointer-events-none" />
         <div class="absolute inset-0 flex items-center pr-[42%] pl-[10%]">
           <div class="flex flex-col items-start text-left gap-[0.6em] w-full">
             <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 40px)">สวัสดิรักษา</h3>
@@ -75,7 +75,7 @@ function closePoem() {
 
       <!-- บทที่ 3 — รูปซ้าย ข้อความขวา -->
       <div class="relative mb-[6vw]">
-        <img src="/poetry/fam 3.png" class="w-full h-auto pointer-events-none" />
+        <img src="/poetry/fam 3.png" loading="lazy" alt="ภาพประกอบบทกวีขุนช้างขุนแผน ตอนที่สื่อถึงความรักและความผูกพันในครอบครัว จากวรรณคดีไทยของสุนทรภู่" class="w-full h-auto pointer-events-none" />
         <div class="absolute inset-0 flex items-center pl-[42%] pr-[14%]">
           <div class="flex flex-col items-end text-right gap-[0.6em] w-full">
             <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 40px)">ขุนช้างขุนแผน</h3>
@@ -95,6 +95,8 @@ function closePoem() {
   <div class="w-full mt-auto">
     <img
       src="/poetry/ท่าเรือ.png"
+      loading="lazy"
+      alt="ภาพท่าเรือโบราณ ฉากหลังบรรยากาศวรรณคดีไทย"
       class="w-full h-auto object-cover pointer-events-none -mt-[35%]"
     />
   </div>

@@ -4,6 +4,7 @@ export interface Poetry {
   subtitle?: string;
   author: string;
   imageSrc: string;
+  imageAlt: string;
   poem: string;
   meaning: string;
   hasUnderline?: boolean;
@@ -16,6 +17,7 @@ export const poetryList: Poetry[] = [
     title: "เพลงยาวถวายโอวาท",
     author: "สุนทรภู่",
     imageSrc: "/poetry/image.png",
+    imageAlt: "ภาพประกอบบทกวีเพลงยาวถวายโอวาท ของสุนทรภู่ สื่อถึงความกตัญญูและการระลึกถึงบุญคุณบิดามารดาก่อนนอน",
     hasUnderline: false,
     poem: `อนึ่งเล่าเข้าที่ศรีไสยาสน์<br/>
            อย่าประมาทหมั่นคำนับลงกับหมอน<br/>
@@ -29,6 +31,7 @@ export const poetryList: Poetry[] = [
     title: "สวัสดิรักษา",
     author: "สุนทรภู่",
     imageSrc: "/poetry/image-2.png",
+    imageAlt: "ภาพประกอบบทกวีสวัสดิรักษา ของสุนทรภู่ สื่อถึงคำสอนเรื่องความกตัญญูและการให้เกียรติบิดามารดา",
     hasUnderline: true,
     poem: `อนึ่งอย่าด่าว่าแต่แม่พ่อ<br/>
            จะเกิดก้อกรรมบาปให้หยาบช้า<br/>
@@ -43,6 +46,7 @@ export const poetryList: Poetry[] = [
     subtitle: "ตอน กำเนิดพลายงาม",
     author: "สุนทรภู่",
     imageSrc: "/poetry/image-3.png",
+    imageAlt: "ภาพประกอบบทกวีขุนช้างขุนแผน ตอนกำเนิดพลายงาม สื่อถึงความรักของแม่ที่ยิ่งใหญ่เกินกว่าสิ่งใด",
     poem: `แม่รักลูกลูกก็รู้อยู่ว่ารักคนอื่นสักหมื่นแสนไม่แม้นเหมือน<br/>
             จะกินนอนวอนว่าเมตตาเตือน<br/>
             จะจากเรือนร้างแม่ไปแต่ตัว<br/>`,
@@ -55,6 +59,7 @@ export const poetryList: Poetry[] = [
     subtitle: "ตอน ตอนสุดสาครเข้าเมืองการะเวก",
     author: "สุนทรภู่",
     imageSrc: "/warning/Phra Aphai Mani-flower.png",
+    imageAlt: "ภาพดอกไม้ประกอบบทกวีพระอภัยมณี ตอนสุดสาครเข้าเมืองการะเวก สื่อถึงคำเตือนใจเรื่องความไม่ไว้วางใจมนุษย์",
     poem: `แล้วสอนว่าอย่าไว้ใจมนุษย์
           มันแสนสุดลึกล้ำเหลือกำหนด<br>
           ถึงเถาวัลย์พันเกี่ยวที่เลี้ยวลด<br>
@@ -66,6 +71,7 @@ export const poetryList: Poetry[] = [
     title: "พระอภัยมณี",
     author: "สุนทรภู่",
     imageSrc: "/sadness/sadness-1.png",
+    imageAlt: "ภาพประกอบบทกวีพระอภัยมณี สื่อถึงความโศกเศร้าและความเจ็บปวดจากความรักที่พลัดพราก",
     titleColor: "#7DB2D3",
     poem: `อกอะไร จะเหมือนอก ที่รกรัก
           อกจะหัก เสียด้วยใจ อาลัยหา<br />
@@ -79,6 +85,7 @@ export const poetryList: Poetry[] = [
     title: "นิราศอิเหนา",
     author: "สุนทรภู่",
     imageSrc: "/sadness/sadness-2.png",
+    imageAlt: "ภาพประกอบบทกวีนิราศอิเหนา ของสุนทรภู่ สื่อถึงความรักที่ตัดไม่ขาดและความโหยหาคนรัก",
     titleColor: "#7DB2D3",
     poem: `จะหักอื่น ขืนหัก ก็จักได้
           หักอาลัย นี้ไม่หลุด สุดจะหัก<br />
@@ -92,6 +99,7 @@ export const poetryList: Poetry[] = [
     title: "พระอภัยมณี",
     author: "สุนทรภู่",
     imageSrc: "/love/love-image.png",
+    imageAlt: "ภาพประกอบบทกวีพระอภัยมณี ตอนความรักอมตะ สื่อถึงความรักที่ยั่งยืนแม้โลกจะสลาย",
     titleColor: "#E86686",
     poem: `ถึงม้วยดินสิ้นฟ้ามหาสมุทร <br />             
         ไม่สิ้นสุดความรักสมัครสมาน<br />
