@@ -47,9 +47,9 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
       <div class="max-w-[960px] mx-auto px-[3vw]">
         <!-- Body text block 1 -->
         <div
-          class="text-[#2c1a0e] font-serif leading-[2.1] text-[clamp(13px,1.35vw,17px)] mb-[3vw] space-y-5"
+          class="text-[#000000] font-sans font-light leading-[2.1] text-[clamp(14px,1.35vw,18px)] mb-[3vw] space-y-5"
         >
-          <p>
+          <p class="indent-14"> 
             ในสมัยวิกตอเรีย (ค.ศ. 1837–1901)
             ประเทศอังกฤษได้อยู่ในช่วงเวลาแห่งความเจริญรุ่งเรืองทั้งด้านวัฒนธรรม
             ศิลปกรรม และอุตสาหกรรม
@@ -71,19 +71,21 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
             หากยังสะท้อนถึงวิธีคิดและ รูปแบบการสื่อสารของสังคมในยุคนั้น
             เมื่อใดก็ตามที่มีการมอบหรือได้รับช่อดอกไม้
             ความหมายที่ซ่อนอยู่ในดอกไม้แต่ละชนิดและสีสัน
-            ที่เลือกย่อมก่อให้เกิดการรับรู้ที่ลึกซึ้งยิ่งขึ้น ปัจจุบัน
-            แม้บริบททางสังคมจะ เปลี่ยนแปลงไป
-            แต่ภาษาดอกไม้ยังคงถูกนำมาประยุกต์ใช้เป็นส่วนหนึ่งของการสร้างสรรค์
-            ของขวัญหรือสิ่งของในโอกาสพิเศษ
-            โดยยังคงสืบทอดคุณค่าทางสัญลักษณ์และความหมายเฉพาะของดอกไม้อย่างงดงาม
-            และทรงคุณค่า
-          </p>
+            ที่เลือกย่อมก่อให้เกิดการรับรู้ที่ลึกซึ้งยิ่งขึ้น 
+            <p class="indent-14">
+              ปัจจุบันแม้บริบททางสังคมจะ เปลี่ยนแปลงไป
+              แต่ภาษาดอกไม้ยังคงถูกนำมาประยุกต์ใช้เป็นส่วนหนึ่งของการสร้างสรรค์
+              ของขวัญหรือสิ่งของในโอกาสพิเศษ
+              โดยยังคงสืบทอดคุณค่าทางสัญลักษณ์และความหมายเฉพาะของดอกไม้อย่างงดงาม
+              และทรงคุณค่า
+            </p>
+            </p>
         </div>
 
       </div>
 
       <!-- Postcard image — แยกออกจาก max-w ให้ใหญ่ขึ้น -->
-      <div class="max-w-[960px] mx-auto px-[3vw] mb-[3vw]">
+      <div class="max-w-[960px] mx-auto px-[3vw] mb-11.25">
         <figure class="flex flex-col">
           <img
             src="/Learnmore/9ce3ba57ca2eeb2ecdc0e2dbca43527650d53f16.png"
@@ -91,13 +93,13 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
             class="w-full h-auto border border-[#c9b49a] shadow-sm"
           />
           <figcaption
-            class="mt-2 text-center text-[clamp(9px,0.9vw,12px)] text-[#6B4A34] font-serif tracking-wide"
+            class="mt-[33px] text-center text-[clamp(9px,0.9vw,12px)] font-medium font-sans text-[#4728097A] tracking-wide"
           >
             ที่มา :
             <a
-              href=""
-              class="underline hover:opacity-70 transition-opacity break-all"
-            >https://www.bbc.com/culture/article/20221012-the-flowers-that-send-a-hidden-message</a>
+              href="https://www.bbc.com/culture/article/20221012-the-flowers-that-send-a-hidden-message"
+              class="underline hover:opacity-70 transition-opacity font-bold font-sans break-all uppercase"
+            > https://www.bbc.com/culture/article/20221012-the-flowers-that-send-a-hidden-message</a>
           </figcaption>
         </figure>
       </div>
@@ -113,7 +115,7 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
               class="border border-[#c9b49a] shadow-sm"
               style="height: clamp(250px, 35vw, 480px); width: auto;"
             />
-            <figcaption class="mt-3 text-center text-[clamp(9px,0.9vw,12px)] text-[#6B4A34] font-serif tracking-[0.15em] uppercase">
+            <figcaption class="mt-5.75 text-center text-[clamp(9px,0.9vw,14px)] text-[#000000] font-sans font-light tracking-[0.15em] uppercase">
               Lady Mary Wortley Montagu
             </figcaption>
           </figure>
@@ -126,26 +128,26 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
               class="border border-[#c9b49a] shadow-sm"
               style="height: clamp(250px, 35vw, 480px); width: auto;"
             />
-            <figcaption class="mt-3 text-center text-[clamp(9px,0.9vw,12px)] text-[#6B4A34] font-serif tracking-[0.15em] uppercase">
+            <figcaption class="mt-5.75 text-center text-[clamp(9px,0.9vw,14px)] text-[#000000] font-sans font-light tracking-[0.15em] uppercase">
               Floriography
             </figcaption>
           </figure>
         </div>
 
         <!-- Link เดียวตรงกลางใต้ทั้ง 2 รูป -->
-        <p class="text-center text-[clamp(9px,0.9vw,12px)] text-[#6B4A34] font-serif mb-[3vw]">
+        <p class="mt-11.25 text-center text-[clamp(9px,0.9vw,12px)] font-medium font-sans text-[#4728097A] tracking-wide">
           ที่มา :
           <a
             href="https://planterraevents.com/blog/floriography-secret-language-flowers-victorian-era"
-            class="underline hover:opacity-70 transition-opacity break-all"
+            class="underline hover:opacity-70 transition-opacity font-bold font-sans break-all uppercase"
           >https://planterraevents.com/blog/floriography-secret-language-flowers-victorian-era</a>
         </p>
 
         <!-- Body text block 2 -->
         <div
-          class="text-[#2c1a0e] font-serif leading-[2.1] text-[clamp(13px,1.35vw,17px)] mt-[3vw] space-y-5 pb-[5vw]"
+          class="text-[#000000] font-sans font-light leading-[2.1] text-[clamp(14px,1.35vw,18px)] mt-11.25 space-y-5 pb-[5vw]"
         >
-          <p>
+          <p class="indent-14">
             โดยภาษาดอกไม้ถูกนำเข้าทวีปยุโรปโดย lady mary wortley montagu
             ที่ไปเจอวัฒนธรรมนี้จากประเทศตุรกี ในปี ค.ศ. 1717
             ระหว่างที่เธอเดินทางติดตามสามีซึ่งดำรงตำแหน่งเอกอัครราชทูตอังกฤษประจำกรุงคอนสแตนติโนเปิล
