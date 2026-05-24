@@ -14,14 +14,18 @@
             <NuxtImg
               src="/home/วงกลม.png"
               class="block w-full h-auto select-none"
+              format="webp"
             />
 
             <div
               class="absolute left-1/2 top-[20%] z-30 w-[80%] -translate-x-1/2 text-center text-[#3A1A05]"
             >
-              <NuxtImg
-                src="/home/message-in-flower.png"
-                class="block w-[50%] h-auto select-none mx-auto mb-2"/>
+              <img
+                src="/home/Message-in-flower.png"
+                alt="Message in Flowers"
+                class="block w-[50%] h-auto select-none mx-auto mb-2"
+                format="webp"
+              />
 
               <p
                 class="mt-[3%] text-[clamp(0.45rem,1.6vw,1.25rem)] leading-normal font-medium"
