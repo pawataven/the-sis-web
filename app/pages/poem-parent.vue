@@ -25,7 +25,7 @@ function closePoem() {
 
 <template>
   <!-- CONTENT -->
-  <section class="w-full pt-[10vw] pb-0">
+  <section class="w-full pt-[5vw] pb-0">
     <div class="text-center mb-[10vw]">
       <h2 class="text-[8vw] md:text-[96px] text-[#F6EBDD] font-serif">
         Poetry – Parent
@@ -33,13 +33,13 @@ function closePoem() {
       <p
         class="text-[#F6EBDD] text-[3.5vw] font-light md:text-[24px] mt-[1vw] leading-relaxed"
       >
-        ขอต้อนรับสู่พื้นที่แห่งความสัมพันธ์ ในหมวดหมู่ <span class="font-bold">ครอบครัว</span> <br />
+        ขอต้อนรับสู่พื้นที่แห่งความสัมพันธ์ ในหมวดหมู่ <span class="font-medium">ครอบครัว</span> <br />
         ที่ได้ค้นหาไปจนถึงการ กลั่นกรองบทกวี และภาษาดอกไม้ <br />
         ที่มีความหมายเกี่ยวข้อง
       </p>
     </div>
 
-    <div class="max-w-275 mx-auto px-[3vw]">
+    <div class="max-w-275 mx-auto">
 
       <!-- บทที่ 1 — รูปซ้าย ข้อความขวา -->
       <div class="relative mb-[6vw]">
@@ -76,7 +76,7 @@ function closePoem() {
       <!-- บทที่ 3 — รูปซ้าย ข้อความขวา -->
       <div class="relative mb-[6vw]">
         <img src="/poetry/fam 3.png" class="w-full h-auto pointer-events-none" />
-        <div class="absolute inset-0 flex items-center pl-[42%] pr-[10%]">
+        <div class="absolute inset-0 flex items-center pl-[42%] pr-[14%]">
           <div class="flex flex-col items-end text-right gap-[0.6em] w-full">
             <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 40px)">ขุนช้างขุนแผน</h3>
             <p class="text-[#2c1a0e] font-light" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
@@ -95,7 +95,7 @@ function closePoem() {
   <div class="w-full mt-auto">
     <img
       src="/poetry/ท่าเรือ.png"
-      class="w-full h-auto object-cover pointer-events-none -mt-[40%]"
+      class="w-full h-auto object-cover pointer-events-none -mt-[35%]"
     />
   </div>
 

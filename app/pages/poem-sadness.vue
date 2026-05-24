@@ -23,31 +23,31 @@ function closePoem() {
 <template>
   <div>
     <!-- CONTENT SECTION -->
-    <section class="w-full py-[10vw] flex-1">
+    <section class="w-full py-[5vw] flex-1">
       <div class="text-center mb-[10vw]">
-        <h2 class="text-[8vw] md:text-[96px] text-[#F6EBDD] italic font-serif">
+        <h2 class="text-[8vw] md:text-[96px] text-[#F6EBDD] font-serif">
           Poetry – sadness
         </h2>
         <p
-          class="text-[#F6EBDD] text-[3.5vw] md:text-[28px] px-2 text-center mt-[1vw] leading-relaxed"
+          class="text-[#F6EBDD] text-[3.5vw] font-light md:text-[24px] mt-[1vw] leading-relaxed"
         >
           ขอต้อนรับสู่พื้นที่แห่งการโอบกอด
-          <span class="font-bold">ความโศกเศร้า...</span> <br />
+          <span class="font-medium">ความโศกเศร้า...</span> <br />
           สถานที่รวบรวมบทกวีและภาษาดอกไม้ ที่ร้อยเรียงจากหยดน้ำตา <br />
           เพื่อสื่อถึงความหมายอันแสนเจ็บปวดในทุกมิติของชีวิต
         </p>
       </div>
-      <div class="max-w-275 mx-auto px-[3vw]">
+      <div class="max-w-275 mx-auto">
 
         <!-- บทที่ 1 — รูปซ้าย ข้อความขวา -->
         <div class="relative mb-[6vw]">
           <img src="/sadness/sad 1.png" class="w-full h-auto pointer-events-none" />
           <div class="absolute inset-0 flex items-center pl-[42%] pr-[10%]">
             <div class="flex flex-col items-end text-right gap-[0.6em] w-full">
-              <h3 class="italic font-serif text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 42px)">นิราศอิเหนา</h3>
-              <p class="text-[#2c1a0e]" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
+              <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 40px)">นิราศอิเหนา</h3>
+              <p class="text-[#2c1a0e] font-light" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
               <button @click="poetryList[4] && openPoem(poetryList[4])"
-                class="bg-[#E76A87] text-white rounded-full shadow-md hover:scale-105 transition-transform"
+                class="bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:scale-105 transition-transform"
                 style="font-size: clamp(10px, 1.1vw, 16px); padding: clamp(4px,0.5vw,8px) clamp(12px,1.8vw,26px)">
                 Read more
               </button>
@@ -58,12 +58,12 @@ function closePoem() {
         <!-- บทที่ 2 — รูปขวา ข้อความซ้าย -->
         <div class="relative mb-[6vw]">
           <img src="/sadness/sad 2.png" class="w-full h-auto pointer-events-none" />
-          <div class="absolute inset-0 flex items-center pr-[42%] pl-[10%]">
+          <div class="absolute inset-0 flex items-center pr-[42%] pl-[13%]">
             <div class="flex flex-col items-start text-left gap-[0.6em] w-full">
-              <h3 class="italic font-serif text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 42px)">สวัสดิรักษา</h3>
-              <p class="text-[#2c1a0e]" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
+              <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 40px)">สวัสดิรักษา</h3>
+              <p class="text-[#2c1a0e] font-light" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
               <button @click="poetryList[5] && openPoem(poetryList[5])"
-                class="bg-[#E76A87] text-white rounded-full shadow-md hover:scale-105 transition-transform"
+                class="bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:scale-105 transition-transform"
                 style="font-size: clamp(10px, 1.1vw, 16px); padding: clamp(4px,0.5vw,8px) clamp(12px,1.8vw,26px)">
                 Read more
               </button>
@@ -77,7 +77,7 @@ function closePoem() {
     <div class="w-full">
       <img
         src="/poetry/ท่าเรือ.png"
-        class="w-full h-auto object-cover pointer-events-none"
+        class="w-full h-auto object-cover -mt-[40%] pointer-events-none"
       />
     </div>
 

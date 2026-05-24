@@ -48,7 +48,7 @@ const current = computed(
 <template>
   <div>
     <div
-      class="relative overflow-visible flex flex-col h-[60vw]"
+      class="relative overflow-visible flex flex-col h-[50vw]"
       style="
         background-image: url('/Learnmore/painted-relief-texture (1).jpg');
         background-size: cover;
