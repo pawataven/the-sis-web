@@ -228,7 +228,7 @@ async function next() {
 
           <button
             type="button"
-            class="bg-[#E76A87] text-white px-10 py-2 mt-[19px] rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw]"
+            class="bg-[#E76A87] text-white font-readmore px-10 py-2 mt-[19px] rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw]"
             @click="next"
           >
             {{ currentStep.buttonLabel }}
@@ -260,7 +260,7 @@ async function next() {
 
           <button
             type="button"
-            class="bg-[#E76A87] text-white px-10 py-2 rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw]"
+            class="bg-[#E76A87] text-white font-readmore px-10 py-2 rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw]"
             @click="next"
           >
             {{ currentStep.buttonLabel }}
@@ -336,7 +336,7 @@ async function next() {
 
           <button
             type="button"
-            class="bg-[#E76A87] text-white px-10 py-2 rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw] disabled:opacity-50 disabled:cursor-not-allowed"
+            class="bg-[#E76A87] text-white px-10 py-2 font-readmore rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw] disabled:opacity-50 disabled:cursor-not-allowed"
             :disabled="!canNext"
             @click="next"
           >
