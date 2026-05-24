@@ -6,7 +6,7 @@ import NavigationBar from "@/layouts/NavigationBar.vue";
   <section class="relative w-full h-auto overflow-hidden">
     <NuxtImg
       src="/home/Head home.png"
-      class="block w-[calc(100%+2px)] max-w-none h-auto select-none pointer-events-none"
+      class="block w-[calc(100%+2px)] max-w-none h-[50vw] select-none pointer-events-none"
     />
 
     <div class="absolute inset-0">

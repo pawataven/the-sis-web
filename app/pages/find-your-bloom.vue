@@ -217,7 +217,7 @@ async function next() {
         </div>
 
         <!-- Welcome text + Start button -->
-        <div class="text-center px-[5vw] max-w-[600px] mb-[3vw]">
+        <div class="text-center px-[5vw] max-w-[600px] mt-[57px] mb-[3vw]">
           <p
             v-for="text in currentStep.content"
             :key="text"
@@ -228,7 +228,7 @@ async function next() {
 
           <button
             type="button"
-            class="bg-[#E76A87] text-white px-10 py-2 rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw]"
+            class="bg-[#E76A87] text-white px-10 py-2 mt-[19px] rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw]"
             @click="next"
           >
             {{ currentStep.buttonLabel }}
@@ -236,7 +236,7 @@ async function next() {
 
           <p
             v-if="currentStep.description"
-            class="text-[#4728097A] font-serif text-[clamp(12px,1.1vw,16px)] leading-relaxed"
+            class="text-[#4728097A] mt-[51px] font-serif text-[clamp(12px,1.1vw,16px)] leading-relaxed"
           >
             {{ currentStep.description }}
           </p>
@@ -350,7 +350,7 @@ async function next() {
     <div class="w-full mt-auto">
       <img
         src="/poetry/ท่าเรือ.png"
-        class="w-full h-auto -mt-[35%] object-cover pointer-events-none"
+        class="w-full h-auto -mt-[30%] object-cover pointer-events-none"
       />
     </div>
   </div>

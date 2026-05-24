@@ -31,4 +31,10 @@ export const NAV_ITEMS: readonly NavItem[] = [
     icon: "/Navbar/Untitled_Artwork41.png",
     alt: "Find your bloom icon",
   },
+  {
+    label: "LEARN MORE",
+    to: "/learn-more",
+    icon: "/Navbar/LEARN MORE ICON.png",
+    alt: "Learn more icon",
+  },
 ] as const;
