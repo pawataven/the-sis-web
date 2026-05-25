@@ -26,6 +26,8 @@ function closeFlower() {
         <div class="relative mb-[6vw]">
           <img
             src="/flowers/anemone.png"
+            loading="lazy"
+            alt="ภาพวาดดอกอะเนมโอนี่สีขาวม่วง สัญลักษณ์แห่งความรักที่ถูกทอดทิ้ง (FORSAKEN LOVE) ในภาษาดอกไม้วิกตอเรีย"
             class="w-full h-auto pointer-events-none"
           />
           <div class="absolute inset-0 flex items-center pl-[40%] pr-[5%]">
@@ -59,6 +61,8 @@ function closeFlower() {
         <div class="relative mb-[6vw]">
           <img
             src="/flowers/passion flower.png"
+            loading="lazy"
+            alt="ภาพวาดดอกแพสชั่นฟลาวเวอร์สีขาวม่วง สัญลักษณ์แห่งศรัทธาและความเชื่อมั่น (FAITH) ในภาษาดอกไม้วิกตอเรีย"
             class="w-full h-auto pointer-events-none"
           />
           <div class="absolute inset-0 flex items-center pl-[47%] pr-[5%]">
@@ -91,6 +95,8 @@ function closeFlower() {
         <div class="relative mb-[6vw]">
           <img
             src="/flowers/honeysuckle.png"
+            loading="lazy"
+            alt="ภาพวาดดอกฮันนี่ซัคเคิลสีเหลือง สัญลักษณ์แห่งความรักและความผูกพัน (DEVOTION & AFFECTION) ในภาษาดอกไม้วิกตอเรีย"
             class="w-full h-auto pointer-events-none"
           />
           <div
@@ -126,6 +132,8 @@ function closeFlower() {
         <div class="relative mb-[6vw]">
           <img
             src="/flowers/apple blossom.png"
+            loading="lazy"
+            alt="ภาพวาดดอกแอปเปิ้ลบลอสซัมสีชมพู สัญลักษณ์แห่งความรัก (LOVE) และความโรแมนติกในภาษาดอกไม้วิกตอเรีย"
             class="w-full h-auto pointer-events-none"
           />
           <div class="absolute inset-0 flex items-center pb-[5%] pl-[50%] pr-[5%]">
@@ -160,6 +168,8 @@ function closeFlower() {
     <div class="w-full mt-auto">
       <img
         src="/poetry/ท่าเรือ.png"
+        loading="lazy"
+        alt="ภาพท่าเรือโบราณ ฉากหลังบรรยากาศวรรณคดีไทย"
         class="w-full h-auto -mt-[45%] object-cover pointer-events-none"
       />
     </div>

@@ -27,7 +27,7 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
       <div class="w-full flex justify-center items-center py-[2vw] mb-[1vw]">
         <img
           src="/Learnmore/leanmore.png"
-          alt="Learn more"
+          alt="หัวข้อ Learn More — เรียนรู้เพิ่มเติมเกี่ยวกับภาษาดอกไม้ Floriography ในยุควิกตอเรีย"
           class="h-auto select-none flex-none"
           style="width: clamp(200px, 28vw, 400px);"
         />
@@ -38,6 +38,8 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
         >
           <img
             src="/Learnmore/264775c19a9ba47e4a1e479f91842b64dcc2f734.png"
+            alt="ภาพดอกไม้ประดับตกแต่งหน้า Learn More สื่อถึงความงดงามของภาษาดอกไม้ Floriography"
+            loading="lazy"
             class="absolute top-0 left-0"
             style="width: clamp(730px, 82vw, 1183px);"
           />
@@ -89,7 +91,8 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
         <figure class="flex flex-col">
           <img
             src="/Learnmore/9ce3ba57ca2eeb2ecdc0e2dbca43527650d53f16.png"
-            alt="À la folie — vintage postcard depicting romantic flowers"
+            alt="ภาพโปสการ์ดวินเทจยุควิกตอเรีย À la folie แสดงภาพดอกไม้โรแมนติก สื่อถึงวัฒนธรรมภาษาดอกไม้ในยุคนั้น"
+            loading="lazy"
             class="w-full h-auto border border-[#c9b49a] shadow-sm"
           />
           <figcaption
@@ -111,7 +114,8 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
           <figure class="flex flex-col items-center">
             <img
               src="/Learnmore/1984b60f9b1bbebc7775b436e96b184226c2c806.png"
-              alt="Lady Mary Wortley Montagu"
+              alt="ภาพเหมือน Lady Mary Wortley Montagu ผู้นำภาษาดอกไม้จากตุรกีสู่ยุโรปในปี ค.ศ. 1717"
+              loading="lazy"
               class="border border-[#c9b49a] shadow-sm"
               style="height: clamp(250px, 35vw, 480px); width: auto;"
             />
@@ -124,7 +128,8 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
           <figure class="flex flex-col items-center">
             <img
               src="/Learnmore/d06d23edbaf5d84aea8eb9f09905219e0efb48b6.png"
-              alt="Language of Flowers — Floriography chart"
+              alt="แผนภูมิภาษาดอกไม้ Floriography แสดงความหมายของดอกไม้แต่ละชนิดในยุควิกตอเรีย"
+              loading="lazy"
               class="border border-[#c9b49a] shadow-sm"
               style="height: clamp(250px, 35vw, 480px); width: auto;"
             />

@@ -41,7 +41,7 @@ function closePoem() {
 
         <!-- บทที่ 1 — รูปซ้าย ข้อความขวา -->
         <div class="relative mb-[6vw]">
-          <img src="/sadness/sad 1.png" class="w-full h-auto pointer-events-none" />
+          <img src="/sadness/sad 1.png" loading="lazy" alt="ภาพประกอบบทกวีนิราศอิเหนา ของสุนทรภู่ สื่อถึงความโศกเศร้าและความรักที่ตัดไม่ขาด ความโหยหาคนรักที่พลัดพราก" class="w-full h-auto pointer-events-none" />
           <div class="absolute inset-0 flex items-center pl-[42%] pr-[10%]">
             <div class="flex flex-col items-end text-right gap-[0.6em] w-full">
               <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 40px)">นิราศอิเหนา</h3>
@@ -57,7 +57,7 @@ function closePoem() {
 
         <!-- บทที่ 2 — รูปขวา ข้อความซ้าย -->
         <div class="relative mb-[6vw]">
-          <img src="/sadness/sad 2.png" class="w-full h-auto pointer-events-none" />
+          <img src="/sadness/sad 2.png" loading="lazy" alt="ภาพประกอบบทกวีสวัสดิรักษา ของสุนทรภู่ สื่อถึงความเจ็บปวดและความโศกเศร้าจากบทกวีวรรณคดีไทย" class="w-full h-auto pointer-events-none" />
           <div class="absolute inset-0 flex items-center pr-[42%] pl-[13%]">
             <div class="flex flex-col items-start text-left gap-[0.6em] w-full">
               <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 40px)">สวัสดิรักษา</h3>
@@ -77,6 +77,8 @@ function closePoem() {
     <div class="w-full">
       <img
         src="/poetry/ท่าเรือ.png"
+        loading="lazy"
+        alt="ภาพท่าเรือโบราณ ฉากหลังบรรยากาศวรรณคดีไทย"
         class="w-full h-auto object-cover -mt-[40%] pointer-events-none"
       />
     </div>
