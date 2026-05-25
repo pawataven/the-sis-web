@@ -19,29 +19,31 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
     >
       <NavigationBar />
     </div>
-    
 
     <!-- Content -->
     <main class="w-full flex-1">
       <!-- Title section: title + flower same row -->
-      <div class="w-full flex justify-center items-center py-[2vw] mb-[1vw]">
+      <div
+        class="w-full flex justify-center items-center px-6 sm:px-8 md:px-10 lg:px-0 mt-20 md:mt-15 lg:mt-0 py-[2vw] mb-[1vw]"
+      >
         <img
-          src="/Learnmore/leanmore.png"
+          src="/Learnmore/learn more.png"
           alt="หัวข้อ Learn More — เรียนรู้เพิ่มเติมเกี่ยวกับภาษาดอกไม้ Floriography ในยุควิกตอเรีย"
           class="h-auto select-none flex-none"
-          style="width: clamp(200px, 28vw, 400px);"
+          style="width: clamp(272px, 28vw, 472px);"
         />
         <!-- CSS crop: wrapper clips canvas เหลือแค่ส่วนดอกไม้มุมบนซ้าย -->
         <div
-          class="relative overflow-hidden flex-none select-none pointer-events-none"
+          class="relative overflow-hidden -ml-11 sm:-ml-11 md:-ml-10 lg:-ml-20 flex-none select-none pointer-events-none"
           style="width: clamp(160px, 18vw, 260px); height: clamp(160px, 18vw, 260px);"
         >
           <img
-            src="/Learnmore/264775c19a9ba47e4a1e479f91842b64dcc2f734.png"
+            src="/Learnmore/Flower Learn more.png"
             alt="ภาพดอกไม้ประดับตกแต่งหน้า Learn More สื่อถึงความงดงามของภาษาดอกไม้ Floriography"
             loading="lazy"
             class="absolute top-0 left-0"
-            style="width: clamp(730px, 82vw, 1183px);"
+            style="width: clamp(730px, 82vw, 232px); transform: rotate(13deg);"
+
           />
         </div>
       </div>
