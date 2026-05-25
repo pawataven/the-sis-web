@@ -18,11 +18,12 @@ const emit = defineEmits(["close"]);
         @click.self="emit('close')"
       >
         <div
-          class="modal-card relative w-full max-w-[626px] max-h-[805px] h-[95vh] bg-[#FDFBF7] shadow-2xl flex flex-col overflow-hidden"
+          class="modal-card relative w-full max-w-[626px] max-h-[805px] h-[95vh] shadow-2xl flex flex-col overflow-hidden"
+          style="background-image: url('/popup/Bg popup.png'); background-size: cover; background-position: center;"
         >
           <img
-            src="/poetry/leaves-bg.png"
-            class="absolute right-0 bottom-0 w-[70%] opacity-25 z-0 pointer-events-none"
+            src="/popup/Bg flower.png"
+            class="absolute right-0 bottom-0 w-[70%] opacity-60 z-0 pointer-events-none"
           />
 
           <button

@@ -18,12 +18,14 @@ const heroMap: Record<
     label: "Parent",
   },
   "/poem-warning": {
-    flowerSrc: "/warning/yellow.png",
+    flowerSrc: "/warning/warning.png",
     label: "Warning",
+    flowerStyle: "top: 0; height: 100%; width: auto;",
   },
   "/poem-love": {
-    flowerSrc: "/warning/yellow.png",
+    flowerSrc: "/love/Love head.png",
     label: "Love",
+    flowerStyle: "top: 0; height: 100%; width: auto;",
   },
   "/poem-sadness": {
     flowerSrc: "/sadness/sadness-bg.png",
