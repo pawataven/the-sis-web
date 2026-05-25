@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Flower } from "@/data/flowerData"
+import type { Flower } from "~/data/Flower/flowerData"
 
 defineProps<{
   isOpen: boolean
@@ -18,16 +18,15 @@ const emit = defineEmits(["close"])
         @click.self="emit('close')"
       >
         <div
-          class="modal-card relative w-full max-w-[626px] max-h-[805px] h-[95vh] bg-[#FDFBF7] shadow-2xl flex flex-col overflow-hidden"
+          class="modal-card relative flex h-[95vh] max-h-[805px] w-full max-w-[626px] flex-col overflow-hidden shadow-2xl"
+          style="background-image: url('/popup/Bg popup.png'); background-size: cover; background-position: center;"
         >
-          <!-- Background watermark -->
           <img
-            src="/poetry/leaves-bg.png"
-            class="absolute right-0 bottom-0 w-[70%] opacity-25 z-0 pointer-events-none"
+            src="/popup/Bg flower.png"
+            class="pointer-events-none absolute right-0 bottom-0 z-0 w-[70%] opacity-60"
+            alt=""
           />
 
-
-          <!-- Close button -->
           <button
             @click="emit('close')"
             class="absolute top-4 right-6 cursor-pointer text-gray-400 hover:text-black text-2xl z-50"
@@ -35,40 +34,43 @@ const emit = defineEmits(["close"])
             ✕
           </button>
 
-          <!-- Header -->
-          <div class="relative z-10 px-6 sm:px-10 pt-6 sm:pt-8 pb-0 flex flex-col items-start flex-shrink-0">
-            <!-- Title EN + butterfly -->
+          <div class="relative z-10 flex flex-shrink-0 flex-col items-start px-6 pt-6 pb-0 sm:px-10 sm:pt-8">
             <div class="relative inline-block pr-14">
-              <h2 class="text-[5.5vw] sm:text-[38px] lg:text-[44px] italic font-serif leading-tight text-[#472809]">
+              <h2 class="font-serif text-[5.5vw] leading-tight italic text-[#472809] uppercase sm:text-[38px] lg:text-[44px]">
                 {{ data.titleEn }}
               </h2>
               <img
                 src="/poetry/butterfly.gif"
-                class="absolute -right-[60px] -top-[20px] w-[120px] scale-x-[-1] pointer-events-none"
+                class="pointer-events-none absolute -top-[20px] -right-[60px] w-[120px] scale-x-[-1]"
+                alt=""
               />
             </div>
 
-            <!-- Thai name tag -->
-            <div class="mt-3 border border-black rounded-full px-4 py-1 text-[14px] text-[#000000] inline-block">
+            <div class="mt-3 inline-block rounded-full border border-black px-4 py-1 text-[14px] text-[#000000]">
               {{ data.titleTh }}
             </div>
           </div>
 
-          <!-- Flower image -->
           <div class="relative z-10 w-full flex-shrink-0" style="height: 45%">
             <img
               :src="data.image"
               :alt="data.titleEn"
-              class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-[420px] object-contain"
+              class="absolute top-1/2 left-1/2 max-w-[420px] w-[80%] -translate-x-1/2 -translate-y-1/2 object-contain"
             />
           </div>
 
-          <!-- Meaning -->
-          <div class="relative z-10 flex flex-col flex-1 overflow-y-auto px-6 sm:px-10 pb-6">
+          <div class="relative z-10 flex flex-1 flex-col overflow-y-auto px-6 pb-6 sm:px-10">
             <div class="mt-2 text-[#472809]">
               <p class="text-[16px] leading-relaxed">
-                <span class="font-medium border-b border-[#472809] mr-2">ความหมาย:</span>
+                <span class="mr-2 border-b border-[#472809] font-medium">ความหมาย:</span>
                 {{ data.meaning }}
+              </p>
+            </div>
+
+            <div v-if="data.origin" class="mt-3.25 text-[#472809]">
+              <p class="text-[16px] leading-relaxed">
+                <span class="mr-2 border-b border-[#472809] font-medium">ที่มา:</span>
+                {{ data.origin }}
               </p>
             </div>
           </div>
@@ -83,22 +85,41 @@ const emit = defineEmits(["close"])
 .modal-leave-active {
   transition: opacity 0.3s ease;
 }
+
 .modal-enter-from,
 .modal-leave-to {
   opacity: 0;
 }
+
 .modal-enter-active .modal-card {
   animation: modalOpen 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
+
 .modal-leave-active .modal-card {
   animation: modalClose 0.25s ease forwards;
 }
+
 @keyframes modalOpen {
-  from { opacity: 0; transform: scale(0.85) translateY(20px); }
-  to   { opacity: 1; transform: scale(1)    translateY(0);    }
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
+
 @keyframes modalClose {
-  from { opacity: 1; transform: scale(1)    translateY(0);    }
-  to   { opacity: 0; transform: scale(0.85) translateY(20px); }
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import FlowerModal from "@/components/FlowerModal.vue"
-import { flowerList } from "@/data/flowerData"
-import type { Flower } from "@/data/flowerData"
+import { flowerCards, flowerList } from "~/data/Flower/flowerData"
+import type { Flower, FlowerCard, FlowerCardLayout } from "~/data/Flower/flowerData"
 import { ref } from "vue"
 
 const selectedFlower = ref<Flower | null>(null)
@@ -15,166 +15,122 @@ function closeFlower() {
   selectedFlower.value = null
   document.body.style.overflow = ""
 }
+
+function getContentStyle(layout: FlowerCardLayout) {
+  return {
+    left: layout.contentLeft,
+    right: layout.contentRight,
+    top: layout.contentTop,
+    bottom: layout.contentBottom,
+  }
+}
+
+function getTextBoxStyle(layout: FlowerCardLayout) {
+  return {
+    left: "0",
+    right: "4%",
+    top: "0",
+    bottom: layout.textBottom,
+  }
+}
+
+function getTitleStyle(layout: FlowerCardLayout) {
+  return {
+    fontSize: "clamp(32px, 3.2vw, 40px)",
+    lineHeight: "1.12",
+    paddingLeft: layout.titlePaddingLeft ?? "0",
+  }
+}
+
+function getButtonStyle(layout: FlowerCardLayout) {
+  return {
+    right: layout.buttonRight,
+    bottom: layout.buttonBottom,
+    fontSize: "clamp(9px, 1.5vw, 16px)",
+    width: "clamp(70px, 11vw, 142px)",
+    height: "clamp(30px, 3.2vw, 44px)",
+  }
+}
+
+function getBodyTextStyle() {
+  return {
+    fontSize: "clamp(9px, 1.45vw, 16px)",
+    lineHeight: "1.45",
+  }
+}
+
+function modalFlower(card: FlowerCard) {
+  return flowerList[card.modalIndex] ?? null
+}
+
+function openCard(card: FlowerCard) {
+  const flower = modalFlower(card)
+  if (!flower) return
+  openFlower(flower)
+}
 </script>
 
 <template>
   <div class="flex flex-col min-h-screen">
-    <!-- Flower list -->
     <section class="w-full py-[5vw] flex-1">
       <div class="max-w-225 mx-auto px-[5vw]">
-        <!-- Anemone Flower -->
-        <div class="relative mb-[6vw]">
-          <img
-            src="/flowers/anemone.png"
+        <div
+          v-for="card in flowerCards"
+          :key="card.id"
+          class="relative mb-[6vw]"
+        >
+          <NuxtImg
+            :src="card.imageSrc"
             loading="lazy"
-            alt="ภาพวาดดอกอะเนมโอนี่สีขาวม่วง สัญลักษณ์แห่งความรักที่ถูกทอดทิ้ง (FORSAKEN LOVE) ในภาษาดอกไม้วิกตอเรีย"
+            :alt="card.alt"
             class="w-full h-auto pointer-events-none"
           />
-          <div class="absolute inset-0 flex items-center pl-[40%] pr-[5%]">
-            <div class="flex flex-col gap-[0.4em] w-full">
-              <h2
-                class="font-serif text-[#3d1600]"
-                style="font-size: clamp(12px, 2.5vw, 38px)"
-              >
-                Anemone Flower
-              </h2>
-              <p
-                class="text-[#3d1600] font-light leading-relaxed"
-                style="font-size: clamp(8px, 1.3vw, 16px)"
-              >
-                "ถูกทอดทิ้ง" (FORSAKEN LOVE) สื่อถึงความโศกเศร้า การถูกทอดทิ้ง
-                และความเจ็บปวดเมื่อ แสนปิติ สิ้นสุดลงพร้อมกับความรัก
-                สิ้นเนื้อสิ้น
-              </p>
-              <button
-                @click="flowerList[0] && openFlower(flowerList[0])"
-                class="self-end mr-[2vw] bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:scale-105 transition-transform"
-                style="font-size: clamp(7px, 1vw, 14px); padding: clamp(3px, 0.4vw, 6px) clamp(10px, 1.5vw, 22px);"
-              >
-                Read more
-              </button>
-            </div>
-          </div>
-        </div>
 
-        <!-- Passion Flower -->
-        <div class="relative mb-[6vw]">
-          <img
-            src="/flowers/passion flower.png"
-            loading="lazy"
-            alt="ภาพวาดดอกแพสชั่นฟลาวเวอร์สีขาวม่วง สัญลักษณ์แห่งศรัทธาและความเชื่อมั่น (FAITH) ในภาษาดอกไม้วิกตอเรีย"
-            class="w-full h-auto pointer-events-none"
-          />
-          <div class="absolute inset-0 flex items-center pl-[47%] pr-[5%]">
-            <div class="flex flex-col gap-[0.4em] w-full">
-              <h2
-                class="font-serif text-[#3d1600]"
-                style="font-size: clamp(12px, 2.5vw, 38px)"
-              >
-                Passion Flower
-              </h2>
-              <p
-                class="text-[#3d1600] font-light leading-relaxed"
-                style="font-size: clamp(8px, 1.3vw, 16px)"
-              >
-                "ศรัทธาและความเชื่อมั่น" (FAITH) แสดงถึงความเชื่อมั่นในกุญแจความ
-                ความรักที่ที่มั่นคง และความเชื่อมั่นที่ยึดเกิดผ่านจากจิตใจ
-              </p>
-              <button
-                @click="flowerList[1] && openFlower(flowerList[1])"
-                class="self-end mr-[2vw] bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:scale-105 transition-transform"
-                style="font-size: clamp(7px, 1vw, 14px); padding: clamp(3px, 0.4vw, 6px) clamp(10px, 1.5vw, 22px);"
-              >
-                Read more
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Honeysuckle -->
-        <div class="relative mb-[6vw]">
-          <img
-            src="/flowers/honeysuckle.png"
-            loading="lazy"
-            alt="ภาพวาดดอกฮันนี่ซัคเคิลสีเหลือง สัญลักษณ์แห่งความรักและความผูกพัน (DEVOTION & AFFECTION) ในภาษาดอกไม้วิกตอเรีย"
-            class="w-full h-auto pointer-events-none"
-          />
           <div
-            class="absolute inset-0 flex items-center pt-[5%] pl-[47%] pr-[5%]"
+            class="absolute overflow-hidden"
+            :style="getContentStyle(card.layout)"
           >
-            <div class="flex flex-col gap-[0.4em] w-full">
-              <h2
-                class="font-serif text-[#3d1600]"
-                style="font-size: clamp(12px, 2.5vw, 38px)"
-              >
-                Honeysuckle
-              </h2>
-              <p
-                class="text-[#3d1600] font-light leading-relaxed"
-                style="font-size: clamp(8px, 1.3vw, 16px)"
-              >
-                "ความรักที่แสนความผูกพัน" (DEVOTION & AFFECTION)
-                เป็นดอกไม้แทนความรู้สึกผิดชอบ ความผูกพันที่แน้นแฟ้น
-                และความสุขพิเศษที่เกิดจากการให้ความรักอย่างจริงใจ
-              </p>
-              <button
-                @click="flowerList[2] && openFlower(flowerList[2])"
-                class="self-end mr-[2vw] bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:scale-105 transition-transform"
-                style="font-size: clamp(7px, 1vw, 14px); padding: clamp(3px, 0.4vw, 6px) clamp(10px, 1.5vw, 22px);"
-              >
-                Read more
-              </button>
-            </div>
-          </div>
-        </div>
+            <div
+              class="absolute overflow-hidden"
+              :style="getTextBoxStyle(card.layout)"
+            >
+              <div class="space-y-[0.35em] pr-[2%]">
+                <h2
+                  class="font-serif text-[#3d1600]"
+                  :style="getTitleStyle(card.layout)"
+                >
+                  {{ card.name }}
+                </h2>
 
-        <!-- Rose Flower (Apple Blossom) -->
-        <div class="relative mb-[6vw]">
-          <img
-            src="/flowers/apple blossom.png"
-            loading="lazy"
-            alt="ภาพวาดดอกแอปเปิ้ลบลอสซัมสีชมพู สัญลักษณ์แห่งความรัก (LOVE) และความโรแมนติกในภาษาดอกไม้วิกตอเรีย"
-            class="w-full h-auto pointer-events-none"
-          />
-          <div class="absolute inset-0 flex items-center pb-[5%] pl-[50%] pr-[5%]">
-            <div class="flex flex-col gap-[0.4em] w-full">
-              <h2
-                class="font-serif text-[#3d1600] pl-[5%]"
-                style="font-size: clamp(12px, 2.5vw, 38px)"
-              >
-                Rose Flower
-              </h2>
-              <p
-                class="text-[#3d1600] font-light leading-relaxed"
-                style="font-size: clamp(8px, 1.3vw, 16px)"
-              >
-                "ความรัก" (LOVE)
-                ดอกกุหลาบสีแดงเป็นสัญลักษณ์ที่เป็นที่นิยมที่สุดในการแสดงออกถึงความรักและความโรแมนติก
-              </p>
-              <button
-                @click="flowerList[3] && openFlower(flowerList[3])"
-                class="self-end mr-[2vw] bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:scale-105 transition-transform"
-                style="font-size: clamp(7px, 1vw, 14px); padding: clamp(3px, 0.4vw, 6px) clamp(10px, 1.5vw, 22px);"
-              >
-                Read more
-              </button>
+                <p
+                  v-html="card.description"
+                  class="text-[#3d1600] font-light uppercase"
+                  :style="getBodyTextStyle()"
+                />
+              </div>
             </div>
+
+            <button
+              class="absolute inline-flex items-center justify-center whitespace-nowrap rounded-full border border-black bg-[#E76A87] text-white font-readmore shadow-md transition-transform hover:scale-105 cursor-pointer"
+              :style="getButtonStyle(card.layout)"
+              @click="openCard(card)"
+            >
+              Read more
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- หญ้า -->
     <div class="w-full mt-auto">
       <img
         src="/poetry/ท่าเรือ.png"
         loading="lazy"
-        alt="ภาพท่าเรือโบราณ ฉากหลังบรรยากาศวรรณคดีไทย"
+        alt="Vintage pier scene background"
         class="w-full h-auto -mt-[45%] object-cover pointer-events-none"
       />
     </div>
 
-    <!-- Modal -->
     <FlowerModal
       :is-open="selectedFlower !== null"
       :data="selectedFlower"
