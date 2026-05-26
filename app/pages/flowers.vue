@@ -2,9 +2,28 @@
 import FlowerModal from "@/components/FlowerModal.vue"
 import { flowerCards, flowerList } from "~/data/Flower/flowerData"
 import type { Flower, FlowerCard, FlowerCardLayout } from "~/data/Flower/flowerData"
-import { ref } from "vue"
+import { onBeforeUnmount, onMounted, ref } from "vue"
+
+definePageMeta({
+  scrollToTop: true,
+})
 
 const selectedFlower = ref<Flower | null>(null)
+let previousScrollRestoration: ScrollRestoration | null = null
+
+onMounted(() => {
+  previousScrollRestoration = window.history.scrollRestoration
+  window.history.scrollRestoration = "manual"
+
+  requestAnimationFrame(() => {
+    window.scrollTo(0, 0)
+  })
+})
+
+onBeforeUnmount(() => {
+  if (previousScrollRestoration === null) return
+  window.history.scrollRestoration = previousScrollRestoration
+})
 
 function openFlower(flower: Flower) {
   selectedFlower.value = flower
@@ -36,7 +55,7 @@ function getTextBoxStyle(layout: FlowerCardLayout) {
 
 function getTitleStyle(layout: FlowerCardLayout) {
   return {
-    fontSize: "clamp(32px, 3.2vw, 40px)",
+    fontSize: "clamp(18px, 3.2vw, 64px)",
     lineHeight: "1.12",
     paddingLeft: layout.titlePaddingLeft ?? "0",
   }
@@ -47,8 +66,8 @@ function getButtonStyle(layout: FlowerCardLayout) {
     right: layout.buttonRight,
     bottom: layout.buttonBottom,
     fontSize: "clamp(9px, 1.5vw, 16px)",
-    width: "clamp(70px, 11vw, 142px)",
-    height: "clamp(30px, 3.2vw, 44px)",
+    width: "clamp(60px, 11vw, 100px)",
+    height: "clamp(20px, 3.2vw, 34px)",
   }
 }
 
@@ -111,11 +130,11 @@ function openCard(card: FlowerCard) {
             </div>
 
             <button
-              class="absolute inline-flex items-center justify-center whitespace-nowrap rounded-full border border-black bg-[#E76A87] text-white font-readmore shadow-md transition-transform hover:scale-105 cursor-pointer"
+              class="absolute inline-flex items-center justify-center whitespace-nowrap rounded-full border border-black bg-[#E76A87] text-white font-NavbarFont shadow-md transition-transform hover:scale-105 cursor-pointer"
               :style="getButtonStyle(card.layout)"
               @click="openCard(card)"
             >
-              Read more
+              Submit
             </button>
           </div>
         </div>

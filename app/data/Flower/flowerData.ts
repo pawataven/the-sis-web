@@ -1,34 +1,35 @@
 export interface Flower {
-  id: string
-  name: string
-  titleEn: string
-  titleTh: string
-  image: string
-  description: string
-  meaning: string
-  origin: string
+  id: string;
+  name: string;
+  titleEn: string;
+  titleTh: string;
+  image: string;
+  description: string;
+  meaning: string;
+  origin: string;
+  duo?: string;
 }
 
 export interface FlowerCardLayout {
-  contentLeft: string
-  contentRight: string
-  contentTop: string
-  contentBottom: string
-  textBottom: string
-  titlePaddingLeft?: string
-  buttonRight: string
-  buttonBottom: string
+  contentLeft: string;
+  contentRight: string;
+  contentTop: string;
+  contentBottom: string;
+  textBottom: string;
+  titlePaddingLeft?: string;
+  buttonRight: string;
+  buttonBottom: string;
 }
 
 export interface FlowerCard {
-  id: string
-  name: string
-  imageSrc: string
-  description: string
-  meaning: string
-  modalIndex: number
-  alt: string
-  layout: FlowerCardLayout
+  id: string;
+  name: string;
+  imageSrc: string;
+  description: string;
+  meaning: string;
+  modalIndex: number;
+  alt: string;
+  layout: FlowerCardLayout;
 }
 
 export const flowerList: Flower[] = [
@@ -37,46 +38,310 @@ export const flowerList: Flower[] = [
     name: "Anemone Flower",
     titleEn: "Anemone Flower",
     titleTh: "ดอกอะเนมโอนี่",
-    image: "/flowers/popupImg/anemone-detail.png",
+    image: "/flowers/popupImg/anemone.png",
     description: "รักที่ถูกทอดทิ้ง <br /> (Forsaken Love)",
-    meaning:
-      '"รักที่ถูกทอดทิ้ง" (FORSAKEN LOVE) สื่อถึงความโศกเศร้า ความพลัดพราก และความโดดเดี่ยวของหัวใจที่ยังคงยึดติดกับความทรงจำในอดีต',
-    origin: "กดกดกดกด",
-  },
-  {
-    id: "passion-flower",
-    name: "Passion Flower",
-    titleEn: "PASSION FLOWER",
-    titleTh: "ดอกแพสชั่นฟลาวเวอร์",
-    image: "/flowers/popupImg/passion-detail.png",
-    description: "ศรัทธาและความเชื่อมั่น <br /> (Faith)",
-    meaning:
-      '"ศรัทธาและความเชื่อมั่น" (FAITH) แสดงถึงความเชื่อมั่นในกุญแจความรัก ความรักที่มั่นคง และความเชื่อมั่นที่ยึดเกิดผ่านจากจิตใจ',
-    origin: "ดกเดเดเดเ",
+    meaning: '"รักที่ถูกทอดทิ้ง" (Forsaken Love)',
+    origin:
+      "ความสัมพันธ์ของแอนีโมนกับความรักที่ถูกทอดทิ้งสามารถสืบย้อนไปถึงตํานานเทพเจ้ากรีก ว่ากันว่าดอกไม้นี้ผุดขึ้นมาจากน้ําตาของ Aphrodite ขณะที่เธอไว้ทุกข์ต่อการสูญเสีย Adonis ที่รักของเธอ เขาถูกฆ่าโดยเทพเจ้าที่หึงหวงเพราะความสัมพันธ์ของเขากับเทพธิดาแห่งความรัก",
+    duo: "camellia  เพื่อแสดงความปรารถนาในสิ่งที่อาจเป็นได้ <br> yarrow  เพื่อช่วยรักษาหัวใจที่แตกสลาย",
   },
   {
     id: "honeysuckle",
     name: "Honeysuckle",
-    titleEn: "HONEYSUCKLE FLOWER",
-    titleTh: "ดอกฮันนี่ซัคเคิล",
-    image: "/flowers/popupImg/honeysuckle-detail.png",
-    description: "ความภักดีและความเสน่หา <br /> (Devotion & Affection)",
-    meaning:
-      '"ความรักที่แสนผูกพัน" (DEVOTION & AFFECTION) เป็นดอกไม้แทนความรู้สึกผิดชอบ ความผูกพันที่แน่นแฟ้น และความสุขพิเศษที่เกิดจากการให้ความรักอย่างจริงใจ',
-    origin: "กดกดกด",
+    titleEn: "Honeysuckle",
+    titleTh: "ดอกสายน้ำผึ้ง",
+    image: "/flowers/popupImg/Honey Suckle.png",
+    description: "ความภักดีและความเสน่หา<br>(Devotion & Affection)",
+    meaning: "ความจงรักภักดี ความรักใคร่",
+    origin:
+      'ชาววิกตอเรียนเชื่อว่าหากนอนหลับโดยมีดอกฮันนีซักเคิลอยู่ใต้หมอน คุณจะฝันเห็นคนรักแท้ของคุณ ความเชื่อนี้อาจมีต้นกำเนิดมาจากบทละครเรื่อง A Midsummer Night\'s Dream ของเชกสเปียร์ ซึ่งเปรียบการบรรทมเคียงข้างบ็อตทอมกับวิธีที่ฮันนีซักเคิลอันหอมหวนพันรอบต้นเอล์มที่มีเปลือกขรุขระว่า "นอนหลับเถิด แล้วฉันจะโอบกอดเจ้าไว้ในอ้อมแขน... ดังที่เถาวูดไบน์ (Woodbine) พันรอบฮันนีซักเคิลอันหวานชื่น อย่างอ่อนโยนและไอวี่เพศเมียก็โอบรัดนิ้วขรุขระของต้นเอล์ม (Elm) โอ้ ฉันรักเจ้าเพียงใด ฉันหลงใหลเจ้าเพียงใด!"',
+    duo: "orchid เพื่อแสดงความขอบคุณสำหรับของขวัญอันล้ำค่าที่คุณหวงแหน cornflower เพื่อแสดงความจงรักภักดีอย่างแท้จริงต่อคนที่คุณรัก",
+  },
+  {
+    id: "passionflower",
+    name: "Passion Flower",
+    titleEn: "Passion Flower",
+    titleTh: "ดอกเสาวรส",
+    image: "/flowers/popupImg/Passion.png",
+    description: '"ศรัทธาและความเชื่อมั่น"<br> (Faith)"',
+    meaning: "ความศรัทธา",
+    origin:
+      "ในศตวรรษที่สิบหก มิชชันนารีนิกายเยซูอิตได้พบกับเสาวรสในอเมริกาใต้ พวกเขาเชื่อว่าดอกไม้เป็นสัญลักษณ์ของความรักของพระคริสต์ กลีบดอกสิบกลีบเป็นตัวแทนของอัครสาวกผู้ซื่อสัตย์สิบคน เส้นใยเป็นมงกุฎหนาม เกสรตัวผู้เป็นบาดแผลทั้งห้า ไข่เป็นค้อน และรูปแบบของตะปูสามอันที่เจาะมือและเท้าของพระเยซูคริสต์",
+    duo: "Edelweiss เพื่อแสดงถึงความเชื่อที่ว่าใครบางคนจะเลือกสิ่งที่ถูกต้อง แม้ว่ามันจะยากก็ตาม <br> iris เพื่อเป็นของขวัญสําหรับผู้นําทางศาสนา",
   },
   {
     id: "appleblossom",
     name: "Apple Blossom",
     titleEn: "APPLE BLOSSOM",
-    titleTh: "ดอกแอปเปิ้ลบลอสซัม",
-    image: "/flowers/popupImg/apple-blossom-detail.png",
+    titleTh: "ดอกแอปเปิ้ล",
+    image: "/flowers/popupImg/Apple Blossom.png",
     description: "ความชอบพอ / ความพึงพอใจ <br /> (Preference)",
-    meaning:
-      '"ความรัก" (LOVE) ดอกกุหลาบสีแดงเป็นสัญลักษณ์ที่เป็นที่นิยมที่สุดในการแสดงออกถึงความรักและความโรแมนติก',
-    origin: "กดกดกด",
+    meaning: "ความชอบพอ ความพึงพอใจ",
+    origin:
+      "การเชื่อมต่อของแอปเปิ้ลกับความชอบมาจากนิทานเรื่อง Golden Apple of Discord เมื่ออีริส เทพธิดาแห่งความไม่ลงรอยกัน โยนแอปเปิ้ลสีทองเข้าไปในพิธีแต่งงานที่เธอไม่ได้รับเชิญให้เข้าร่วม แอปเปิ้ลนั้นถูกจารึกว่า “เพื่อผู้ที่งดงามที่สุด” ทำให้เฮร่า อธีนา และอโฟรไดท์ต่างอ้างสิทธิ์ในผลแอปเปิ้ล Zeus จึงมอบหมายให้ Paris of Troy เป็นผู้ตัดสินระหว่างเทพธิดาทั้งสาม ในที่สุดปารีสเลือกอโฟรไดท์ หลังจากที่เธอสัญญาว่าจะมอบความรักของหญิงสาวที่งดงามที่สุดในโลก Helen of Sparta ให้แก่เขา แต่เนื่องจากเฮเลนเป็นภรรยาของกษัตริย์เมเนลอสอยู่แล้ว การตัดสินใจของปารีสจึงกลายเป็นชนวนที่นำไปสู่สงครามโทรจันในที่สุด",
+    duo: "pansy เพื่อแสดงให้ผู้รับเห็นว่าคุณกำลังคิดถึงเขาอยู่ <br> zinnia เพื่อเป็นของขวัญให้กับเพื่อนสนิท",
   },
-]
+
+  {
+    id: "amaryllis",
+    name: "Amaryllis Flower",
+    titleEn: "Amaryllis Flower",
+    titleTh: "ว่านสี่ทิศ",
+    image: "/flowers/popupImg/Amaryllis.png",
+    description: "ความภาคภูมิใจ <br> (Pride)",
+    meaning: "ความภาคภูมิใจ",
+    origin:
+      "ชาววิกตอเรียนเชื่อมโยงดอกอมาริลลิสกับความภาคภูมิใจ เนื่องจากลำต้นที่สูงสง่าและดอกอันสดสะพรั่งที่ตั้งตระหง่านเหนือดอกไม้อื่น ๆนอกจากนี้ ดอกอมาริลลิสซึ่งมักไม่มีใบ ยังเป็นที่รู้จักในด้านความทนทานต่อความแห้งแล้ง มันเป็นพืชที่แข็งแกร่งและอดทนภาคภูมิใจเกินกว่าจะยอมสูญสลายไปต่อสภาวะอันโหดร้าย",
+    duo: "Hydrangea  เพื่อสื่อถึงความหยิ่งผยองและการคุยโอ้อวด <br>Clematis  เพื่อบอกให้ผู้รับรู้สึกภาคภูมิใจในความฉลาดเฉลียวของตนเอง",
+  },
+
+  {
+    id: "oleander",
+    name: "Oleander Flower",
+    titleEn: "Oleander Flower",
+    titleTh: "ดอกยี่โถ",
+    image: "/flowers/popupImg/azalea.png",
+    description: "ความระมัดระวัง <br>(Caution)",
+    meaning: "ความระมัดระวัง",
+    origin:
+      'ชาววิกตอเรียนกำหนดความหมายว่า "ความระมัดระวัง" ให้กับดอกโอลีแอนเดอร์ อาจเป็นเพราะพืชชนิดนี้มีพิษ แต่ยังเกี่ยวโยงกับตำนานเตือนใจของกรีกเรื่องฮีโรและลีแอนเดอร์อีกด้วย ทั้งคู่ตกหลุมรักกัน และแม้จะอาศัยอยู่คนละฝั่งของทะเลเฮลเลสพอนต์ ลีแอนเดอร์ก็ว่ายน้ำข้ามทะเลทุกคืนเพื่อไปพบฮีโร คืนหนึ่งในระหว่างพายุรุนแรง ลีแอนเดอร์เสียชีวิตขณะพยายามว่ายน้ำไปหาคนรักในท่ามกลางคลื่นลมโหดร้าย เมื่อฮีโรเห็นร่างของลีแอนเดอร์ถูกซัดขึ้นฝั่ง นางร้องออกมาว่า "โอ้ ลีแอนเดอร์! โอ้ ลีแอนเดอร์!" แล้วโจนลงทะเลเพื่อไปอยู่เคียงข้างเขาในความตาย',
+    duo: "azalea  เพื่อเตือนใครบางคนว่ากำลังจะตัดสินใจผิดพลาด<br>sunflower เพื่อเตือนเพื่อนให้ระวังการลงทุนที่ไม่ดี",
+  },
+
+  {
+    id: "buttercup",
+    name: "Buttercup Flower",
+    titleEn: "buttercup flower",
+    titleTh: "ดอกบัตเตอร์คัพ",
+    image: "/flowers/popupImg/Buttercup.png",
+    description: "คุณเปล่งประกายไปด้วยเสน่ห์ <br>(You are radiant with charm)",
+    meaning: "คุณเปล่งประกายด้วยเสน่ห์",
+    origin:
+      "ความหมายของดอกบัตเตอร์คัพอาจมีต้นกำเนิดมาจากเกมในวัยเด็กยุควิกตอเรีย เด็กๆ จะนำดอกบัตเตอร์คัพไปไว้ใต้คางแล้วดูว่ามีแสงสะท้อนสีเหลืองปรากฏบนผิวหนังหรือไม่ หากมีแสงเรืองรองปรากฏขึ้น แสดงว่าผู้นั้นชอบรับประทานเนย !",
+    duo: "cowslip เพื่อแสดงถึงความรักใหม่ที่เพิ่งเริ่มต้น<br>sunflower datura เพื่อแสดงว่าคุณจะไม่หลงเชื่อเสน่ห์ใดๆ ง่ายๆ",
+  },
+
+  {
+    id: "asphodel",
+    name: "Asphodel Flower",
+    titleEn: "Asphodel Flower",
+    titleTh: "ดอกอัสโฟเดล",
+    image: "/flowers/popupImg/asphodel.png",
+    description:
+      "ความเสียใจของฉันจะติดตามคุณไปจนถึงหลุมศพ <br>(My regrets follow you to the grave)",
+    meaning: "ความเสียใจของฉันจะติดตามคุณไปจนถึงหลุมฝังศพ",
+    origin:
+      'ในตำนานเทพกรีก ดอกแอสโฟเดลเติบโตในโลกใต้พิภพและเป็นอาหารของผู้ล่วงลับ มหากาพย์โอดิสซีของโฮเมอร์ได้หล่อหลอมภาพลักษณ์ของดอกแอสโฟเดลให้เป็นดอกไม้แห่งความเสียใจ โดยกล่าวถึง "ทุ่งแอสโฟเดล" ว่าเป็นส่วนหนึ่งของโลกใต้พิภพที่วิญญาณซึ่งไม่ดีและไม่ชั่วอาศัยอยู่ ราวกับเป็นแดนชำระวิญญาณอันเงียบสงัด ',
+    duo: "cypress or marigold เพื่อแสดงถึงความโศกเศร้าและความสิ้นหวัง<br>rosemary เพื่อแสดงถึงการระลึกถึงกันชั่วนิรันดร์",
+  },
+  {
+    id: "azalea",
+    name: " Azalea Flower",
+    titleEn: "azalea flower",
+    titleTh: "กุหลาบพันปี",
+    image: "/flowers/popupImg/azalea.png",
+    description: "ความเปราะบาง / ความพอประมาณ <br>(Fragility/ Temperance)",
+    meaning: "ความเปราะบาง /  ความพอประมาณ",
+    origin:
+      "ดอกอะซาเลียเป็นที่รู้จักกันดีว่าเปราะบางและปลูกยากดอกไม้ที่งดงามและอ่อนช้อยนี้จะบานอยู่ได้เพียงช่วงเวลาสั้น ๆ ก่อนจะร่วงหล่นลงสู่พื้น นอกจากนี้รากที่ตื้นของมันยังไม่ทนต่อการรดน้ำมากเกินไป จึงเป็นที่มาของความเชื่อมโยงกับความพอประมาณ",
+    duo: "mint or snowdrop  เพื่อปลอบประโลมจิตใจที่เปราะบาง<br>Heather  เพื่อบอกผู้รับว่าพวกเขาจะได้รับการดูแลในยามที่ต้องการ",
+  },
+
+  {
+    id: "dogwood",
+    name: " Dogwood Flower",
+    titleEn: "dogwood flower",
+    titleTh: "ดอกด็อกวู้ด",
+    image: "/flowers/popupImg/Dogwood.png",
+    description:
+      "ความรักจะเอาชนะทุกความยากลำบาก<br>(Our love will overcome adversity)",
+    meaning: "ความรักจะเอาชนะทุกความยากลำบาก",
+    origin:
+      "ดอกไม้ของต้นด็อกวูดดูอ่อนช้อยและน่าหลงใหล แต่เนื้อไม้ของลำต้นนั้นแข็งแกร่งและทนทาน คู่รักในยุควิกตอเรียใช้ดอกไม้ชนิดนี้เพื่อบ่งบอกว่าความรักของพวกเขาสามารถผ่านพ้นทุกบททดสอบได้",
+    duo: "Hellebore เพื่อเสริมพลังในการเอาชนะเรื่องอื้อฉาว<br>Monkshood เพื่อแสดงถึงความกล้าหาญและความมีเกียรติเมื่อเผชิญกับอุปสรรค",
+  },
+  {
+    id: "gladiolus",
+    name: "Gladiolus",
+    titleEn: "Gladiolus",
+    titleTh: "ดอกซ่อนกลิ่นฝรั่ง",
+    image: "/flowers/popupImg/Gladiolus.png",
+    description: "คุณแทงทะลุหัวใจของฉัน<br>(You pierce my heart)",
+    meaning: "คุณแทงทะลุหัวใจของฉัน",
+    origin:
+      'ในภาษาละติน คำว่า gladius แปลว่า "ดาบ" จึงเป็นที่มาของชื่อเล่นทั่วไปว่า "ลิลลี่ดาบ" ของดอกไม้ชนิดนี้ทั้งชื่อและความหมายของพืชขนาดใหญ่และน่าประทับใจชนิดนี้ล้วนมาจากรูปทรงคล้ายดาบของใบ',
+    duo: "yarrow เพื่อเยียวยาหัวใจที่แตกสลาย<br>anemone or Daffodil เพื่อสื่อถึงความรักที่ไม่สมหวัง<br>hemlock and marigold เพื่อแสดงความเป็นเพื่อนในยามโศกเศร้า",
+  },
+  {
+    id: "hemlock",
+    name: "Hemlock Flower",
+    titleEn: "hemlock Flower",
+    titleTh: "ดอกเฮมล็อก",
+    image: "/flowers/popupImg/Hemlock.png",
+    description: "ความตาย<br>(Death)",
+    meaning: "ความตาย",
+    origin:
+      "เฮมล็อคเป็นพืชมีพิษที่ทำให้เกิดอาการอัมพาตและเสียชีวิตบางทีการวางยาพิษที่โด่งดังที่สุดด้วยเฮมล็อคคือ กรณีของโสกราตีสผู้ซึ่งดื่มชาที่ทำจากพืชชนิดนี้หลังจากถูกตัดสินประหารชีวิตเนื่องจากปรัชญาทางศีลธรรมของเขา",
+    duo: "Chrysanthemum เพื่อแสดงความเสียใจต่อการสูญเสียคนที่รัก<br>nettle เพื่อแสดงความอาลัยต่อคนที่รักซึ่งจากไปเร็วเกินไป",
+  },
+  {
+    id: "datura",
+    name: "Datura Flower",
+    titleEn: "datura Flower",
+    titleTh: "ดอกลำโพง",
+    image: "/flowers/popupImg/Datura.png",
+    description: "เสน่ห์อันหลอกลวง<br>(Deceitful charms)",
+    meaning: "เสน่ห์อันหลอกลวง",
+    origin:
+      'ดาตูราอาจทำให้คุณหลงใหลด้วยรูปลักษณ์อันสวยงาม แต่มีพิษร้ายแรงหากกินเข้าไป ดอกไม้ชนิดนี้ยังเป็นที่รู้จักในชื่อ "แตรของปีศาจ" และเชื่อกันว่าถูกนำมาใช้ในพิธีกรรมไสยศาสตร์ยุโรปยุคแรกในฐานะส่วนผสมของยาขี้ผึ้งที่ช่วยให้แม่มดบินบนไม้กวาดได้',
+    duo: "Wormwood เพื่อสื่อถึงคนรักที่ถูกปฏิเสธและผิดหวัง<br>Thistle เพื่อแสดงความเป็นเพื่อนแก่คนที่กำลังผ่านช่วงเลิกราอกหัก",
+  },
+  {
+    id: "carnation",
+    name: "Carnation Flower",
+    titleEn: "carnation Flower",
+    titleTh: "ดอกคาร์เนชั่น",
+    image: "/flowers/popupImg/Carnation.png",
+    description:
+      "ความรักนิรันดร์ของแม่ / ความเจ็บปวดในหัวใจ <br>(Mother’s eternal love Heartache)",
+    meaning: "ความรักนิรันดร์ของแม่ / ความเจ็บปวดในหัวใจ",
+    origin:
+      'ความหมายของดอกคาร์เนชั่นสามารถสืบย้อนไปถึงการตรึงกางเขนของพระเยซูคริสต์ เชื่อกันว่าดอกคาร์เนชั่นผุดขึ้นในจุดที่น้ำตาของพระแม่มารีหยดลง จึงเป็นที่มาของความเชื่อมโยงกับความเจ็บปวดในหัวใจและความรักนิรันดร์ของแม่ที่มีต่อลูกชาย นอกจากนี้ ชื่อสามัญว่า "carnation" อาจหมายถึงพระคริสต์ในฐานะ 化身(ฮั่วเซิน) ของพระเจ้าที่จุติมาเป็นมนุษย์',
+    duo: "mint or snowdrop เพื่อปลอบประโลมความสูญเสียของลูก<br>Heather เพื่อแสดงความอาลัยแก่ลูกที่กำลังจะออกไปเรียนมหาวิทยาลัย",
+  },
+  {
+    id: "ivy",
+    name: "Ivy",
+    titleEn: "ivy Flower",
+    titleTh: "ดอกไอวี่",
+    image: "/flowers/popupImg/Ivy.png",
+    description: "ความซื่อสัตย์ / ความผูกพัน<br>(Fidelity / Attachment)",
+    meaning: "ความซื่อสัตย์ / ความผูกพัน",
+    origin:
+      "เถาวัลย์ใบหนาชนิดนี้จะพันตัวรอบต้นไม้เก่าแก่ แม้แต่เมื่อต้นไม้ตายไปแล้ว ไอวี่ก็ยังคงเกาะติดอยู่ ไม่อาจแยกออกจากการโอบกอดอันนิรันดร์นั้นได",
+    duo: "dahlia เพื่อเป็นเกียรติแก่ความสัมพันธ์ที่ยืนยาว<br>Hellebore เพื่อบอกว่าไม่มีสิ่งใดมาขวางกั้นระหว่างคุณและคู่รักได้",
+  },
+  {
+    id: "lavender",
+    name: "Lavender Flower",
+    titleEn: "lavender Flower",
+    titleTh: "ดอกลาเวนเดอร์  ",
+    image: "/flowers/popupImg/Lavender.png",
+    description: "ความไม่ไว้วางใจ<br>(Distrust)",
+    meaning: "ความไม่ไว้วางใจ",
+    origin:
+      "ในอดีต ลาเวนเดอร์เติบโตในภูมิอากาศร้อน ซึ่งเป็นที่อยู่อาศัยของงูแอสป์ที่มีพิษร้ายแรงอยู่บ่อยครั้ง ดอกไม้ที่สวยงามและหอมหวนนี้จึงอาจล่อลวงผู้ที่อยากรู้อยากเห็นไปสู่ความตายได้ บางคนกล่าวว่างูแอสป์ที่คร่าชีวิตพระนางคลีโอพัตราถูกซ่อนอยู่ในมัดลาเวนเดอร์",
+    duo: "foxglove เพื่อกระตุ้นให้เพื่อนพิจารณาทบทวนการตัดสินใจของตนเอง<br>datura เพื่อบอกใครบางคนว่าคุณมองเห็นทะลุหน้ากากของพวกเขา",
+  },
+  {
+    id: "mint",
+    name: "Mint",
+    titleEn: "mint",
+    titleTh: "ดอกมินต์",
+    image: "/flowers/popupImg/Mint.png",
+    description: "การปลอบประโลม<br>(Consolation)",
+    meaning: "การปลอบประโลม",
+    origin:
+      "ในตำนานเทพกรีก นางไนแอด มินเธ หลงรักเฮดีส เทพแห่งโลกใต้พิภพ เพอร์เซโฟนี ราชินีผู้หึงหวงของเฮดีส จึงแปลงร่างมินเธให้กลายเป็นสมุนไพรในสวนธรรมดา มิ้นต์จึงมีความเชื่อมโยงกับการปลอบประโลมและความโศกเศร้า และมักถูกนำมาใช้ในพิธีศพเพื่อกลบกลิ่นของร่างกายที่เน่าเปื่อย ดังนั้นแม้มินเธจะไม่สามารถอยู่เคียงข้างเทพแห่งโลกใต้พิภพได้ การปลอบใจของเธอคือการได้กลายเป็นพืชที่เกี่ยวข้องกับความตาย",
+    duo: "passion flower เพื่อแสดงความเชื่อมั่นว่าสถานการณ์จะดีขึ้น<br>cornflower เพื่อบอกเพื่อนว่าคุณคิดถึงและรักพวกเขาในช่วงเวลาที่ยากลำบาก",
+  },
+  {
+    id: "myrtle",
+    name: "Myrtle Flower",
+    titleEn: "myrtle Flower",
+    titleTh: "ดอกเมอร์เทิล",
+    image: "/flowers/popupImg/Myrtle.png",
+    description: "ความรัก<br>(Love)",
+    meaning: "ความรัก",
+    origin:
+      "อาจเป็นเพราะความเชื่อมโยงกับทั้งฮาธอร์และอะโฟรไดต์เทพีแห่งความรักของอียิปต์และกรีกดอกไม้สวยงามและหอมหวนของไม้ยืนต้นชนิดนี้จึงมักถูกนำมาใช้ในงานฉลองมงคลสมรสอยู่บ่อยครั้ง",
+    duo: "dahlia เพื่อมอบให้แก่คนรักแท้เพียงหนึ่งเดียวของคุณ<br>carnation เพื่อเป็นของขวัญในวันแม่",
+  },
+  {
+    id: "oak",
+    name: "Oak",
+    titleEn: "oak",
+    titleTh: "ต้นโอ๊ก",
+    image: "/flowers/popupImg/Oak.png",
+    description: "ความกล้าหาญ<br>(Bravery)",
+    meaning: "ความกล้าหาญ",
+    origin:
+      "ต้นโอ๊กอาจเป็นพืชที่ได้รับการเคารพบูชามากที่สุดในประวัติศาสตร์ยุคต้น มันถูกเชื่อมโยงกับบุคคลผู้กล้าหาญและได้รับชัยชนะในหลากหลายวัฒนธรรมมาช้านาน ในตำนานเทพกรีก ต้นโอ๊กคือต้นไม้ศักดิ์สิทธิ์ของซูสในตำนานนอร์สมันคือต้นไม้แห่งชีวิตที่ธอร์ให้ความเคารพนับถือ และในวัฒนธรรมดรูอิดของชาวเคลต์ ต้นโอ๊กมีความสำคัญในพิธีกรรมและพิธีการต่างๆ มากมายในฐานะต้นไม้ศักดิ์สิทธิ์ขอศักดาเทพเจ้าแห่งศาสนาเพแกน",
+    duo: "Sweet William and Monkshood เพื่อมอบให้แก่คนที่คุณชื่นชมและศรัทธา<br>Clematis เพื่อแสดงความซาบซึ้งต่อผู้นำในชีวิตของคุณ",
+  },
+  {
+    id: "holly",
+    name: "Holly",
+    titleEn: "holly",
+    titleTh: "ต้นฮอลลี่",
+    image: "/flowers/popupImg/Holly.png",
+    description: "การมองการณ์ไกล<br>(Foresight)",
+    meaning: "การมองการณ์ไกล",
+    origin:
+      "ในประเพณีเพแกนของยุโรปหลายแห่งกิ่งฮอลลี่จะถูกแขวนไว้ในบ้านเพื่อป้องกันโชคร้าย ประเพณีนี้ถูกนำมาใช้ในช่วงเทศกาลคริสต์มาสในภายหลังโดยชาววิกตอเรียนผู้ที่ชื่นชอบการหมกมุ่นอยู่กับความเชื่อโชคลางฮอลลี่ยังมักปรากฏในเกมทำนายโชคชะตาอีกด้วย ในเวลส์มีความเชื่อว่าหากเด็กผู้หญิงวิ่งรอบต้นฮอลลี่เจ็ดรอบในทิศทางหนึ่ง แล้วอีกเจ็ดรอบในทิศทางตรงข้าม สามีในอนาคตของเธอจะปรากฏตัวให้เห็น",
+    duo: "eucalyptus เพื่อแสดงถึงการดูแลเอาใจใส่เพื่อน<br>lilly of the valley เพื่อบอกว่าช่วงเวลาที่ดีกว่านี้กำลังจะมาถึง",
+  },
+  {
+    id: "orange-blossom",
+    name: "Orange blossom",
+    titleEn: "orange blossom",
+    titleTh: "ดอกส้ม",
+    image: "/flowers/popupImg/Orange blossom.png",
+    description: "ความรักนิรันดร์<br>(Eternal love)",
+    meaning: "ความรักนิรันดร์",
+    origin:
+      "อกออเรนจ์บลอสซัมเป็นหนึ่งในดอกไม้งานแต่งงานที่ได้รับความนิยมมากที่สุดในยุควิกตอเรีย ไม่ว่าจะเป็นพิธีเรียบง่ายหรืองานเลี้ยงอลังการแทบทุกงาน การแต่งงานจะมีดอกออเรนจ์บลอสซัมอยู่ด้วยเมื่อสมเด็จพระราชินีวิกตอเรียอภิเษกสมรสกับเจ้าชายอัลเบิร์ตในปี ค.ศ. 1840 พระองค์ทรงสวมมงกุฎดอกออเรนจ์บลอสซัม ความเชื่อมโยงของดอกไม้ชนิดนี้กับความรักนิรันดร์สามารถสืบย้อนไปถึงกรีกโบราณ เมื่อเฮราอภิเษกสมรสกับซูส เธอได้รับดอกออเรนจ์บลอสซัมจากไกอา เทพีโบราณแห่งแผ่นดินและความอุดมสมบูรณ์",
+    duo: "dogwood เพื่อเป็นของขวัญครบรอบแต่งงานหลังผ่านปีที่ยากลำบาก<br>ivy เพื่อเป็นสัญลักษณ์ของความสัมพันธ์ที่ยืนยาว",
+  },
+  {
+    id: "pansy",
+    name: "pansy flower",
+    titleEn: "pansy flower",
+    titleTh: "ดอกหน้าแมว",
+    image: "/flowers/popupImg/Pansy.png",
+    description: "คุณอยู่ในความคิดของฉันเสมอ<br>(You occupy my thoughts)",
+    meaning: "คุณอยู่ในความคิดของฉันเสมอ",
+    origin:
+      'ชื่อ "pansy" มาจากภาษาฝรั่งเศสว่า pensée ซึ่งแปลว่า "ความคิด" ในบทละครแฮมเล็ตของเชกสเปียร์ โอฟีเลียกล่าวว่า"มีดอกแพนซีนั่นคือสัญลักษณ์แห่งความคิด" ขณะที่เธอแจกจ่ายดอกไม้หลังจากการสูญเสียบิดาของเธอ',
+    duo: "Chrysanthemum เพื่อมอบให้แก่คนที่รักซึ่งกำลังผ่านช่วงเวลาที่ยากลำบาก<br>for get me not เพื่อเป็นของขวัญแก่เพื่อนที่คุณจะไม่มีวันลืมความมีน้ำใจและความเอื้อเฟื้อเผื่อแผ่ของพวกเขา",
+  },
+  {
+    id: "rose",
+    name: "Rose",
+    titleEn: "rose",
+    titleTh: "ดอกกุหลาบ",
+    image: "/flowers/popupImg/Rose.png",
+    description: "ความรัก<br>(LOve)",
+    meaning: "ความรัก",
+    origin:
+      'ดอกกุหลาบมีความเชื่อมโยงอย่างใกล้ชิดกับความรักในหลากหลายวัฒนธรรมตลอดประวัติศาสตร์ บางทีอาจเป็นเพราะกลีบดอกที่ซ้อนกันอย่างอวบอิ่มและกลิ่นหอมหวานของมัน สำหรับชาววิกตอเรียน สีของกุหลาบบ่งบอกถึงระดับความรักใคร่ กุหลาบขาวหมายถึงความรักบริสุทธิ์ กุหลาบชมพูอ่อนหมายถึงความรักที่กำลังผลิบาน และกุหลาบแดงเข้มหมายถึงความรักอันเร่าร้อนในตำนานเทพกรีก คลอริส เทพีแห่งดอกไม้เชื่อกันว่าได้แปลงร่างนางไม้ผู้สวยงามที่เสียชีวิตให้กลายเป็นดอกกุหลาบ เธอเชิญอะพอลโลมาอบอุ่นดอกบาน อะโฟรไดต์มามอบความงดงาม ไดโอนีซัสมาเติมน้ำหวาน และเทพีสามพระองค์แห่งพระคุณมามอบเสน่ห์ ความสุข และความงามอันยิ่งใหญ่ คลอริสขนานนามกุหลาบว่า \"ราชินีแห่งดอกไม้\"',
+    duo: "Baby's Breath เพื่อเฉลิมฉลองในงานแต่งงาน<br>cornflower เพื่อแสดงความหวังในการเริ่มต้นความสัมพันธ์ใหม่",
+  },
+  {
+    id: "vine",
+    name: "Vine",
+    titleEn: "vine",
+    titleTh: "เถาวัลย์",
+    image: "/flowers/popupImg/Vine.png",
+    description: "ความลุ่มหลง มัวเมา<br>(Intoxication)",
+    meaning: "มัวเมา ราวกับถูกมอมเมา",
+    origin:
+      'เพราะเถาวัลย์มีลักษณคดเคี้ยวคดวนไปมาทำให้รู้สึกมัวเมาเหมือนกับเถาวัลย์ที่พันกันไปมา',
+    duo: "",
+  },
+    {
+    id: "violet",
+    name: "Violet",
+    titleEn: "violet",
+    titleTh: "ดอกไวโอเล็ต",
+    image: "/flowers/popupImg/Violet.png",
+    description: "ความสุภาพถ่อมตน<br>(Modesty)",
+    meaning: "ความสุภาพถ่อมตน",
+    origin:
+      'ดอกไวโอเล็ตเติบโตใกล้พื้นดินโดยมีดอกก้มลง ราวกับเป็นภาพแทนของความสุภาพถ่อมตน เดิมทีดอกไม้ชนิดนี้ถือเป็นดอกไม้แห่งวันวาเลนไทน์ มีเรื่องเล่าว่านักบุญวาเลนไทน์ ขณะถูกจองจำจากการพยายามเผยแพร่ศาสนาคริสต์ ได้บดดอกไวโอเล็ตที่เติบโตใกล้ห้องขังเพื่อทำหมึก ตำนานหนึ่งกล่าวว่าพระองค์ใช้หมึกนี้เขียนจดหมายถึงลูกสาวของผู้คุม ซึ่งพระองค์ได้รักษาอาการตาบอดของเธอให้หาย โดยลงท้ายจดหมายว่า "วาเลนไทน์ของเธอ" จึงกลายเป็นแรงบันดาลใจให้เกิดการส่งจดหมายรักสืบต่อกันมานับศตวรรษ',
+    duo: "Bluebell เพื่อมอบให้แก่เพื่อนที่สุภาพถ่อมตนแต่มีความหมายต่อคุณอย่างมาก<br>Laurel เพื่อบอกเพื่อนว่าคุณภูมิใจในความสำเร็จของพวกเขา",
+  },  
+];
 
 const cardVisuals = [
   {
@@ -93,9 +358,94 @@ const cardVisuals = [
   },
   {
     imageSrc: "/flowers/apple blossom.png",
-    alt: "Rose flower card artwork",
+    alt: "Apple blossom card artwork",
   },
-] as const
+  {
+    imageSrc: "/flowers/Amaryllis Flower.png",
+    alt: "Amaryllis flower card artwork",
+  },
+
+  {
+    imageSrc: "/flowers/Oleander Flower.png",
+    alt: "Oleander flower card artwork",
+  },
+  {
+    imageSrc: "/flowers/Buttercup Flower.png",
+    alt: "Buttercup Flower card artwork",
+  },
+  {
+    imageSrc: "/flowers/Asphodel Flower.png",
+    alt: "Asphodel Flower card artwork",
+  },
+  {
+    imageSrc: "/flowers/Azalea Flower.png",
+    alt: "Azalea Flower card artwork",
+  },
+  {
+    imageSrc: "/flowers/Dogwood Flower.png",
+    alt: "Dogwood Flower card artwork",
+  },
+  {
+    imageSrc: "/flowers/Gladiolus.png",
+    alt: "Gladiolus Flower card artwork",
+  },
+  {
+    imageSrc: "/flowers/Hemlock Flower.png",
+    alt: "Hemlock Flower card artwork",
+  },
+  {
+    imageSrc: "/flowers/Datura Flower.png",
+    alt: "Datura Flower card artwork",
+  },
+  {
+    imageSrc: "/flowers/Carnation Flower.png",
+    alt: "Carnation Flower card artwork",
+  },
+  {
+    imageSrc: "/flowers/Ivy.png",
+    alt: "Ivy card artwork",
+  },
+  {
+    imageSrc: "/flowers/Lavender Flower.png",
+    alt: "Lavender Flower card artwork",
+  },
+  {
+    imageSrc: "/flowers/Mint.png",
+    alt: "Mint card artwork",
+  },
+  {
+    imageSrc: "/flowers/Myrtle Flower.png",
+    alt: "Myrtle Flower card artwork",
+  },
+  {
+    imageSrc: "/flowers/Oak.png",
+    alt: "Oak card artwork",
+  },
+  {
+    imageSrc: "/flowers/Holly.png",
+    alt: "Holly  card artwork",
+  },
+  {
+    imageSrc: "/flowers/Orange blossom.png",
+    alt: "Orange blossom card artwork",
+  },
+  {
+    imageSrc: "/flowers/Orange blossom.png",
+    alt: "Orange blossom card artwork",
+  },
+  {
+    imageSrc: "/flowers/Rose.png",
+    alt: "Rose card artwork",
+  },
+  {
+    imageSrc: "/flowers/Vine.png",
+    alt: "Vine card artwork",
+  },
+    {
+    imageSrc: "/flowers/Violet.png",
+    alt: "Violet card artwork",
+  },
+] as const;
 
 export const flowerCards: FlowerCard[] = [
   {
@@ -168,7 +518,407 @@ export const flowerCards: FlowerCard[] = [
       textBottom: "28%",
       titlePaddingLeft: "5%",
       buttonRight: "4%",
-      buttonBottom: "6%",
+      buttonBottom: "15%",
     },
   },
-]
+  {
+    id: flowerList[4]!.id,
+    name: flowerList[4]!.name,
+    imageSrc: cardVisuals[4]!.imageSrc,
+    description: flowerList[4]!.description,
+    meaning: flowerList[4]!.meaning,
+    modalIndex: 4,
+    alt: cardVisuals[4]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[5]!.id,
+    name: flowerList[5]!.name,
+    imageSrc: cardVisuals[5]!.imageSrc,
+    description: flowerList[5]!.description,
+    meaning: flowerList[5]!.meaning,
+    modalIndex: 5,
+    alt: cardVisuals[5]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[6]!.id,
+    name: flowerList[6]!.name,
+    imageSrc: cardVisuals[6]!.imageSrc,
+    description: flowerList[6]!.description,
+    meaning: flowerList[6]!.meaning,
+    modalIndex: 6,
+    alt: cardVisuals[6]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+
+  {
+    id: flowerList[7]!.id,
+    name: flowerList[7]!.name,
+    imageSrc: cardVisuals[7]!.imageSrc,
+    description: flowerList[7]!.description,
+    meaning: flowerList[7]!.meaning,
+    modalIndex: 7,
+    alt: cardVisuals[7]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[8]!.id,
+    name: flowerList[8]!.name,
+    imageSrc: cardVisuals[8]!.imageSrc,
+    description: flowerList[8]!.description,
+    meaning: flowerList[8]!.meaning,
+    modalIndex: 8,
+    alt: cardVisuals[8]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[9]!.id,
+    name: flowerList[9]!.name,
+    imageSrc: cardVisuals[9]!.imageSrc,
+    description: flowerList[9]!.description,
+    meaning: flowerList[9]!.meaning,
+    modalIndex: 9,
+    alt: cardVisuals[9]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[10]!.id,
+    name: flowerList[10]!.name,
+    imageSrc: cardVisuals[10]!.imageSrc,
+    description: flowerList[10]!.description,
+    meaning: flowerList[10]!.meaning,
+    modalIndex: 10,
+    alt: cardVisuals[10]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[11]!.id,
+    name: flowerList[11]!.name,
+    imageSrc: cardVisuals[11]!.imageSrc,
+    description: flowerList[11]!.description,
+    meaning: flowerList[11]!.meaning,
+    modalIndex: 11,
+    alt: cardVisuals[11]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[12]!.id,
+    name: flowerList[12]!.name,
+    imageSrc: cardVisuals[12]!.imageSrc,
+    description: flowerList[12]!.description,
+    meaning: flowerList[12]!.meaning,
+    modalIndex: 12,
+    alt: cardVisuals[12]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[13]!.id,
+    name: flowerList[13]!.name,
+    imageSrc: cardVisuals[13]!.imageSrc,
+    description: flowerList[13]!.description,
+    meaning: flowerList[13]!.meaning,
+    modalIndex: 13,
+    alt: cardVisuals[13]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[14]!.id,
+    name: flowerList[14]!.name,
+    imageSrc: cardVisuals[14]!.imageSrc,
+    description: flowerList[14]!.description,
+    meaning: flowerList[14]!.meaning,
+    modalIndex: 14,
+    alt: cardVisuals[14]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[15]!.id,
+    name: flowerList[15]!.name,
+    imageSrc: cardVisuals[15]!.imageSrc,
+    description: flowerList[15]!.description,
+    meaning: flowerList[15]!.meaning,
+    modalIndex: 15,
+    alt: cardVisuals[15]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[16]!.id,
+    name: flowerList[16]!.name,
+    imageSrc: cardVisuals[16]!.imageSrc,
+    description: flowerList[16]!.description,
+    meaning: flowerList[16]!.meaning,
+    modalIndex: 16,
+    alt: cardVisuals[16]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[17]!.id,
+    name: flowerList[17]!.name,
+    imageSrc: cardVisuals[17]!.imageSrc,
+    description: flowerList[17]!.description,
+    meaning: flowerList[17]!.meaning,
+    modalIndex: 17,
+    alt: cardVisuals[17]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[18]!.id,
+    name: flowerList[18]!.name,
+    imageSrc: cardVisuals[18]!.imageSrc,
+    description: flowerList[18]!.description,
+    meaning: flowerList[18]!.meaning,
+    modalIndex: 18,
+    alt: cardVisuals[18]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[19]!.id,
+    name: flowerList[19]!.name,
+    imageSrc: cardVisuals[19]!.imageSrc,
+    description: flowerList[19]!.description,
+    meaning: flowerList[19]!.meaning,
+    modalIndex: 19,
+    alt: cardVisuals[19]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[20]!.id,
+    name: flowerList[20]!.name,
+    imageSrc: cardVisuals[20]!.imageSrc,
+    description: flowerList[20]!.description,
+    meaning: flowerList[20]!.meaning,
+    modalIndex: 20,
+    alt: cardVisuals[20]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[21]!.id,
+    name: flowerList[21]!.name,
+    imageSrc: cardVisuals[21]!.imageSrc,
+    description: flowerList[21]!.description,
+    meaning: flowerList[21]!.meaning,
+    modalIndex: 21,
+    alt: cardVisuals[21]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[22]!.id,
+    name: flowerList[22]!.name,
+    imageSrc: cardVisuals[22]!.imageSrc,
+    description: flowerList[22]!.description,
+    meaning: flowerList[22]!.meaning,
+    modalIndex: 22,
+    alt: cardVisuals[22]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[23]!.id,
+    name: flowerList[23]!.name,
+    imageSrc: cardVisuals[23]!.imageSrc,
+    description: flowerList[23]!.description,
+    meaning: flowerList[23]!.meaning,
+    modalIndex: 23,
+    alt: cardVisuals[23]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+    {
+    id: flowerList[24]!.id,
+    name: flowerList[24]!.name,
+    imageSrc: cardVisuals[24]!.imageSrc,
+    description: flowerList[24]!.description,
+    meaning: flowerList[24]!.meaning,
+    modalIndex: 24,
+    alt: cardVisuals[24]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+];
