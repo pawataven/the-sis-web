@@ -10,7 +10,7 @@ import ArchCardsMobile from "~/components/home/ArchCards-Mobile.vue";
 <template>
   <div class="min-h-screen w-full bg-[#7DB2D3] mx-auto overflow-hidden">
     <HomePageHero />
-    <div class="relative flex flex-col items-center overflow-hidden">
+    <div class="relative z-0 flex flex-col items-center overflow-visible">
       <DecorationComp />
 
       <HomeSkyFlowerSection />

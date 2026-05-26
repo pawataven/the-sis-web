@@ -1,48 +1,53 @@
 <!-- DecorationComp.vue -->
 <template>
   <div
-    class="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden"
+    class="absolute inset-0 pointer-events-none select-none overflow-visible"
   >
     <NuxtImg
       src="/home/cloud1.png"
-      class="absolute -top-[-7%] -left-[20%] sm:-top-[-8%] sm:-left-[20%] md:-top-[-5%] md:-left-[15%] lg:-top-[-4%] lg:-left-[10%] w-[60vw] sm:w-[60vw] md:w-[60vw] lg:w-[50vw] max-w-[934px] scale-x-[-1]"
+      class="absolute -top-[10%] -left-[25%] z-[3] sm:-top-[5%] sm:-left-[30%] md:-top-[2%] md:-left-[25%] lg:-top-[15%] lg:-left-[20%] w-[95vw] sm:w-[95vw] md:w-[90vw] lg:w-[80vw] max-w-[1350px] scale-x-[-1]"
       aria-hidden="true"
     />
+
+    <img
+      src="/home/butterfly.gif"
+      class="absolute -top-[-5%] -z-[3] -left-[-76%] sm:-top-[-9%] sm:-left-[-75%] md:-top-[-11%] md:-left-[-75%] lg:-top-[-10%] lg:-left-[-75%] w-[25vw] sm:w-[30vw] md:w-[30vw] lg:w-[100vw] max-w-[400px] scale-x-[-1] -rotate-16"
+      aria-hidden="true"
+    />
+
+    <NuxtImg
+      src="/home/cloud2.png"
+      class="absolute z-[3] -top-[-3%] -left-[-80%] sm:-top-[-6%] sm:-left-[-80%] md:-top-[-8%] md:-left-[-79%] lg:-top-[-10%] lg:-left-[-75%] w-[50vw] sm:w-[60vw] lg:w-[50vw] max-w-[934px]"
+      aria-hidden="true"
+    />
+
+    <img
+      src="/home/butterfly.gif"
+      class="absolute -top-[-21%] -left-[9%] sm:-top-[-26%] sm:-left-[11%] md:-top-[-28%] md:-left-[11%] lg:-top-[-47%] lg:left-[5%] w-[25vw] sm:w-[30vw] md:w-[30vw] lg:w-[100vw] max-w-[400px] -rotate-30"
+      aria-hidden="true"
+    />
+
+    <NuxtImg
+      src="/home/cloud2.png"
+      class="absolute -top-[-37%] -left-[20%] sm:-top-[-40%] sm:-left-[19%] md:-top-[-40%] md:-left-[30%] lg:-top-[-65%] lg:left-[-20%] w-[40vw] sm:w-[40vw] md:w-[50vw] -z-[3] lg:w-[100vw] max-w-[600px]"
+      aria-hidden="true"
+    />
+
     <NuxtImg
       src="/home/cloud1.png"
-      class="absolute -top-[-1%] -left-[-45%] sm:-top-[-1%] sm:-left-[-70%] md:-top-[2%] md:-left-[-67%] lg:-top-[4%] lg:-left-[-75%] w-[80vw] sm:w-[70vw] md:w-[70vw] lg:w-[54vw] max-w-[934px]"
-      aria-hidden="true"
-    />
-
-    <!-- butterfly-->
-
-    <img
-      src="/home/butterfly.gif"
-      class="absolute -top-[-15%] -left-[-84%] sm:-top-[-20%] sm:-left-[-81%] md:-top-[-20%] md:-left-[-81%] lg:-top-[-30%] lg:-left-[-81%] w-[25vw] sm:w-[30vw] md:w-[30vw] lg:w-[100vw] max-w-[500px] scale-x-[-1] -rotate-16"
+      class="absolute z-[3] -top-[-20%] -left-[-80%] sm:-top-[-27%] sm:-left-[-80%] md:-top-[-27%] md:-left-[-85%] lg:-top-[-40%] lg:-left-[-75%] w-[50vw] sm:w-[60vw] lg:w-[65vw] max-w-[1350px] scale-x-[-1]"
       aria-hidden="true"
     />
 
     <NuxtImg
-      src="/home/cloud2.png"
-      class="absolute -top-[-18%] -left-[40%] sm:-top-[-23%] sm:-left-[40%] md:-top-[-24%] md:-left-[40%] lg:-top-[-40%] lg:-left-[20%] w-[60vw] sm:w-[60vw] md:w-[60vw] lg:w-[100vw] max-w-[700px] z-0"
-      aria-hidden="true"
-    />
-
-    <img
-      src="/home/butterfly.gif"
-      class="absolute -top-[-21%] -left-[9%] sm:-top-[-26%] sm:-left-[11%] md:-top-[-28%] md:-left-[11%] lg:-top-[-43%] lg:-left-[11%] w-[25vw] sm:w-[30vw] md:w-[30vw] z-0 lg:w-[100vw] max-w-[500px] rotate-16"
+      src="/home/cloud1.png"
+      class="absolute -top-[-100%] -left-[25%] z-[3] sm:-top-[-95%] sm:-left-[30%] md:-top-[-95%] md:-left-[25%] lg:-top-[-83%] lg:-left-[20%] w-[95vw] sm:w-[95vw] md:w-[90vw] lg:w-[80vw] max-w-[1350px] scale-x-[-1]"
       aria-hidden="true"
     />
 
     <NuxtImg
-      src="/home/cloud2.png"
-      class="absolute -top-[-20%] -left-[-75%] sm:-top-[-25%] sm:-left-[-75%] md:-top-[-26%] md:-left-[-75%] lg:-top-[-40%] lg:-left-[-75%] w-[80vw] sm:w-[70vw] lg:w-[50vw] max-w-[934px]"
-      aria-hidden="true"
-    />
-
-    <NuxtImg
-      src="/home/cloud2.png"
-      class="absolute -top-[-35%] -left-[40%] sm:-top-[-40%] sm:-left-[40%] md:-top-[-43%] md:-left-[40%] lg:-top-[-60%] lg:-left-[30%] w-[60vw] sm:w-[60vw] md:w-[60vw] lg:w-[100vw] max-w-[700px] z-0"
+      src="/home/cloud1.png"
+      class="absolute -top-[-115%] -left-[-35%] z-[3] sm:-top-[-108%] sm:-left-[-35%] md:-top-[-105%] md:-left-[-35%] lg:-top-[-99%] lg:-left-[-35%] w-[95vw] sm:w-[95vw] md:w-[90vw] lg:w-[100vw] max-w-[1350px] scale-x-[-1]"
       aria-hidden="true"
     />
   </div>
