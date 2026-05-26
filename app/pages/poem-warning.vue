@@ -49,7 +49,7 @@ function closePoem() {
               <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 40px)">พระอภัยมณี</h3>
               <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(12px, 2vw, 36px)">ตอนสุดสาครเข้าเมืองการะเวก</h3>
               <p class="text-[#2c1a0e] font-light" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
-              <button @click="poetryList[3] && openPoem(poetryList[3])"
+              <button @click="poetryList[5] && openPoem(poetryList[5])"
                 class="bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:scale-105 transition-transform"
                 style="font-size: clamp(10px, 1.1vw, 16px); padding: clamp(4px,0.5vw,8px) clamp(12px,1.8vw,26px)">
                 Read more
@@ -63,9 +63,9 @@ function closePoem() {
         <img src="/warning/warn 2.png" loading="lazy" alt="ภาพประกอบบทกวีสวัสดิรักษา ของสุนทรภู่ สื่อถึงการอบรมสั่งสอนของผู้ใหญ่ และมารยาทอันดีงามในครอบครัว" class="w-full h-auto pointer-events-none" />
         <div class="absolute inset-0 flex items-center pr-[42%] pl-[10%]">
           <div class="flex flex-col items-start text-left gap-[0.6em] w-full">
-            <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 40px)">เพลงยาวถวายโอวาทา</h3>
+            <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 40px)">เพลงยาวถวายโอวาท</h3>
             <p class="text-[#2c1a0e] font-light" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
-            <button @click="poetryList[1] && openPoem(poetryList[1])"
+            <button @click="poetryList[6] && openPoem(poetryList[6])"
               class="bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:scale-105 transition-transform"
               style="font-size: clamp(10px, 1.1vw, 16px); padding: clamp(4px,0.5vw,8px) clamp(12px,1.8vw,26px)">
               Read more
@@ -81,7 +81,7 @@ function closePoem() {
           <div class="flex flex-col items-end text-right gap-[0.6em] w-full">
             <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 40px)">เพลงยาวถวายโอวาท</h3>
             <p class="text-[#2c1a0e] font-light" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
-            <button @click="poetryList[2] && openPoem(poetryList[2])"
+            <button @click="poetryList[7] && openPoem(poetryList[7])"
               class="bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:scale-105 transition-transform"
               style="font-size: clamp(10px, 1.1vw, 16px); padding: clamp(4px,0.5vw,8px) clamp(12px,1.8vw,26px)">
               Read more
@@ -97,7 +97,7 @@ function closePoem() {
           <div class="flex flex-col items-start text-left gap-[0.6em] w-full">
             <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 40px)">เพลงยาวถวายโอวาท</h3>
             <p class="text-[#2c1a0e] font-light" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
-            <button @click="poetryList[1] && openPoem(poetryList[1])"
+            <button @click="poetryList[8] && openPoem(poetryList[8])"
               class="bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:scale-105 transition-transform"
               style="font-size: clamp(10px, 1.1vw, 16px); padding: clamp(4px,0.5vw,8px) clamp(12px,1.8vw,26px)">
               Read more
@@ -113,7 +113,7 @@ function closePoem() {
           <div class="flex flex-col items-end text-right gap-[0.6em] w-full">
             <h3 class="font-serif font-medium text-[#2c1a0e]" style="font-size: clamp(14px, 2.8vw, 40px)">เพลงยาวถวายโอวาท</h3>
             <p class="text-[#2c1a0e] font-light" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
-            <button @click="poetryList[0] && openPoem(poetryList[0])"
+            <button @click="poetryList[9] && openPoem(poetryList[9])"
               class="bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:scale-105 transition-transform"
               style="font-size: clamp(10px, 1.1vw, 16px); padding: clamp(4px,0.5vw,8px) clamp(12px,1.8vw,26px)">
               Read more
