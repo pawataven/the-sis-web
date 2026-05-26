@@ -68,10 +68,12 @@ import ArchCardsMobile from "~/components/home/ArchCards-Mobile.vue";
         class="pointer-events-none absolute bottom-[4%] right-0 z-10 hidden h-auto w-full max-w-[180px] select-none sm:block md:max-w-[220px] lg:bottom-[0%] lg:right-[1.5%] lg:max-w-[270px] xl:bottom-[-1%] xl:right-[1%] xl:max-w-[320px]"
       />
 
-      <NuxtImg
-        src="/home/ท่าเรือ2.png"
-        class="relative z-20 -mt-[45%] h-auto w-full select-none pointer-events-none"
+    <div class="w-full mt-auto">
+      <img
+        src="/poetry/ท่าเรือ.png"
+        class="w-full h-auto object-cover -mt-[40%] pointer-events-none"
       />
+    </div>
     </div>
   </div>
 </template>

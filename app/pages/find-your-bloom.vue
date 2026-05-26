@@ -191,7 +191,7 @@ async function next() {
     </div>
 
     <!-- Main content -->
-    <main class="flex-1 flex flex-col items-center">
+    <main class="flex-1 flex flex-col items-center mt-[4vw]">
       <!-- Page Start -->
       <template v-if="currentStep?.type === 'start'">
         <!-- Title + vase section -->
@@ -248,7 +248,7 @@ async function next() {
         <div
           class="flex-1 flex flex-col items-center justify-center text-center pt-[2vw] px-[5vw] max-w-[900px]"
         >
-          <div class="mb-[12vw]">
+          <div class="mb-[2vw]">
             <p
               v-for="text in currentStep.content"
               :key="text"
@@ -256,6 +256,28 @@ async function next() {
             >
               {{ text }}
             </p>
+          </div>
+
+          <div class="mb-[2vw]">
+            <p
+              v-for="text in currentStep.contenttwo"
+              :key="text"
+              class="text-[#472809] mt-[1vw] font-serif font-medium text-[clamp(16px,1.6vw,24px)] leading-relaxed"
+            >
+              {{ text }}
+            </p>
+          </div>
+
+          <div
+            v-if="currentStep.imageSrc"
+            class="mb-[2vw]"
+          >
+            <img
+              :src="currentStep.imageSrc"
+              :alt="currentStep.imageAlt ?? 'scene'"
+              class="h-auto"
+              style="width: clamp(300px, 59vw, 856px)"
+            />
           </div>
 
           <button
