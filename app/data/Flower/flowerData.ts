@@ -332,7 +332,7 @@ export const flowerList: Flower[] = [
     {
     id: "violet",
     name: "Violet",
-    titleEn: "violetด",
+    titleEn: "violet",
     titleTh: "ดอกไวโอเล็ต",
     image: "/flowers/popupImg/Violet.png",
     description: "ความสุภาพถ่อมตน<br>(Modesty)",
