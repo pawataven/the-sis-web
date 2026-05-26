@@ -22,6 +22,9 @@ export type QuizStep =
       page: number;
       type: "story";
       content: string[];
+      contenttwo: string[];
+      imageSrc?: string;
+      imageAlt?: string;
       buttonLabel: string;
     }
   | {
@@ -58,6 +61,7 @@ export const findBloomQuiz: QuizStep[] = [
       "ต่อไปนี้คุณต้องเป็นผู้พายเรือให้กับสุนทรภู่ เพื่อล่องเรือ",
       "ไปนมัสการเจดีย์ภูเขาทองที่จังหวัดพระนครศรีอยุธยา",
     ],
+    contenttwo: [],
     buttonLabel: "Next",
   },
 
@@ -68,6 +72,7 @@ export const findBloomQuiz: QuizStep[] = [
     content: [
       "แต่ไม่ต้องกังวลใจ เรามีวิธีพาคุณกลับไปยังโลกปัจจุบัน ดังนั้นตั้งใจทำหน้าที่ให้ดีแล้ววิธีจะปรากฏ",
     ],
+    contenttwo: [],
     buttonLabel: "Next",
   },
 
@@ -153,9 +158,12 @@ export const findBloomQuiz: QuizStep[] = [
     id: "page-6",
     page: 6,
     type: "story",
+    imageSrc: "/bloom/7730ecf29e2808e46cadcc79353063c050e05d8a.png",
+    imageAlt: "Boat journey scene",
     content: [
       "สุนทรภู่แปลกใจกับคำถามของคุณ แต่คิดว่าวันนี้คุณอาจจะพักผ่อนน้อยจึงมีสติเลอะเลือนบ้างไม่ได้ถือสาอะไร และได้อธิบายว่า “เพลานี้เราจะล่องเรือไปนมัสการเจดีย์ภูเขาทองที่อยุธยา  ต้องล่องเรือไปทางเหนือ ยังไงก็ต้องเป็นหน้าที่เจ้าอยู่แล้ว ” คุณจึงพอเข้าใจสถานการณ์และสถานะตัวเองอยู่บ้างจึงได้ตามน้ำไป",
     ],
+    contenttwo: [],
     buttonLabel: "Next",
   },
 
@@ -297,5 +305,21 @@ export const findBloomQuiz: QuizStep[] = [
       },
     ],
     buttonLabel: "Next",
+  },
+
+    {
+    id: "page-10",
+    page: 10,
+    type: "story",
+    imageSrc: "/bloom/e34110572ef7321ff7b4a009ae384f2b0603781f.png",
+    imageAlt: "Boat journey scene",
+    content: [
+      "ตะวันลับฟ้า แสงสุริยาเลือนลับไป สีท้องสดใสของท้องฟ้าได้แปรเปลี่ยนเป็นสีมืดเข้ม เป็นสัญลักษณ์ที่แจ้งเตือนว่า บัดนี้เป็นเวลาพลบค่ำแล้ว ตอนนี้คุณและสุนทรภู่ได้เดินทางมาถึงเจดีย์ภูเขาทองที่จังหวัดพระนครศรีอยุธยา ...",
+    ],
+    contenttwo: [
+      "บัดนี้คุณได้ทำภารกิจเสร็จสิ้นแล้ว คุณจะได้กลับไปยังโลกปัจจุบันระหว่างการเดินทางเราได้ซึบซับทำความรู้จักคุณไปทีละนิด เราจึงมีสิ่งของที่อยากจะให้กลับไปเป็นที่ระลึก นั่นคือ...",
+    ],
+
+    buttonLabel: "Submit",
   },
 ];

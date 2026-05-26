@@ -146,9 +146,9 @@ async function playAgain() {
         </div> -->
 
         <!-- Description -->
-        <div class="max-w-[700px] text-center mb-[3vw]">
+        <div class="max-w-[700px] text-center mb-[3vw] mt-[3vw]">
           <p
-            class="text-[#2c1a0e] font-serif leading-[2] text-[clamp(13px,1.1vw,16px)]"
+            class="text-[#2c1a0e] font-serif leading-[2] text-[clamp(14px,1.1vw,20px)]"
           >
             {{ result.description }}
           </p>

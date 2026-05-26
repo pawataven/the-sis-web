@@ -13,7 +13,7 @@ export const NAV_ITEMS: readonly NavItem[] = [
     icon: "/Navbar/Group32.png",
     alt: "Poetry icon",
     dropdown: [
-      { label: "PARENT", to: "/poem-parent" },
+      { label: "FAMILY", to: "/poem-parent" },
       { label: "WARNING", to: "/poem-warning" },
       { label: "SADNESS", to: "/poem-sadness" },
       { label: "LOVE", to: "/poem-love" },
