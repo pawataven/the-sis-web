@@ -4,9 +4,10 @@ import PoetryHero from "~/components/poetry-hero.vue"
 const route = useRoute()
 const flowerSrc = useState('flowerSrc', () => '/poetry/red-flower-bg.png')
 const label = useState('label', () => 'Parent')
+const normalizedPath = computed(() => route.path.replace(/\/+$/, '') || '/')
 
 const isPoetryPage = computed(() =>
-  route.path.startsWith('/poem-') || route.path === '/flowers'
+  normalizedPath.value.startsWith('/poem-') || normalizedPath.value === '/flowers'
 )
 </script>
 

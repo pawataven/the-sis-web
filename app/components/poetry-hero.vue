@@ -2,6 +2,7 @@
 import NavigationBar from "@/layouts/NavigationBar.vue";
 
 const route = useRoute();
+const normalizedPath = computed(() => route.path.replace(/\/+$/, "") || "/");
 
 const heroMap: Record<
   string,
@@ -40,7 +41,7 @@ const heroMap: Record<
 };
 const current = computed(
   () =>
-    heroMap[route.path] ?? {
+    heroMap[normalizedPath.value] ?? {
       flowerSrc: "/poetry/red-flower-bg.png",
       label: "",
     },

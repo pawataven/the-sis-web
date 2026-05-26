@@ -14,7 +14,7 @@ const emit = defineEmits(["close"])
     <Transition name="modal">
       <div
         v-if="isOpen && data"
-        class="fixed inset-0 z-[10000] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+        class="fixed inset-0 z-[10000] uppercase flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
         @click.self="emit('close')"
       >
         <div
@@ -36,7 +36,7 @@ const emit = defineEmits(["close"])
 
           <div class="relative z-10 flex flex-shrink-0 flex-col items-start px-6 pt-6 pb-0 sm:px-10 sm:pt-8">
             <div class="relative inline-block pr-14">
-              <h2 class="font-serif text-[5.5vw] leading-tight italic text-[#472809] uppercase sm:text-[38px] lg:text-[44px]">
+              <h2 class="font-serif text-[5.5vw] leading-tight text-[#472809] uppercase sm:text-[38px] lg:text-[44px]">
                 {{ data.titleEn }}
               </h2>
               <img
@@ -55,22 +55,29 @@ const emit = defineEmits(["close"])
             <img
               :src="data.image"
               :alt="data.titleEn"
-              class="absolute top-1/2 left-1/2 max-w-[420px] w-[80%] -translate-x-1/2 -translate-y-1/2 object-contain"
+              class="absolute top-1/2 left-1/2 max-w-[420px] w-[100%] -translate-x-1/2 -translate-y-1/2 object-contain"
             />
           </div>
 
           <div class="relative z-10 flex flex-1 flex-col overflow-y-auto px-6 pb-6 sm:px-10">
             <div class="mt-2 text-[#472809]">
-              <p class="text-[16px] leading-relaxed">
+              <p class="text-[15px] leading-relaxed font-light">
                 <span class="mr-2 border-b border-[#472809] font-medium">ความหมาย:</span>
                 {{ data.meaning }}
               </p>
             </div>
 
             <div v-if="data.origin" class="mt-3.25 text-[#472809]">
-              <p class="text-[16px] leading-relaxed">
+              <p class="text-[15px] leading-relaxed font-light">
                 <span class="mr-2 border-b border-[#472809] font-medium">ที่มา:</span>
                 {{ data.origin }}
+              </p>
+            </div>
+
+            <div v-if="data.duo" class="mt-3.25 text-[#472809]">
+              <p class="text-[15px] leading-relaxed font-light">
+                <span class="mr-2 border-b border-[#472809] font-medium">สามารถจับคู่กับ:<br></span>
+                <span v-html="data.duo" />
               </p>
             </div>
           </div>
