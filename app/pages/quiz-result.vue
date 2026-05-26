@@ -1,24 +1,21 @@
 <script setup lang="ts">
 import NavigationBar from "~/layouts/NavigationBar.vue";
 import { quizResults } from "@/data/quizResultData";
-import {
-  answerTypes,
-  findBloomQuiz,
-} from "~/data/findBloomQuiz";
+import { answerTypes, findBloomQuiz } from "~/data/findBloomQuiz";
 import type { AnswerType } from "~/data/findBloomQuiz";
 
 const answers = useState<Record<string, string>>(
   "find-bloom-answers",
-  () => ({})
+  () => ({}),
 );
 
 const finalResultType = useState<AnswerType | null>(
   "find-bloom-result-type",
-  () => null
+  () => null,
 );
 
 const resultByType = Object.fromEntries(
-  quizResults.map((result) => [result.id, result])
+  quizResults.map((result) => [result.id, result]),
 ) as Record<AnswerType, (typeof quizResults)[number]>;
 
 if (!finalResultType.value) {
@@ -83,7 +80,7 @@ function logResultSummary() {
     answerTypes.map((type) => ({
       type,
       count: answerTypeCount.value[type],
-    }))
+    })),
   );
   console.log("[Find Your Bloom] final result type:", finalResultType.value);
 }
@@ -96,7 +93,7 @@ watch(
   () => finalResultType.value,
   () => {
     logResultSummary();
-  }
+  },
 );
 
 async function playAgain() {
@@ -114,7 +111,7 @@ async function playAgain() {
   <div
     class="flex flex-col min-h-screen"
     style="
-      background-image: url('/Learnmore/painted-relief-texture (1).jpg');
+      background-image: url(&quot;/Learnmore/painted-relief-texture (1).jpg&quot;);
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
@@ -122,51 +119,31 @@ async function playAgain() {
     "
   >
     <!-- Navbar -->
-    <div class="relative z-50 px-[5vw] md:px-0 scale-[0.85] md:scale-100 origin-top">
+    <div
+      class="relative z-50 px-[5vw] md:px-0 scale-[0.85] md:scale-100 origin-top"
+    >
       <NavigationBar />
     </div>
 
     <main class="flex-1 flex flex-col items-center py-[6vw] px-[5vw]">
       <template v-if="result">
-        <!-- Label -->
-        <p
-          lang="en"
-          class="text-[#2c1a0e] tracking-[0.25em] text-[clamp(11px,1vw,14px)] uppercase mb-3"
-        >
-          {{ result.label }}
-        </p>
-
-        <!-- Title -->
-        <h1
-          lang="en"
-          class="text-[#2c1a0e] italic font-serif text-center leading-tight mb-[3vw]"
-          style="font-size: clamp(32px, 5.5vw, 80px)"
-        >
-          {{ result.bouquetTitle }}
-        </h1>
-
         <!-- Bouquet Image -->
-        <div class="mb-[3vw]">
+        <div class="mb-[1vw]">
           <img
             :src="result.flowerImage"
-            :alt="result.bouquetTitle"
+            :alt="result.id"
             class="h-auto pointer-events-none select-none"
             style="width: clamp(260px, 42vw, 993px)"
           />
         </div>
 
-        <!-- Tags -->
-        <div class="flex items-center gap-4 mb-[3vw]">
+        <!-- Tags — อยู่ในรูปแล้ว -->
+        <!-- <div class="flex items-center gap-4 mb-[2vw]">
           <template v-for="(tag, i) in result.tags" :key="tag">
-            <span class="text-[#2c1a0e] text-[clamp(13px,1.2vw,18px)] font-serif">
-              {{ tag }}
-            </span>
-            <span
-              v-if="i < result.tags.length - 1"
-              class="text-[#2c1a0e] opacity-40 text-[18px]"
-            >|</span>
+            <span class="text-[#2c1a0e] text-[clamp(13px,1.2vw,18px)]">{{ tag }}</span>
+            <span v-if="i < result.tags.length - 1" class="text-[#2c1a0e] text-[18px]">|</span>
           </template>
-        </div>
+        </div> -->
 
         <!-- Description -->
         <div class="max-w-[700px] text-center mb-[3vw]">
@@ -188,7 +165,9 @@ async function playAgain() {
 
       <template v-else>
         <div class="text-center">
-          <p class="text-[#2c1a0e] font-serif text-[clamp(16px,1.5vw,24px)] mb-4">
+          <p
+            class="text-[#2c1a0e] font-serif text-[clamp(16px,1.5vw,24px)] mb-4"
+          >
             ไม่พบผลลัพธ์ของแบบทดสอบ
           </p>
 
