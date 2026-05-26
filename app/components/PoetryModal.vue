@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Poetry } from "~/types/poetry";
+import type { Poetry } from "~/data/poetryData";
 
 defineProps<{
   isOpen: boolean;
@@ -23,7 +23,7 @@ const emit = defineEmits(["close"]);
         >
           <img
             src="/popup/Bg flower.png"
-            class="absolute right-0 bottom-0 w-[70%] opacity-60 z-0 pointer-events-none"
+            class="absolute right-0 bottom-0 w-[70%] opacity-30 z-0 pointer-events-none"
           />
 
           <button
@@ -52,7 +52,8 @@ const emit = defineEmits(["close"]);
 
             <p
               v-if="data.subtitle"
-              class="text-[16px] text-[#472809] font-serif mt-1"
+              class="text-[16px] font-serif mt-1"
+              :style="{ color: data.titleColor ?? '#F17E6A' }"
             >
               {{ data.subtitle }}
             </p>
@@ -67,7 +68,8 @@ const emit = defineEmits(["close"]);
           <div class="relative z-10 w-full flex-shrink-0" style="height: 38%">
             <img
               :src="data.imageSrc"
-              class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] max-w-[500px] object-contain"
+              class="absolute w-[85%] max-w-125 object-contain"
+              :style="{ left: `calc(50% + ${data.imageOffsetX ?? 0}%)`, top: '50%', transform: `translateX(-50%) translateY(${data.imageOffsetY ?? -50}%)` }"
             />
           </div>
 
@@ -75,7 +77,7 @@ const emit = defineEmits(["close"]);
             class="relative z-10 flex flex-col flex-1 overflow-y-auto px-6 sm:px-10 pb-6"
           >
             <div
-              class="italic text-[#472809] text-[20px] leading-[1.9] font-medium mt-5"
+              class="poem-display italic text-[#472809] leading-[1.9] font-medium mt-5 sm:mt-16" style="font-size: clamp(13px, 1.5vw, 17px)"
               v-html="data.poem"
             />
             <div class="mt-4 text-[#472809]">
@@ -93,6 +95,14 @@ const emit = defineEmits(["close"]);
   </Teleport>
 </template>
 <style scoped>
+/* กลอน: มือถือ → 1 คอลัมน์, desktop → 2 คอลัมน์ตามเดิม */
+@media (max-width: 640px) {
+  .poem-display :deep(div) {
+    grid-template-columns: 1fr !important;
+    gap: 0.4em !important;
+  }
+}
+
 /* Backdrop */
 .modal-enter-active,
 .modal-leave-active {
