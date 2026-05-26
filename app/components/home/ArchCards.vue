@@ -13,7 +13,7 @@ const cards = [
   {
     description: "สำรวจดอกไม้และบทกลอน<br />ที่บ่งบอกความเป็นคุณ",
     image: "/home/card/your bloom.png",
-    link: "/your-bloom",
+    link: "/find-your-bloom",
   },
 ];
 </script>

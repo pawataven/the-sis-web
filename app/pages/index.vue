@@ -4,6 +4,7 @@ import HomePageHero from "~/components/HomePage-hero.vue";
 import HomeSkyFlowerSection from "~/components/home/HomeSkyFlowerSection.vue";
 import { FOOTER_CONTENT } from "~/data/homeContent";
 import DecorationComp from "~/components/home/DecorationComp.vue";
+import ArchCardsMobile from "~/components/home/ArchCards-Mobile.vue";
 </script>
 
 <template>
@@ -14,7 +15,13 @@ import DecorationComp from "~/components/home/DecorationComp.vue";
 
       <HomeSkyFlowerSection />
 
-      <ArchCards class="relative z-10 mt-5" />
+      <div class="relative z-10 mt-5 hidden w-full lg:block">
+        <ArchCards />
+      </div>
+
+      <div class="relative z-10 mt-5 block w-full lg:hidden">
+        <ArchCardsMobile />
+      </div>
 
       <div class="relative w-full px-4 -mt-[17%] z-0">
         <div class="flex justify-center">
@@ -34,13 +41,12 @@ import DecorationComp from "~/components/home/DecorationComp.vue";
           class="flex w-full max-w-[260px] flex-col items-center justify-center rounded-[32px] border border-[#472809] bg-white px-5 py-6 sm:max-w-[400px] sm:rounded-[38px] sm:h-[283px] sm:px-8 sm:py-7 lg:max-w-[464px] lg:rounded-[43px] lg:px-10 lg:py-8 lg:ml-[4%] xl:ml-[-10%]"
         >
           <p
-            class="text-[#472809] leading-[1.55] text-center text-[clamp(0.78rem,1.15vw,1.5rem)] sm:leading-[1.65] sm:text-[clamp(0.85rem,1.35vw,1.35rem)] lg:leading-[1.7] lg:text-[clamp(0.9rem,1.5vw,1.5rem)]"
+            class="text-[#472809] leading-[1.55] text-center text-[clamp(16px,1.15vw,24px)] sm:leading-[1.65] sm:text-[clamp(24px,1.35vw,1.35rem)] lg:leading-[1.7] lg:text-[clamp(0.9rem,1.5vw,1.5rem)]"
           >
             {{ FOOTER_CONTENT.description[0] }}
             <span class="font-bold">{{ FOOTER_CONTENT.description[1] }}</span>
             <br />{{ FOOTER_CONTENT.description[2] }} <br />{{
-              FOOTER_CONTENT.description[3]
-            }}
+              FOOTER_CONTENT.description[3] }}                                                    
             <br />{{ FOOTER_CONTENT.description[4] }}
             <span class="font-bold italic">{{
               FOOTER_CONTENT.description[5]
