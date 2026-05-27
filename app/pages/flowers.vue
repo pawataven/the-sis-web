@@ -55,27 +55,26 @@ function getTextBoxStyle(layout: FlowerCardLayout) {
 
 function getTitleStyle(layout: FlowerCardLayout) {
   return {
-    fontSize: "clamp(18px, 3.2vw, 64px)",
+    fontSize: "clamp(30px, 4vw, 48px)",
     lineHeight: "1.12",
     paddingLeft: layout.titlePaddingLeft ?? "0",
   }
 }
 
-function getButtonStyle(layout: FlowerCardLayout) {
+function getBodyTextStyle() {
   return {
-    right: layout.buttonRight,
-    bottom: layout.buttonBottom,
-    fontSize: "clamp(9px, 1.5vw, 16px)",
-    width: "clamp(60px, 11vw, 100px)",
-    height: "clamp(20px, 3.2vw, 34px)",
+    fontSize: "clamp(12px, 1.85vw, 16px)",
+    lineHeight: "1.45",
   }
 }
 
-function getBodyTextStyle() {
-  return {
-    fontSize: "clamp(9px, 1.45vw, 16px)",
-    lineHeight: "1.45",
-  }
+function bumpPxSize(value: string | undefined, increase: number, fallback: string) {
+  if (!value) return fallback
+
+  const match = value.match(/^(\d+(?:\.\d+)?)px$/)
+  if (!match) return value
+
+  return `${Number(match[1]) + increase}px`
 }
 
 function getMobileTextStyle(layout: FlowerCardLayout) {
@@ -92,15 +91,23 @@ function getMobileTextStyle(layout: FlowerCardLayout) {
 
 function getMobileTitleStyle(layout: FlowerCardLayout) {
   return {
-    fontSize: layout.mobileText?.titleSize ?? "20px",
+    fontSize: bumpPxSize(layout.mobileText?.titleSize, 3, "20px"),
   }
 }
 
 function getMobileBodyStyle(layout: FlowerCardLayout) {
   return {
-    fontSize: layout.mobileText?.bodySize ?? "9px",
-    lineHeight: layout.mobileText?.bodyLineHeight ?? "1.15",
-    maxHeight: layout.mobileText?.bodyMaxHeight ?? "46px",
+    fontSize: bumpPxSize(layout.mobileText?.bodySize, 2, "16px"),
+    lineHeight: layout.mobileText?.bodyLineHeight ?? "1.3",
+    maxHeight: bumpPxSize(layout.mobileText?.bodyMaxHeight, 8, "68px"),
+  }
+}
+
+function getMobileButtonStyle(layout: FlowerCardLayout) {
+  const mb = layout.mobileButton
+  return {
+    right: mb?.right ?? "7%",
+    bottom: mb?.bottom ?? "18%",
   }
 }
 
@@ -124,7 +131,7 @@ function openCard(card: FlowerCard) {
           :key="card.id"
           class="mb-5 sm:mb-[6vw]"
         >
-          <div class="relative sm:hidden">
+          <div class="flower-card-mobile relative sm:hidden">
             <NuxtImg
               :src="card.imageSrc"
               loading="lazy"
@@ -133,7 +140,7 @@ function openCard(card: FlowerCard) {
             />
 
             <div
-              class="absolute flex flex-col overflow-hidden rounded-r-[12px]"
+              class="absolute overflow-hidden rounded-r-[12px]"
               :style="getMobileTextStyle(card.layout)"
             >
               <h2
@@ -149,18 +156,18 @@ function openCard(card: FlowerCard) {
                 :style="getMobileBodyStyle(card.layout)"
               />
             </div>
+
+            <div class="absolute" :style="getMobileButtonStyle(card.layout)">
+              <button
+                class="flower-card-mobile-button bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
+                @click="openCard(card)"
+              >
+                Submit
+              </button>
+            </div>
           </div>
 
-          <div class="mt-1 flex justify-end pr-3 sm:hidden">
-            <button
-              class="inline-flex h-[26px] min-w-[76px] cursor-pointer items-center justify-center rounded-full border border-black bg-[#E76A87] px-4 text-[10px] text-white shadow-md transition-transform hover:scale-105"
-              @click="openCard(card)"
-            >
-              Submit
-            </button>
-          </div>
-
-          <div class="relative hidden sm:block">
+          <div class="flower-card relative hidden sm:block">
             <NuxtImg
               :src="card.imageSrc"
               loading="lazy"
@@ -169,11 +176,11 @@ function openCard(card: FlowerCard) {
             />
 
             <div
-              class="absolute overflow-visible"
+              class="absolute flex flex-col overflow-visible"
               :style="getContentStyle(card.layout)"
             >
               <div
-                class="absolute overflow-hidden"
+                class="overflow-hidden"
                 :style="getTextBoxStyle(card.layout)"
               >
                 <div class="space-y-[0.35em] pr-[2%]">
@@ -192,13 +199,14 @@ function openCard(card: FlowerCard) {
                 </div>
               </div>
 
-              <button
-                class="absolute inline-flex items-center justify-center whitespace-nowrap rounded-full border border-black bg-[#E76A87] text-white font-NavbarFont shadow-md transition-transform hover:scale-105 cursor-pointer"
-                :style="getButtonStyle(card.layout)"
-                @click="openCard(card)"
-              >
-                Submit
-              </button>
+              <div class="mt-auto flex justify-end pt-[6%]" :style="{ paddingRight: card.layout.buttonRight }">
+                <button
+                  class="flower-card-button bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
+                  @click="openCard(card)"
+                >
+                  Submit
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -221,3 +229,23 @@ function openCard(card: FlowerCard) {
     />
   </div>
 </template>
+
+<style scoped>
+.flower-card-mobile,
+.flower-card {
+  container-type: inline-size;
+}
+
+.flower-card-mobile-button {
+  min-width: clamp(66px, 24cqw, 92px);
+  height: clamp(24px, 8cqw, 32px);
+  padding-inline: clamp(10px, 4cqw, 18px);
+  font-size: clamp(9px, 3.2cqw, 12px);
+}
+
+.flower-card-button {
+  width: clamp(74px, 30cqw, 112px);
+  height: clamp(28px, 10cqw, 40px);
+  font-size: clamp(11px, 4.2cqw, 18px);
+}
+</style>
