@@ -12,6 +12,14 @@
 }
 
 @font-face {
+  font-family: "KanitBody";
+  src: url("/fonts/Kanit-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "SiteUI";
   src: url("/fonts/Kanit-Light.ttf") format("truetype");
   font-weight: 300;
@@ -89,6 +97,13 @@ body,
     "NavbarFont",
     var(--font-ui);
   font-weight: 500;
+}
+
+.font-kanit-regular {
+  font-family:
+    "KanitBody",
+    sans-serif;
+  font-weight: 400;
 }
 
 .font-display {
