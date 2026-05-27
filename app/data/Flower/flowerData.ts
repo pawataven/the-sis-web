@@ -19,6 +19,17 @@ export interface FlowerCardLayout {
   titlePaddingLeft?: string;
   buttonRight: string;
   buttonBottom: string;
+  mobileText?: {
+    left?: string;
+    right?: string;
+    top?: string;
+    bottom?: string;
+    padding?: string;
+    titleSize?: string;
+    bodySize?: string;
+    bodyLineHeight?: string;
+    bodyMaxHeight?: string;
+  };
 }
 
 export interface FlowerCard {
@@ -128,7 +139,7 @@ export const flowerList: Flower[] = [
     titleTh: "ดอกอัสโฟเดล",
     image: "/flowers/popupImg/asphodel.png",
     description:
-      "ความเสียใจของฉันจะติดตามคุณไปจนถึงหลุมศพ <br>(My regrets follow you to the grave)",
+      "ความเสียใจของฉันจะติดตามคุณไปจนถึงหลุมศพ<br>(My regrets follow you to the grave)",
     meaning: "ความเสียใจของฉันจะติดตามคุณไปจนถึงหลุมฝังศพ",
     origin:
       'ในตำนานเทพกรีก ดอกแอสโฟเดลเติบโตในโลกใต้พิภพและเป็นอาหารของผู้ล่วงลับ มหากาพย์โอดิสซีของโฮเมอร์ได้หล่อหลอมภาพลักษณ์ของดอกแอสโฟเดลให้เป็นดอกไม้แห่งความเสียใจ โดยกล่าวถึง "ทุ่งแอสโฟเดล" ว่าเป็นส่วนหนึ่งของโลกใต้พิภพที่วิญญาณซึ่งไม่ดีและไม่ชั่วอาศัยอยู่ ราวกับเป็นแดนชำระวิญญาณอันเงียบสงัด ',
@@ -326,10 +337,10 @@ export const flowerList: Flower[] = [
     description: "ความลุ่มหลง มัวเมา<br>(Intoxication)",
     meaning: "มัวเมา ราวกับถูกมอมเมา",
     origin:
-      'เพราะเถาวัลย์มีลักษณคดเคี้ยวคดวนไปมาทำให้รู้สึกมัวเมาเหมือนกับเถาวัลย์ที่พันกันไปมา',
+      "เพราะเถาวัลย์มีลักษณคดเคี้ยวคดวนไปมาทำให้รู้สึกมัวเมาเหมือนกับเถาวัลย์ที่พันกันไปมา",
     duo: "",
   },
-    {
+  {
     id: "violet",
     name: "Violet",
     titleEn: "violet",
@@ -340,7 +351,91 @@ export const flowerList: Flower[] = [
     origin:
       'ดอกไวโอเล็ตเติบโตใกล้พื้นดินโดยมีดอกก้มลง ราวกับเป็นภาพแทนของความสุภาพถ่อมตน เดิมทีดอกไม้ชนิดนี้ถือเป็นดอกไม้แห่งวันวาเลนไทน์ มีเรื่องเล่าว่านักบุญวาเลนไทน์ ขณะถูกจองจำจากการพยายามเผยแพร่ศาสนาคริสต์ ได้บดดอกไวโอเล็ตที่เติบโตใกล้ห้องขังเพื่อทำหมึก ตำนานหนึ่งกล่าวว่าพระองค์ใช้หมึกนี้เขียนจดหมายถึงลูกสาวของผู้คุม ซึ่งพระองค์ได้รักษาอาการตาบอดของเธอให้หาย โดยลงท้ายจดหมายว่า "วาเลนไทน์ของเธอ" จึงกลายเป็นแรงบันดาลใจให้เกิดการส่งจดหมายรักสืบต่อกันมานับศตวรรษ',
     duo: "Bluebell เพื่อมอบให้แก่เพื่อนที่สุภาพถ่อมตนแต่มีความหมายต่อคุณอย่างมาก<br>Laurel เพื่อบอกเพื่อนว่าคุณภูมิใจในความสำเร็จของพวกเขา",
-  },  
+  },
+  {
+    id: "begonia",
+    name: "Begonia Flower",
+    titleEn: "begonia",
+    titleTh: "ดอกบีโกเนีย",
+    image: "/flowers/popupImg/Begonia.png",
+    description: "การตอบแทนบุญคุณ / คำเตือน<br>(To repay a favor / A warning)",
+    meaning: "การตอบแทนบุญคุณ คำเตือน",
+    origin:
+      'เพื่อเป็นการตอบแทนบุญคุณ ชาร์ลส์ พลูมิเยร์นักพฤกษศาสตร์ชาวฝรั่งเศสในศตวรรษที่สิบเจ็ด ได้ตั้งชื่อดอกบีโกเนียตามชื่อของมิเชล เบกง นักการเมืองและนักสะสมพืชชาวฝรั่งเศส นอกจากนี้ชื่อของดอกไม้ซึ่งมีวลี "be gone" (จงไปเสีย) แฝงอยู่อาจเป็นที่มาของการใช้เป็นสัญลักษณ์แห่งคำเตือนด้วย',
+    duo: "sweetpea เพื่อเป็นของขวัญสำหรับเจ้าภาพงานเลี้ยง<br>Oleander เพื่อเน้นย้ำให้ระมัดระวังในสิ่งที่กำลังจะเริ่มต้นใหม่",
+  },
+  {
+    id: "camellia",
+    name: "Camellia Flower",
+    titleEn: "camellia",
+    titleTh: "ดอกคามิเลีย",
+    image: "/flowers/popupImg/Camellia.png",
+    description: "ความโหยหาถึงคุณ<br>(Longing for you)",
+    meaning: "ความโหยหาถึงคุณ",
+    origin:
+      "ความหมายของดอกคาเมลเลียมีต้นกำเนิดมาจากนวนิยายของอเล็กซานเดอร์ ดูมาส์ ในปี ค.ศ. 1848 เรื่อง La dame aux caméliasซึ่งเล่าเรื่องราวความรักอันโศกสลดของอาร์ม็อง ดูวาล หนุ่มชนชั้นกลาง และมาร์เกอริต โกติเยร์ หญิงโลกีย์ ทั้งสองตกหลุมรักกัน แต่ความสัมพันธ์ของพวกเขาถูกบ่อนทำลายโดยบิดาของอาร์ม็อง ผู้ซึ่งเกรงกลัวเรื่องอื้อฉาวจึงโน้มน้าวให้มาร์เกอริตจากอาร์ม็องไป อาร์ม็องโศกเศร้าคร่ำครวญถึงคนรัก แต่ไม่ได้ติดตามเธอ เพราะเชื่อว่าเธอจากไปหาชายอื่น ในขณะเดียวกันมาร์เกอริตก็ล้มป่วยด้วยโรควัณโรค เธอสิ้นใจอย่างโดดเดี่ยวพร้อมความโหยหาอาร์ม็องและสิ่งที่อาจจะเป็นไปได้",
+    duo: "ดอกแดฟโฟดิล เพื่อแสดงความโหยหาในความรักที่ไม่สมหวัง<br>ดอกซินเนีย เพื่อเป็นของขวัญแก่เพื่อนที่กำลังจะย้ายไปอยู่ที่อื่น",
+  },
+  {
+    id: "belladonna",
+    name: "Belladonna",
+    titleEn: "belladonna",
+    titleTh: "ดอกเบลลาดอนน่า",
+    image: "/flowers/popupImg/Belladonna.png",
+    description: "ความเงียบ<br>(Silence)",
+    meaning: "ความเงียบ",
+    origin:
+      "Belladonna หรือที่เรียกว่า deadly nightshade เป็นหนึ่งในพืชที่มีพิษมากที่สุดในโลก ชาวโรมันมักใช้เป็นยาพิษ ทําให้เสียชีวิตและทําให้เหยื่อเงียบไปตลอดกาล นอกจากนี้ สกุล Atropa ยังตั้งชื่อตามเทพธิดากรีก Atropos ซึ่งเป็นเทพที่เก่าแก่ที่สุดในสาม Fates ซึ่งเป็นที่รู้จักในเรื่องการตัดด้ายแห่งชีวิต ยุติชีวิตมนุษย์",
+    duo: "Columbine and begonia  เพื่อกระตุ้นให้ใครบางคนเก็บความลับ<br>ดอก Rue เพื่อเตือนผู้รับให้เงียบเกรงว่าพวกเขาจะเสียใจ",
+  },
+  {
+    id: "ladyslipper",
+    name: "lady slipper",
+    titleEn: "lady slipper",
+    titleTh: "กล้วยไม้รองเท้านารี",
+    image: "/flowers/popupImg/lady slipper.png",
+    description: "ความเอาแต่ใจ<br>(Capriciousness)",
+    meaning: "ความเอาแต่ใจ",
+    origin:
+      "กล้วยไม้เหล่านี้มีชื่อเสียงในการแปรปรวนและยากต่อการเพาะปลูก บางชนิดอาจใช้เวลากว่าทศวรรษในการเบ่งบาน และมีเพียงไม่กี่คนที่รอดชีวิตจากการปลูกถ่าย อย่างไรก็ตาม คนอื่น ๆหากปล่อยทิ้งไว้โดยไม่ถูกรบกวน สามารถมีชีวิตอยู่ได้นานถึงห้าสิบปี",
+    duo: "Hawthorn เพื่อความหวังสําหรับผลลัพธ์ที่ดี<br>Snapdragon เพื่อให้กําลังใจเพื่อนในสถานการณ์ที่คาดเดาไม่ได",
+  },
+  {
+    id: "bluebell",
+    name: "Bluebell",
+    titleEn: "Bluebell Flower",
+    titleTh: "ดอกบลูเบลล์",
+    image: "/flowers/popupImg/Bluebell.png",
+    description: "ความถ่อมตัว ความซื่อสัตย์<br>(humility , Faithfulness)",
+    meaning: "ความถ่อมตัว ความซื่อสัตย์",
+    origin:
+      "รูปลักษณ์ของบลูเบลเป็นแรงบันดาลใจให้เชื่อมโยงกับความอ่อนน้อมถ่อมตนและความซื่อสัตย์ ดอกไม้รูประฆังอันเงียบสงบก้มลงบนลําต้นอายห่างจากแสงแดดราวกับแสดงความสันโดษ",
+    duo: "peony เพื่อการให้อภัยสําหรับการละเมิดบรรทัดฐานทางสังคม<br>passionflower เป็นของขวัญสําหรับคนที่เตรียมตัวสําหรับพิธีทางศาสนา",
+  },
+  {
+    id: "aster",
+    name: "Aster",
+    titleEn: "aster flower",
+    titleTh: "ดอกแอสเตอร์",
+    image: "/flowers/popupImg/aster.png",
+    description: "ความละมุน<br>(daintiness)",
+    meaning: "ความละมุน",
+    origin:
+      "ความสัมพันธ์ของแอสเตอร์กับความเลียวฉลาดน่าจะมาจากความชุ่มฉ่ําของมันกลีบดอกที่ยาวและเรียวยาวจํานวนมากล้อมรอบศูนย์กลางสีเหลืองสดใสอย่างประณีต ผลงานชิ้นเอกเล็ก ๆ ในทุ่งบุปผา",
+    duo: "Daisy เพื่อเป็นของขวัญสําหรับเด็กสาว<br>buttercup เพื่อชมเชยท่าทางที่มีเสน่ห์ของใครบางคน",
+  },
+  {
+    id: "cypress",
+    name: "Cypress",
+    titleEn: "cypress flower",
+    titleTh: "ดอกไซเปรส",
+    image: "/flowers/popupImg/cypress.png",
+    description: "ความตาย<br>(death)",
+    meaning: "ความตาย",
+    origin:
+      "ต้นไซเปรสเป็นสัญลักษณ์ของการไว้ทุกข์และความตายมาตั้งแต่สมัยโบราณ และยังคงเป็นต้นไม้ที่ปลูกกันมากที่สุดในสุสานทั้งในยุโรปและตะวันออกกลาง ในตํานานกรีกที่ต้นไม้ได้ชื่อมา Cyparissusบังเอิญฆ่าเพื่อนสุดที่รักของเขาซึ่งเป็นกวางที่เชื่อง เขาถูกครอบงําด้วยความเศร้าโศกจนเขากลายเป็นต้นไซเปรส",
+    duo: "marigold and ivy  สําหรับเพื่อนที่เศร้าโศก<br>orangr blossom  เพื่อแสดงถึงการอุทิศตนชั่วนิรันดร์ของคุณต่อคนที่คุณรักที่เพิ่งเสียชีวิตไป",
+  },
 ];
 
 const cardVisuals = [
@@ -430,8 +525,8 @@ const cardVisuals = [
     alt: "Orange blossom card artwork",
   },
   {
-    imageSrc: "/flowers/Orange blossom.png",
-    alt: "Orange blossom card artwork",
+    imageSrc: "/flowers/Pansy.png",
+    alt: "Pansy card artwork",
   },
   {
     imageSrc: "/flowers/Rose.png",
@@ -441,9 +536,37 @@ const cardVisuals = [
     imageSrc: "/flowers/Vine.png",
     alt: "Vine card artwork",
   },
-    {
+  {
     imageSrc: "/flowers/Violet.png",
     alt: "Violet card artwork",
+  },
+  {
+    imageSrc: "/flowers/Begonia Flower.png",
+    alt: "Begonia Flower card artwork",
+  },
+  {
+    imageSrc: "/flowers/Camellia Flower.png",
+    alt: "Camellia Flower card artwork",
+  },
+  {
+    imageSrc: "/flowers/Belladonna.png",
+    alt: "Belladonna card artwork",
+  },
+  {
+    imageSrc: "/flowers/Lady Slipper.png",
+    alt: "Lady Slipper card artwork",
+  },
+  {
+    imageSrc: "/flowers/Bluebell.png",
+    alt: "Bluebell card artwork",
+  },
+  {
+    imageSrc: "/flowers/Aster.png",
+    alt: "Aster card artwork",
+  },
+  {
+    imageSrc: "/flowers/Cypress.png",
+    alt: "Cypress card artwork",
   },
 ] as const;
 
@@ -457,13 +580,22 @@ export const flowerCards: FlowerCard[] = [
     modalIndex: 0,
     alt: cardVisuals[0]!.alt,
     layout: {
-      contentLeft: "40%",
+      contentLeft: "44%",
       contentRight: "5%",
-      contentTop: "20%",
+      contentTop: "23%",
       contentBottom: "18%",
       textBottom: "28%",
       buttonRight: "4%",
       buttonBottom: "6%",
+      mobileText: {
+        left: "43%",
+        right: "8%",
+        top: "29%",
+        bottom: "24%",
+        titleSize: "18px",
+        bodySize: "8px",
+        bodyMaxHeight: "34px",
+      },
     },
   },
   {
@@ -475,13 +607,22 @@ export const flowerCards: FlowerCard[] = [
     modalIndex: 1,
     alt: cardVisuals[1]!.alt,
     layout: {
-      contentLeft: "47%",
+      contentLeft: "50%",
       contentRight: "5%",
-      contentTop: "26%",
+      contentTop: "30%",
       contentBottom: "18%",
       textBottom: "28%",
       buttonRight: "4%",
-      buttonBottom: "6%",
+      buttonBottom: "-5%",
+      mobileText: {
+        left: "50%",
+        right: "8%",
+        top: "30%",
+        bottom: "25%",
+        titleSize: "18px",
+        bodySize: "8px",
+        bodyMaxHeight: "36px",
+      },
     },
   },
   {
@@ -493,13 +634,22 @@ export const flowerCards: FlowerCard[] = [
     modalIndex: 2,
     alt: cardVisuals[2]!.alt,
     layout: {
-      contentLeft: "47%",
+      contentLeft: "50%",
       contentRight: "5%",
-      contentTop: "20%",
+      contentTop: "28%",
       contentBottom: "18%",
       textBottom: "28%",
       buttonRight: "4%",
-      buttonBottom: "6%",
+      buttonBottom: "-5%",
+      mobileText: {
+        left: "50%",
+        right: "8%",
+        top: "25%",
+        bottom: "24%",
+        titleSize: "18px",
+        bodySize: "8px",
+        bodyMaxHeight: "36px",
+      },
     },
   },
   {
@@ -516,9 +666,17 @@ export const flowerCards: FlowerCard[] = [
       contentTop: "20%",
       contentBottom: "18%",
       textBottom: "28%",
-      titlePaddingLeft: "5%",
+      titlePaddingLeft: "4%",
       buttonRight: "4%",
       buttonBottom: "15%",
+      mobileText: {
+        left: "54%",
+        right: "7%",
+        top: "15%",
+        titleSize: "18px",
+        bodySize: "8px",
+        bodyMaxHeight: "34px",
+      },
     },
   },
   {
@@ -532,12 +690,21 @@ export const flowerCards: FlowerCard[] = [
     layout: {
       contentLeft: "50%",
       contentRight: "5%",
-      contentTop: "20%",
+      contentTop: "23%",
       contentBottom: "18%",
       textBottom: "28%",
-      titlePaddingLeft: "5%",
-      buttonRight: "4%",
-      buttonBottom: "15%",
+      titlePaddingLeft: "1%",
+      buttonRight: "17%",
+      buttonBottom: "5%",
+      mobileText: {
+        left: "45%",
+        right: "7%",
+        top: "20%",
+        bottom: "24%",
+        titleSize: "17px",
+        bodySize: "8px",
+        bodyMaxHeight: "34px",
+      },
     },
   },
   {
@@ -549,14 +716,23 @@ export const flowerCards: FlowerCard[] = [
     modalIndex: 5,
     alt: cardVisuals[5]!.alt,
     layout: {
-      contentLeft: "50%",
+      contentLeft: "45%",
       contentRight: "5%",
-      contentTop: "20%",
-      contentBottom: "18%",
+      contentTop: "30%",
+      contentBottom: "0%",
       textBottom: "28%",
-      titlePaddingLeft: "5%",
-      buttonRight: "4%",
-      buttonBottom: "15%",
+      titlePaddingLeft: "0%",
+      buttonRight: "18%",
+      buttonBottom: "19%",
+      mobileText: {
+        left: "45%",
+        right: "7%",
+        top: "28%",
+        bottom: "24%",
+        titleSize: "17px",
+        bodySize: "8px",
+        bodyMaxHeight: "34px",
+      },
     },
   },
   {
@@ -570,12 +746,21 @@ export const flowerCards: FlowerCard[] = [
     layout: {
       contentLeft: "50%",
       contentRight: "5%",
-      contentTop: "20%",
+      contentTop: "14%",
       contentBottom: "18%",
       textBottom: "28%",
-      titlePaddingLeft: "5%",
-      buttonRight: "4%",
-      buttonBottom: "15%",
+      titlePaddingLeft: "0%",
+      buttonRight: "1%",
+      buttonBottom: "3%",
+      mobileText: {
+        left: "50%",
+        right: "7%",
+        top: "15%",
+        bottom: "24%",
+        titleSize: "17px",
+        bodySize: "8px",
+        bodyMaxHeight: "34px",
+      },
     },
   },
 
@@ -590,12 +775,23 @@ export const flowerCards: FlowerCard[] = [
     layout: {
       contentLeft: "50%",
       contentRight: "5%",
-      contentTop: "20%",
+      contentTop: "21%",
       contentBottom: "18%",
-      textBottom: "28%",
-      titlePaddingLeft: "5%",
-      buttonRight: "4%",
-      buttonBottom: "15%",
+      textBottom: "0%",
+      titlePaddingLeft: "0%",
+      buttonRight: "13%",
+      buttonBottom: "3%",
+      mobileText: {
+        left: "50%",
+        right: "7%",
+        top: "18%",
+        bottom: "30%",
+        padding: "8px 10px 8px 9px",
+        titleSize: "17px",
+        bodySize: "7.5px",
+        bodyLineHeight: "1.08",
+        bodyMaxHeight: "none",
+      },
     },
   },
   {
@@ -615,6 +811,17 @@ export const flowerCards: FlowerCard[] = [
       titlePaddingLeft: "5%",
       buttonRight: "4%",
       buttonBottom: "15%",
+      mobileText: {
+        left: "50%",
+        right: "7%",
+        top: "18%",
+        bottom: "30%",
+        padding: "8px 10px 8px 9px",
+        titleSize: "17px",
+        bodySize: "7.5px",
+        bodyLineHeight: "1.08",
+        bodyMaxHeight: "none",
+      },
     },
   },
   {
@@ -902,7 +1109,7 @@ export const flowerCards: FlowerCard[] = [
       buttonBottom: "15%",
     },
   },
-    {
+  {
     id: flowerList[24]!.id,
     name: flowerList[24]!.name,
     imageSrc: cardVisuals[24]!.imageSrc,
@@ -910,6 +1117,139 @@ export const flowerCards: FlowerCard[] = [
     meaning: flowerList[24]!.meaning,
     modalIndex: 24,
     alt: cardVisuals[24]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[25]!.id,
+    name: flowerList[25]!.name,
+    imageSrc: cardVisuals[25]!.imageSrc,
+    description: flowerList[25]!.description,
+    meaning: flowerList[25]!.meaning,
+    modalIndex: 25,
+    alt: cardVisuals[25]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[26]!.id,
+    name: flowerList[26]!.name,
+    imageSrc: cardVisuals[26]!.imageSrc,
+    description: flowerList[26]!.description,
+    meaning: flowerList[26]!.meaning,
+    modalIndex: 26,
+    alt: cardVisuals[26]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[27]!.id,
+    name: flowerList[27]!.name,
+    imageSrc: cardVisuals[27]!.imageSrc,
+    description: flowerList[27]!.description,
+    meaning: flowerList[27]!.meaning,
+    modalIndex: 27,
+    alt: cardVisuals[27]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[28]!.id,
+    name: flowerList[28]!.name,
+    imageSrc: cardVisuals[28]!.imageSrc,
+    description: flowerList[28]!.description,
+    meaning: flowerList[28]!.meaning,
+    modalIndex: 28,
+    alt: cardVisuals[28]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[29]!.id,
+    name: flowerList[29]!.name,
+    imageSrc: cardVisuals[29]!.imageSrc,
+    description: flowerList[29]!.description,
+    meaning: flowerList[29]!.meaning,
+    modalIndex: 29,
+    alt: cardVisuals[29]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[30]!.id,
+    name: flowerList[30]!.name,
+    imageSrc: cardVisuals[30]!.imageSrc,
+    description: flowerList[30]!.description,
+    meaning: flowerList[30]!.meaning,
+    modalIndex: 30,
+    alt: cardVisuals[30]!.alt,
+    layout: {
+      contentLeft: "50%",
+      contentRight: "5%",
+      contentTop: "20%",
+      contentBottom: "18%",
+      textBottom: "28%",
+      titlePaddingLeft: "5%",
+      buttonRight: "4%",
+      buttonBottom: "15%",
+    },
+  },
+  {
+    id: flowerList[31]!.id,
+    name: flowerList[31]!.name,
+    imageSrc: cardVisuals[31]!.imageSrc,
+    description: flowerList[31]!.description,
+    meaning: flowerList[31]!.meaning,
+    modalIndex: 31,
+    alt: cardVisuals[31]!.alt,
     layout: {
       contentLeft: "50%",
       contentRight: "5%",
