@@ -40,39 +40,27 @@ function handleClick() {
     class="fixed inset-0 z-[99999] flex overflow-hidden cursor-pointer"
     @click="handleClick"
   >
-    <!-- left door — รูปปกติ -->
+    <!-- left door -->
     <div
       class="w-1/2 h-full overflow-hidden transition-transform duration-[1800ms] ease-in-out"
       :class="open ? '-translate-x-full' : ''"
     >
       <img
-        src="/Door/door.jpg"
-        class="h-full pointer-events-none"
-        style="
-          width: 200%;
-          max-width: none;
-          object-fit: cover;
-          object-position: right center;
-          margin-left: -100%;
-        "
+        src="/Door/ประจูซ้าย.png"
+        class="w-full h-full pointer-events-none"
+        style="object-fit: cover; object-position: right center;"
       />
     </div>
 
-    <!-- right door — mirror -->
+    <!-- right door -->
     <div
       class="w-1/2 h-full overflow-hidden transition-transform duration-[1800ms] ease-in-out"
       :class="open ? 'translate-x-full' : ''"
     >
       <img
-        src="/Door/door.jpg"
-        class="h-full pointer-events-none"
-        style="
-          width: 200%;
-          max-width: none;
-          object-fit: cover;
-          object-position: right center;
-          transform: scaleX(-1);
-        "
+        src="/Door/ประตุขวา.png"
+        class="w-full h-full pointer-events-none"
+        style="object-fit: cover; object-position: left center;"
       />
     </div>
 

@@ -38,7 +38,7 @@ export const poetryList: Poetry[] = [
     imageOffsetY: -40,
     imageOffsetX: -2,
     imageAlt: "ภาพประกอบบทกวีสวัสดิรักษา ของสุนทรภู่ สื่อถึงคำสอนเรื่องความกตัญญูและการให้เกียรติบิดามารดา",
-    hasUnderline: true,
+    hasUnderline: false,
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>อนึ่งอย่าด่าว่าแต่แม่พ่อ</span><span>จะเกิดก้อกรรมบาปให้หยาบช้า</span>
       <span>ถึงร้อยรสบทกลอนอักษรา</span><span>ไม่เทียบค่าเมตตาที่อารี</span>
@@ -80,7 +80,7 @@ export const poetryList: Poetry[] = [
     title: "พระอภัยมณี",
     subtitle:"ตอนฤาษีช่วยสุดสาคร",
     author: "สุนทรภู่",
-    imageSrc: "/poetry/image-4.png",
+    imageSrc: "/poetry/Family พระอภัยมณี-01.png",
     imageAlt: "ภาพประกอบบทกวีพระอภัยมณี ตอนฤาษีช่วยสุดสาคร ของสุนทรภู่ สื่อถึงคำสอนเรื่องการรักษาตัวรอดและระมัดระวังในการคบคน",
     titleColor: "#F17E6A",
     imageOffsetY: -47,
@@ -169,7 +169,7 @@ export const poetryList: Poetry[] = [
   {
     id: "mom-ped-sawan",
     title: "หม่อมเป็ดสวรรค์",
-    author: "สุนทรภู่",
+    author: "คุณสุวรรณ",
     imageSrc: "/sadness/sad-pop-1.png",
     imageAlt: "ภาพประกอบบทกวีหม่อมเป็ดสวรรค์ ของสุนทรภู่ สื่อถึงความโศกเศร้าของหม่อมที่พลัดพรากจากพระสวามีและต้องใช้ชีวิตเป็นหม้ายเพียงลำพัง",
     titleColor: "#7DB2D3",
