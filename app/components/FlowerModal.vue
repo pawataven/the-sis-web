@@ -55,7 +55,7 @@ const emit = defineEmits(["close"])
             <img
               :src="data.image"
               :alt="data.titleEn"
-              class="absolute top-1/2 left-1/2 max-w-[420px] w-[100%] -translate-x-1/2 -translate-y-1/2 object-contain"
+              class="absolute top-1/2 left-1/2 max-w-[370px] w-[85%] -translate-x-1/2 -translate-y-1/2 object-contain"
             />
           </div>
 

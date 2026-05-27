@@ -78,6 +78,32 @@ function getBodyTextStyle() {
   }
 }
 
+function getMobileTextStyle(layout: FlowerCardLayout) {
+  const mobileText = layout.mobileText
+
+  return {
+    left: mobileText?.left ?? "42%",
+    right: mobileText?.right ?? "7%",
+    top: mobileText?.top ?? "27%",
+    bottom: mobileText?.bottom ?? "22%",
+    padding: mobileText?.padding ?? "6px 8px",
+  }
+}
+
+function getMobileTitleStyle(layout: FlowerCardLayout) {
+  return {
+    fontSize: layout.mobileText?.titleSize ?? "20px",
+  }
+}
+
+function getMobileBodyStyle(layout: FlowerCardLayout) {
+  return {
+    fontSize: layout.mobileText?.bodySize ?? "9px",
+    lineHeight: layout.mobileText?.bodyLineHeight ?? "1.15",
+    maxHeight: layout.mobileText?.bodyMaxHeight ?? "46px",
+  }
+}
+
 function modalFlower(card: FlowerCard) {
   return flowerList[card.modalIndex] ?? null
 }
@@ -91,51 +117,89 @@ function openCard(card: FlowerCard) {
 
 <template>
   <div class="flex flex-col min-h-screen">
-    <section class="w-full py-[5vw] flex-1">
-      <div class="max-w-225 mx-auto px-[5vw]">
+    <section class="w-full flex-1 py-6 sm:py-[5vw]">
+      <div class="mx-auto w-full max-w-[430px] px-3 sm:max-w-225 sm:px-[5vw]">
         <div
           v-for="card in flowerCards"
           :key="card.id"
-          class="relative mb-[6vw]"
+          class="mb-5 sm:mb-[6vw]"
         >
-          <NuxtImg
-            :src="card.imageSrc"
-            loading="lazy"
-            :alt="card.alt"
-            class="w-full h-auto pointer-events-none"
-          />
+          <div class="relative sm:hidden">
+            <NuxtImg
+              :src="card.imageSrc"
+              loading="lazy"
+              :alt="card.alt"
+              class="pointer-events-none h-auto w-full"
+            />
 
-          <div
-            class="absolute overflow-hidden"
-            :style="getContentStyle(card.layout)"
-          >
             <div
-              class="absolute overflow-hidden"
-              :style="getTextBoxStyle(card.layout)"
+              class="absolute flex flex-col overflow-hidden rounded-r-[12px]"
+              :style="getMobileTextStyle(card.layout)"
             >
-              <div class="space-y-[0.35em] pr-[2%]">
-                <h2
-                  class="font-serif text-[#3d1600]"
-                  :style="getTitleStyle(card.layout)"
-                >
-                  {{ card.name }}
-                </h2>
+              <h2
+                class="truncate font-serif leading-none text-[#3d1600]"
+                :style="getMobileTitleStyle(card.layout)"
+              >
+                {{ card.name }}
+              </h2>
 
-                <p
-                  v-html="card.description"
-                  class="text-[#3d1600] font-light uppercase"
-                  :style="getBodyTextStyle()"
-                />
-              </div>
+              <p
+                v-html="card.description"
+                class="mt-1 overflow-hidden font-light uppercase text-[#3d1600]"
+                :style="getMobileBodyStyle(card.layout)"
+              />
             </div>
+          </div>
 
+          <div class="mt-1 flex justify-end pr-3 sm:hidden">
             <button
-              class="absolute inline-flex items-center justify-center whitespace-nowrap rounded-full border border-black bg-[#E76A87] text-white font-NavbarFont shadow-md transition-transform hover:scale-105 cursor-pointer"
-              :style="getButtonStyle(card.layout)"
+              class="inline-flex h-[26px] min-w-[76px] cursor-pointer items-center justify-center rounded-full border border-black bg-[#E76A87] px-4 text-[10px] text-white shadow-md transition-transform hover:scale-105"
               @click="openCard(card)"
             >
               Submit
             </button>
+          </div>
+
+          <div class="relative hidden sm:block">
+            <NuxtImg
+              :src="card.imageSrc"
+              loading="lazy"
+              :alt="card.alt"
+              class="w-full h-auto pointer-events-none"
+            />
+
+            <div
+              class="absolute overflow-visible"
+              :style="getContentStyle(card.layout)"
+            >
+              <div
+                class="absolute overflow-hidden"
+                :style="getTextBoxStyle(card.layout)"
+              >
+                <div class="space-y-[0.35em] pr-[2%]">
+                  <h2
+                    class="font-serif text-[#3d1600]"
+                    :style="getTitleStyle(card.layout)"
+                  >
+                    {{ card.name }}
+                  </h2>
+
+                  <p
+                    v-html="card.description"
+                    class="text-[#3d1600] font-light uppercase"
+                    :style="getBodyTextStyle()"
+                  />
+                </div>
+              </div>
+
+              <button
+                class="absolute inline-flex items-center justify-center whitespace-nowrap rounded-full border border-black bg-[#E76A87] text-white font-NavbarFont shadow-md transition-transform hover:scale-105 cursor-pointer"
+                :style="getButtonStyle(card.layout)"
+                @click="openCard(card)"
+              >
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       </div>
