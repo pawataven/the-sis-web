@@ -125,38 +125,59 @@ async function playAgain() {
       <NavigationBar />
     </div>
 
-    <main class="flex-1 flex flex-col items-center py-[6vw] px-[5vw]">
+    <main class="flex-1 flex flex-col items-center pt-[40vw] sm:pt-[20vw] md:pt-[20vw] lg:pt-[5vw] pb-[8vw] md:pb-[6vw] px-[6vw] sm:px-[5vw]">
       <template v-if="result">
         <!-- Bouquet Image -->
-        <div class="mb-[1vw]">
+        <div class="mb-[3vw] sm:mb-[2vw] md:mb-[1vw]">
           <img
             :src="result.flowerImage"
             :alt="result.id"
-            class="h-auto pointer-events-none select-none"
-            style="width: clamp(260px, 42vw, 993px)"
+            class="w-[70vw] sm:w-[55vw] md:w-[42vw] lg:w-[36vw] max-w-[993px] h-auto pointer-events-none select-none"
           />
         </div>
 
-        <!-- Tags — อยู่ในรูปแล้ว -->
-        <!-- <div class="flex items-center gap-4 mb-[2vw]">
+        <!-- Tags — อยู่ในรูปแล้ว
+        <div class="flex items-center justify-center flex-wrap">
           <template v-for="(tag, i) in result.tags" :key="tag">
-            <span class="text-[#2c1a0e] text-[clamp(13px,1.2vw,18px)]">{{ tag }}</span>
-            <span v-if="i < result.tags.length - 1" class="text-[#2c1a0e] text-[18px]">|</span>
+            <span class="text-[#472809] font-medium text-[clamp(14px,1.2vw,24px)]">
+              {{ tag }}
+            </span>
+            <span
+              v-if="i < result.tags.length - 1"
+              aria-hidden="true"
+              class="mx-[1.8vw] inline-block h-[20px] w-[2px] bg-[#472809]"
+            >
+            </span>
           </template>
         </div> -->
 
         <!-- Description -->
-        <div class="max-w-[700px] text-center mb-[3vw] mt-[3vw]">
+        <div class="max-w-[90vw] sm:max-w-[700px] text-center mt-[40px] sm:mt-[60px] md:mt-[83px] px-2 sm:px-0">
           <p
-            class="text-[#2c1a0e] font-serif leading-[2] text-[clamp(14px,1.1vw,20px)]"
+            class="text-[#2c1a0e] font-serif leading-[1.8] sm:leading-[2] text-[16px] sm:text-[clamp(16px,1.1vw,22px)]"
           >
             {{ result.description }}
           </p>
         </div>
 
+        <!-- Flowers -->
+        <!-- <div class="flex items-center justify-center flex-wrap mb-[3vw]">
+          <template v-for="(flower, i) in result.flowers" :key="flower">
+            <span class="text-[#472809] font-serif font-medium tracking-[0.15em] uppercase text-[clamp(12px,1vw,18px)]">
+              {{ flower }}
+            </span>
+            <span
+              v-if="i < result.flowers.length - 1"
+              aria-hidden="true"
+              class="mx-[1.5vw] inline-block h-[18px] w-[2px] bg-[#472809]"
+            >
+            </span>
+          </template>
+        </div> -->
+
         <button
           type="button"
-          class="bg-[#E76A87] text-white px-10 py-2 rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform"
+          class="bg-[#E76A87] text-white px-8 sm:px-10 mt-[40px] sm:mt-[60px] md:mt-[83px] py-2 rounded-full border border-[#000000] cursor-pointer text-[14px] sm:text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform"
           @click="playAgain"
         >
           เล่นใหม่
@@ -186,7 +207,7 @@ async function playAgain() {
     <div class="w-full mt-auto">
       <img
         src="/poetry/ท่าเรือ.png"
-        class="w-full h-auto object-cover pointer-events-none"
+        class="w-full h-auto object-cover  pointer-events-none"
       />
     </div>
   </div>

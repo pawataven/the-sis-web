@@ -191,7 +191,7 @@ async function next() {
     </div>
 
     <!-- Main content -->
-    <main class="flex-1 flex flex-col items-center mt-[4vw]">
+    <main class="flex-1 flex flex-col items-center pt-[40vw] sm:pt-[20vw] md:pt-[20vw] lg:pt-[5vw] pb-[8vw] md:pb-[6vw] px-[6vw] sm:px-[5vw]">
       <!-- Page Start -->
       <template v-if="currentStep?.type === 'start'">
         <!-- Title + vase section -->
@@ -217,7 +217,7 @@ async function next() {
         </div>
 
         <!-- Welcome text + Start button -->
-        <div class="text-center px-[5vw] max-w-[600px] mt-[57px] mb-[3vw]">
+        <div class="text-center px-[6vw] max-w-[680px] mt-[57px] mb-[3vw]">
           <p
             v-for="text in currentStep.content"
             :key="text"
@@ -228,7 +228,7 @@ async function next() {
 
           <button
             type="button"
-            class="bg-[#E76A87] text-white font-readmore px-10 py-2 mt-[19px] rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw]"
+            class="bg-[#E76A87] text-white font-readmore px-8 py-2 mt-[19px] rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw]"
             @click="next"
           >
             {{ currentStep.buttonLabel }}
@@ -236,7 +236,7 @@ async function next() {
 
           <p
             v-if="currentStep.description"
-            class="text-[#4728097A] mt-[51px] font-serif text-[clamp(12px,1.1vw,16px)] leading-relaxed"
+            class="text-[#4728097A] mt-[51px] mx-auto w-full px-0 font-serif text-[clamp(16px,1.1vw,20px)] leading-relaxed"
           >
             {{ currentStep.description }}
           </p>
