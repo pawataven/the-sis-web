@@ -18,6 +18,9 @@ const finalResultType = useState<AnswerType | null>(
   () => null
 );
 
+const quizButtonClass =
+  "find-bloom-button bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150";
+
 function parseStepIndex(step: unknown) {
   const rawStep = Array.isArray(step) ? step[0] : step;
 
@@ -228,7 +231,7 @@ async function next() {
 
           <button
             type="button"
-            class="bg-[#E76A87] text-white font-readmore px-8 py-2 mt-[19px] rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw]"
+            :class="quizButtonClass"
             @click="next"
           >
             {{ currentStep.buttonLabel }}
@@ -282,7 +285,7 @@ async function next() {
 
           <button
             type="button"
-            class="bg-[#E76A87] mb-[73px] text-white font-readmore px-10 py-2 rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw]"
+            :class="quizButtonClass"
             @click="next"
           >
             {{ currentStep.buttonLabel }}
@@ -358,7 +361,7 @@ async function next() {
 
           <button
             type="button"
-            class="bg-[#E76A87] text-white px-10 py-2 font-readmore rounded-full  border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw] disabled:opacity-50 disabled:cursor-not-allowed"
+            :class="quizButtonClass"
             :disabled="!canNext"
             @click="next"
           >
@@ -377,3 +380,13 @@ async function next() {
     </div>
   </div>
 </template>
+
+<style scoped>
+.find-bloom-button {
+  min-width: clamp(74px, 30cqw, 112px);
+  min-height: clamp(28px, 10cqw, 40px);
+  padding-inline: clamp(10px, 4cqw, 18px);
+  font-size: clamp(11px, 4.2cqw, 18px);
+  line-height: 1.2;
+}
+</style>
