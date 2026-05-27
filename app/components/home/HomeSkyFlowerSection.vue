@@ -6,7 +6,7 @@
       <div class="relative w-full z-20 mt-40">
         <NuxtImg
           src="/home/skyflower.png"
-          class="w-full select-none block mt-20 md:mt-100"
+          class="w-full select-none block mt-20 md:mt-100" 
         />
 
         <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
