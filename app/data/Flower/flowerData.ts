@@ -116,7 +116,7 @@ export const flowerList: Flower[] = [
     name: "Oleander Flower",
     titleEn: "Oleander Flower",
     titleTh: "ดอกยี่โถ",
-    image: "/flowers/popupImg/azalea.png",
+    image: "/flowers/popupImg/oleander.png",
     description: "ความระมัดระวัง <br>(Caution)",
     meaning: "ความระมัดระวัง",
     origin:
@@ -155,7 +155,7 @@ export const flowerList: Flower[] = [
     name: " Azalea Flower",
     titleEn: "azalea flower",
     titleTh: "กุหลาบพันปี",
-    image: "/flowers/popupImg/azalea.png",
+    image: "/flowers/popupImg/Azalea Flower.png",
     description: "ความเปราะบาง / ความพอประมาณ <br>(Fragility/ Temperance)",
     meaning: "ความเปราะบาง /  ความพอประมาณ",
     origin:
@@ -374,7 +374,7 @@ export const flowerList: Flower[] = [
     name: "Camellia Flower",
     titleEn: "camellia",
     titleTh: "ดอกคามิเลีย",
-    image: "/flowers/popupImg/Camellia.png",
+    image: "/flowers/popupImg/Camellia Flower.png",
     description: "ความโหยหาถึงคุณ<br>(Longing for you)",
     meaning: "ความโหยหาถึงคุณ",
     origin:
@@ -434,7 +434,7 @@ export const flowerList: Flower[] = [
     name: "Cypress",
     titleEn: "cypress flower",
     titleTh: "ดอกไซเปรส",
-    image: "/flowers/popupImg/cypress.png",
+    image: "/flowers/popupImg/Cypress.png",
     description: "ความตาย<br>(death)",
     meaning: "ความตาย",
     origin:

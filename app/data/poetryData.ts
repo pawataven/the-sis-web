@@ -9,8 +9,8 @@ export interface Poetry {
   meaning: string;
   hasUnderline?: boolean;
   titleColor?: string;
-  imageOffsetY?: number;  // ลบ = ขึ้น, บวก = ลง  (default -50 = กึ่งกลาง)
-  imageOffsetX?: number;  // ลบ = ซ้าย, บวก = ขวา (default 0 = กึ่งกลาง)
+  imageOffsetY?: number; // ลบ = ขึ้น, บวก = ลง  (default -50 = กึ่งกลาง)
+  imageOffsetX?: number; // ลบ = ซ้าย, บวก = ขวา (default 0 = กึ่งกลาง)
 }
 
 export const poetryList: Poetry[] = [
@@ -18,16 +18,17 @@ export const poetryList: Poetry[] = [
     id: "pleng-yao",
     title: "เพลงยาวถวายโอวาท",
     author: "สุนทรภู่",
-    imageSrc: "/poetry/image.png",
+    imageSrc: "/poetry/image1.png",
     titleColor: "#F17E6A",
-    imageAlt: "ภาพประกอบบทกวีเพลงยาวถวายโอวาท ของสุนทรภู่ สื่อถึงความกตัญญูและการระลึกถึงบุญคุณบิดามารดาก่อนนอน",
+    imageAlt:
+      "ภาพประกอบบทกวีเพลงยาวถวายโอวาท ของสุนทรภู่ สื่อถึงความกตัญญูและการระลึกถึงบุญคุณบิดามารดาก่อนนอน",
     hasUnderline: false,
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>อนึ่งเล่าเข้าที่ศรีไสยาสน์</span><span>อย่าประมาทหมั่นคำนับลงกับหมอน</span>
       <span>เป็นนิรันดร์สรรเสริญเจริญพร</span><span>คุณบิดรมารดาคุณอาจารย์</span>
     </div>`,
     meaning:
-      "ก่อนเข้านอนทุกคืน ให้ระลึกถึงและอธิษฐานสรรเสริญบุญคุณของบิดามารดา ที่ได้อุ้มท้องและเลี้ยงดูเรามาอย่างมากมาย อย่าได้ประมาทหรือละเลยในบุญคุณนี้",
+      "<br>ก่อนเข้านอนทุกคืน ให้ระลึกถึงและอธิษฐานสรรเสริญบุญคุณของบิดามารดา ที่ได้อุ้มท้องและเลี้ยงดูเรามาอย่างมากมาย อย่าได้ประมาทหรือละเลยในบุญคุณนี้",
   },
   {
     id: "sawatdi-raksa",
@@ -37,7 +38,8 @@ export const poetryList: Poetry[] = [
     titleColor: "#F17E6A",
     imageOffsetY: -40,
     imageOffsetX: -2,
-    imageAlt: "ภาพประกอบบทกวีสวัสดิรักษา ของสุนทรภู่ สื่อถึงคำสอนเรื่องความกตัญญูและการให้เกียรติบิดามารดา",
+    imageAlt:
+      "ภาพประกอบบทกวีสวัสดิรักษา ของสุนทรภู่ สื่อถึงคำสอนเรื่องความกตัญญูและการให้เกียรติบิดามารดา",
     hasUnderline: false,
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>อนึ่งอย่าด่าว่าแต่แม่พ่อ</span><span>จะเกิดก้อกรรมบาปให้หยาบช้า</span>
@@ -53,7 +55,8 @@ export const poetryList: Poetry[] = [
     author: "สุนทรภู่",
     imageSrc: "/poetry/image-3.png",
     titleColor: "#F17E6A",
-    imageAlt: "ภาพประกอบบทกวีขุนช้างขุนแผน ตอนกำเนิดพลายงาม ของสุนทรภู่ สื่อถึงความรักของแม่ที่ยิ่งใหญ่เกินกว่าสิ่งใด",
+    imageAlt:
+      "ภาพประกอบบทกวีขุนช้างขุนแผน ตอนกำเนิดพลายงาม ของสุนทรภู่ สื่อถึงความรักของแม่ที่ยิ่งใหญ่เกินกว่าสิ่งใด",
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>แม่รักลูกลูกก็รู้อยู่ว่ารัก</span><span>คนอื่นสักหมื่นแสนไม่แม้นเหมือน</span>
       <span>จะกินนอนวอนว่าเมตตาเตือน</span><span>จะจากเรือนร้างแม่ไปแต่ตัว</span>
@@ -66,7 +69,8 @@ export const poetryList: Poetry[] = [
     title: "สุภาษิตสอนหญิง",
     author: "สุนทรภู่",
     imageSrc: "/poetry/supasit.png",
-    imageAlt: "ภาพประกอบบทกวีสุภาษิตสอนหญิง ของสุนทรภู่ สื่อถึงคำสอนเรื่องการดูแลเลี้ยงดูบิดามารดายามชรา",
+    imageAlt:
+      "ภาพประกอบบทกวีสุภาษิตสอนหญิง ของสุนทรภู่ สื่อถึงคำสอนเรื่องการดูแลเลี้ยงดูบิดามารดายามชรา",
     titleColor: "#F17E6A",
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>เมื่อพ่อแม่แก่เฒ่าชรากาล</span><span>จงเลี้ยงท่านเฝ้าปฏิบัติให้ชัดเจน</span>
@@ -78,10 +82,11 @@ export const poetryList: Poetry[] = [
   {
     id: "Phra Aphai Mani-3",
     title: "พระอภัยมณี",
-    subtitle:"ตอนฤาษีช่วยสุดสาคร",
+    subtitle: "ตอนฤาษีช่วยสุดสาคร",
     author: "สุนทรภู่",
     imageSrc: "/poetry/Family พระอภัยมณี-01.png",
-    imageAlt: "ภาพประกอบบทกวีพระอภัยมณี ตอนฤาษีช่วยสุดสาคร ของสุนทรภู่ สื่อถึงคำสอนเรื่องการรักษาตัวรอดและระมัดระวังในการคบคน",
+    imageAlt:
+      "ภาพประกอบบทกวีพระอภัยมณี ตอนฤาษีช่วยสุดสาคร ของสุนทรภู่ สื่อถึงคำสอนเรื่องการรักษาตัวรอดและระมัดระวังในการคบคน",
     titleColor: "#F17E6A",
     imageOffsetY: -47,
     imageOffsetX: -2,
@@ -102,7 +107,8 @@ export const poetryList: Poetry[] = [
     titleColor: "#EB4346",
     imageOffsetY: -45,
     imageOffsetX: -2,
-    imageAlt: "ภาพดอกไม้ประกอบบทกวีพระอภัยมณี ตอนสุดสาครเข้าเมืองการะเวก ของสุนทรภู่ สื่อถึงคติธรรมเรื่องความไม่ไว้วางใจมนุษย์",
+    imageAlt:
+      "ภาพดอกไม้ประกอบบทกวีพระอภัยมณี ตอนสุดสาครเข้าเมืองการะเวก ของสุนทรภู่ สื่อถึงคติธรรมเรื่องความไม่ไว้วางใจมนุษย์",
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>แล้วสอนว่าอย่าไว้ใจมนุษย์</span><span>มันแสนสุดลึกล้ำเหลือกำหนด</span>
       <span>ถึงเถาวัลย์พันเกี่ยวที่เลี้ยวลด</span><span>ก็ไม่คดเหมือนหนึ่งในน้ำใจคน</span>
@@ -114,7 +120,8 @@ export const poetryList: Poetry[] = [
     title: "เพลงยาวถวายโอวาท",
     author: "สุนทรภู่",
     imageSrc: "/warning/warn-pop-1.png",
-    imageAlt: "ภาพประกอบบทกวีเพลงยาวถวายโอวาท ของสุนทรภู่ สื่อถึงคำเตือนเรื่องการระวังคำพูดหวานล้อมที่อาจทำให้หลงผิด",
+    imageAlt:
+      "ภาพประกอบบทกวีเพลงยาวถวายโอวาท ของสุนทรภู่ สื่อถึงคำเตือนเรื่องการระวังคำพูดหวานล้อมที่อาจทำให้หลงผิด",
     titleColor: "#EB4346",
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>อันคำรักหนักหน่วงประทรวงจิต</span><span>จะหลงลมงมงามตามประลาต</span>
@@ -128,7 +135,8 @@ export const poetryList: Poetry[] = [
     title: "เพลงยาวถวายโอวาท",
     author: "สุนทรภู่",
     imageSrc: "/warning/warn-pop-2.png",
-    imageAlt: "ภาพประกอบบทกวีเพลงยาวถวายโอวาท ของสุนทรภู่ สื่อถึงคำสอนที่ว่าคำพูดดีงามนั้นคงทนยิ่งกว่าความหวานจากสิ่งของ",
+    imageAlt:
+      "ภาพประกอบบทกวีเพลงยาวถวายโอวาท ของสุนทรภู่ สื่อถึงคำสอนที่ว่าคำพูดดีงามนั้นคงทนยิ่งกว่าความหวานจากสิ่งของ",
     titleColor: "#EB4346",
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>อันอ้อยตาลหวานลิ้นแล้วสิ้นซาก </span><span>แต่ลมปากหวานหูไม่รู้หาย</span>
@@ -142,7 +150,8 @@ export const poetryList: Poetry[] = [
     title: "เพลงยาวถวายโอวาท",
     author: "สุนทรภู่",
     imageSrc: "/warning/warn-pop-3.png",
-    imageAlt: "ภาพประกอบบทกวีเพลงยาวถวายโอวาท ของสุนทรภู่ สื่อถึงคำสอนเรื่องการใช้ความรู้อย่างรอบคอบ เปรียบดั่งอาวุธที่ต้องเก็บรักษาไว้ใช้ยามจำเป็น",
+    imageAlt:
+      "ภาพประกอบบทกวีเพลงยาวถวายโอวาท ของสุนทรภู่ สื่อถึงคำสอนเรื่องการใช้ความรู้อย่างรอบคอบ เปรียบดั่งอาวุธที่ต้องเก็บรักษาไว้ใช้ยามจำเป็น",
     titleColor: "#EB4346",
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>อันความคิดวิทยาเหมือนอาวุธ</span><span>ประเสริฐสุดซ่อนใส่เสียในฝัก</span>
@@ -156,7 +165,8 @@ export const poetryList: Poetry[] = [
     title: "เพลงยาวถวายโอวาท",
     author: "สุนทรภู่",
     imageSrc: "/warning/warn-pop-4.png",
-    imageAlt: "ภาพประกอบบทกวีเพลงยาวถวายโอวาท ของสุนทรภู่ สื่อถึงคำสอนเรื่องการรักษาน้ำใจต่อกันเพื่อความสัมพันธ์ที่ยั่งยืน",
+    imageAlt:
+      "ภาพประกอบบทกวีเพลงยาวถวายโอวาท ของสุนทรภู่ สื่อถึงคำสอนเรื่องการรักษาน้ำใจต่อกันเพื่อความสัมพันธ์ที่ยั่งยืน",
     titleColor: "#EB4346",
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>อันที่จริงหญิงชายพึ่งหมายรัก</span><span>ใช่จะหักด้วยกำลังนั้นหาไม่</span>
@@ -171,7 +181,8 @@ export const poetryList: Poetry[] = [
     title: "หม่อมเป็ดสวรรค์",
     author: "คุณสุวรรณ",
     imageSrc: "/sadness/sad-pop-1.png",
-    imageAlt: "ภาพประกอบบทกวีหม่อมเป็ดสวรรค์ ของสุนทรภู่ สื่อถึงความโศกเศร้าของหม่อมที่พลัดพรากจากพระสวามีและต้องใช้ชีวิตเป็นหม้ายเพียงลำพัง",
+    imageAlt:
+      "ภาพประกอบบทกวีหม่อมเป็ดสวรรค์ ของสุนทรภู่ สื่อถึงความโศกเศร้าของหม่อมที่พลัดพรากจากพระสวามีและต้องใช้ชีวิตเป็นหม้ายเพียงลำพัง",
     titleColor: "#7DB2D3",
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span> จะกล่าวถึงหม่อมสุดนุชนาฎ</span><span>เป็นข้าบาทพระราชวังบวรสถาน</span>
@@ -187,7 +198,8 @@ export const poetryList: Poetry[] = [
     title: "พระอภัยมณี",
     author: "สุนทรภู่",
     imageSrc: "/sadness/sad-pop-2.png",
-    imageAlt: "ภาพประกอบบทกวีพระอภัยมณี ของสุนทรภู่ สื่อถึงความโศกเศร้าและความเจ็บปวดจากความรักที่พลัดพราก",
+    imageAlt:
+      "ภาพประกอบบทกวีพระอภัยมณี ของสุนทรภู่ สื่อถึงความโศกเศร้าและความเจ็บปวดจากความรักที่พลัดพราก",
     titleColor: "#7DB2D3",
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>อกอะไรจะเหมือนอกที่รกรัก</span><span>อกจะหักเสียด้วยใจอาลัยหา</span>
@@ -201,7 +213,8 @@ export const poetryList: Poetry[] = [
     title: "นิราศอิเหนา",
     author: "สุนทรภู่",
     imageSrc: "/sadness/sad-pop-3.png",
-    imageAlt: "ภาพประกอบบทกวีนิราศอิเหนา ของสุนทรภู่ สื่อถึงความรักที่ตัดไม่ขาดและความโหยหาคนรักที่พลัดพราก",
+    imageAlt:
+      "ภาพประกอบบทกวีนิราศอิเหนา ของสุนทรภู่ สื่อถึงความรักที่ตัดไม่ขาดและความโหยหาคนรักที่พลัดพราก",
     titleColor: "#7DB2D3",
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>จะหักอื่น ขืนหัก ก็จักได้</span><span>สารพัด ตัดขาด ประหลาดนัก</span>
@@ -215,7 +228,8 @@ export const poetryList: Poetry[] = [
     title: "ระเด่นลันได",
     author: "สุนทรภู่",
     imageSrc: "/sadness/sad-pop-4.png",
-    imageAlt: "ภาพประกอบบทกวีระเด่นลันได ของสุนทรภู่ สื่อถึงความเจ็บปวดจากความหึงหวงที่ยิ่งกว่าการสูญเสียทรัพย์สมบัติ",
+    imageAlt:
+      "ภาพประกอบบทกวีระเด่นลันได ของสุนทรภู่ สื่อถึงความเจ็บปวดจากความหึงหวงที่ยิ่งกว่าการสูญเสียทรัพย์สมบัติ",
     titleColor: "#7DB2D3",
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>อันโศกอื่นหมื่นแสนในแดนโลก </span><span>ถึงเสียทองของรักสักเท่าตัว </span>
@@ -229,7 +243,8 @@ export const poetryList: Poetry[] = [
     title: "ระเด่นลันได",
     author: "สุนทรภู่",
     imageSrc: "/sadness/sad-pop-5.png",
-    imageAlt: "ภาพประกอบบทกวีระเด่นลันได ของสุนทรภู่ สื่อถึงความรักในช่วงต้นที่หวานชื่น แต่เมื่อเวลาผ่านไปความรักก็อาจจืดจางลง",
+    imageAlt:
+      "ภาพประกอบบทกวีระเด่นลันได ของสุนทรภู่ สื่อถึงความรักในช่วงต้นที่หวานชื่น แต่เมื่อเวลาผ่านไปความรักก็อาจจืดจางลง",
     titleColor: "#7DB2D3",
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>อันที่จริงหญิงชายพึ่งหมายรัก</span><span>ใช่จะหักด้วยกำลังนั้นหาไม่</span>
@@ -245,8 +260,11 @@ export const poetryList: Poetry[] = [
     subtitle: "ตอน พระอภัยมณีเกี้ยวนางละเวง",
     author: "สุนทรภู่",
     imageSrc: "/love/love-pop-1.png",
-    imageAlt: "ภาพประกอบบทกวีพระอภัยมณี ตอนพระอภัยมณีเกี้ยวนางละเวง ของสุนทรภู่ สื่อถึงความรักที่ยั่งยืนแม้โลกจะสูญสลาย",
+    imageAlt:
+      "ภาพประกอบบทกวีพระอภัยมณี ตอนพระอภัยมณีเกี้ยวนางละเวง ของสุนทรภู่ สื่อถึงความรักที่ยั่งยืนแม้โลกจะสูญสลาย",
     titleColor: "#E86686",
+    imageOffsetY: -47,
+    imageOffsetX: -6,
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>ถึงม้วยดินสิ้นฟ้ามหาสมุทร</span><span>ไม่สิ้นสุดความรักสมัครสมาน</span>
       <span>แม้นเกิดในไต้ฟ้าสุธาธาร</span><span>ขอพบพานพิศวาสไม่คลาดคลา</span>
@@ -259,10 +277,11 @@ export const poetryList: Poetry[] = [
     title: "โคบุตร",
     author: "สุนทรภู่",
     imageSrc: "/love/love-pop-2.png",
-    imageAlt: "ภาพประกอบบทกวีโคบุตร ของสุนทรภู่ สื่อถึงความรักที่ยิ่งใหญ่ที่สุดซึ่งไม่มีผู้หญิงคนใดเทียบได้",
+    imageAlt:
+      "ภาพประกอบบทกวีโคบุตร ของสุนทรภู่ สื่อถึงความรักที่ยิ่งใหญ่ที่สุดซึ่งไม่มีผู้หญิงคนใดเทียบได้",
     titleColor: "#E86686",
-    imageOffsetY: -50,
-    imageOffsetX: 8,
+    imageOffsetY: -45,
+    imageOffsetX: 4,
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>สวาทไหนหรือจะเปรียบสวาทมิ่ง</span><span>สวาทแม่นี่ยิ่งเป็นที่สุด</span>
       <span>ที่หวังเสกเป็นเอกอนงค์นุช</span><span>อนงค์ไหนมิได้สุดสวาทเรียม</span>
@@ -275,10 +294,11 @@ export const poetryList: Poetry[] = [
     title: "นิราศภูเขาทอง",
     author: "สุนทรภู่",
     imageSrc: "/love/love-pop-3.png",
-    imageAlt: "ภาพประกอบบทกวีนิราศภูเขาทอง ของสุนทรภู่ สื่อถึงความเมาใจในความรักที่ลึกซึ้งและคงทนยิ่งกว่าความเมาสุรา",
+    imageAlt:
+      "ภาพประกอบบทกวีนิราศภูเขาทอง ของสุนทรภู่ สื่อถึงความเมาใจในความรักที่ลึกซึ้งและคงทนยิ่งกว่าความเมาสุรา",
     titleColor: "#E86686",
     imageOffsetY: -50,
-    imageOffsetX: 10,
+    imageOffsetX: -1,
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>ไม่เมาเหล้าแล้วแต่เรายังเมารัก</span><span>สุดจะหักห้ามจิตคิดไฉน</span>
       <span>ถึงเมาเหล้าเช้าสายก็หายไป</span><span>แต่เมาใจนี้ประจำทุกค่ำคืน</span>
@@ -290,9 +310,12 @@ export const poetryList: Poetry[] = [
     id: "nirat-phra-pathom",
     title: "นิราศพระประธม",
     author: "สุนทรภู่",
-    imageSrc: "/love/love-pop-4.png",
-    imageAlt: "ภาพประกอบบทกวีนิราศพระประธม ของสุนทรภู่ สื่อถึงความรักที่ตัดไม่ขาดแม้จะพยายามปล่อยวางสักเท่าไร",
+    imageSrc: "/love/love-popup-4.png",
+    imageAlt:
+      "ภาพประกอบบทกวีนิราศพระประธม ของสุนทรภู่ สื่อถึงความรักที่ตัดไม่ขาดแม้จะพยายามปล่อยวางสักเท่าไร",
     titleColor: "#E86686",
+    imageOffsetY: -48,
+    imageOffsetX: -0,
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>กราบพระเจ้าเศร้าจิตรคิดสังเวช</span><span>โอ้น้ำเนตรเอ๋ยกลืนก็ขืนไหล</span>
       <span>สารพัดตัดขาดประหลาดใจ</span><span>ตัดอาไลยตัดสวาทไม่ขาดความ</span>
@@ -305,8 +328,11 @@ export const poetryList: Poetry[] = [
     title: "อุณรุท",
     author: "สุนทรภู่",
     imageSrc: "/love/love-pop-5.png",
-    imageAlt: "ภาพประกอบบทกวีอุณรุท ของสุนทรภู่ สื่อถึงความรักที่มั่นคงยั่งยืนดั่งสายน้ำที่ไหลไม่หยุดหย่อน มีรากฐานจากบุพเพสันนิวาส",
+    imageAlt:
+      "ภาพประกอบบทกวีอุณรุท ของสุนทรภู่ สื่อถึงความรักที่มั่นคงยั่งยืนดั่งสายน้ำที่ไหลไม่หยุดหย่อน มีรากฐานจากบุพเพสันนิวาส",
     titleColor: "#E86686",
+    imageOffsetY: -48,
+    imageOffsetX: -0,
     poem: `<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6em 2em">
       <span>อันความรักที่มั่นคงคงที่</span><span>มักจะมีมูลเหตุแต่ปางหลัง </span>
       <span>เหมือนน้ำหลั่งไหลรินไม่หยุดยั้ง</span><span>เป็นกำลังเกื้อหนุนบุญนำพา</span>

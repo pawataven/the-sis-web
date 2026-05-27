@@ -224,7 +224,7 @@ async function next() {
           <p
             v-for="text in currentStep.content"
             :key="text"
-            class="text-[#472809] font-serif text-[clamp(16px,2vw,28px)] mb-[1.5vw]"
+            class="text-[#472809] font-readmore text-[clamp(16px,2vw,28px)] mb-[1.5vw]"
           >
             {{ text }}
           </p>

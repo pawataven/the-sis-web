@@ -85,7 +85,7 @@ const emit = defineEmits(["close"]);
                 <span class="font-medium border-b border-[#472809] mr-2"
                   >ความหมาย:</span
                 >
-                {{ data.meaning }}
+                <span v-html="data.meaning"></span>
               </p>
             </div>
           </div>
