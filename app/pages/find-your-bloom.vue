@@ -282,7 +282,7 @@ async function next() {
 
           <button
             type="button"
-            class="bg-[#E76A87] text-white font-readmore px-10 py-2 rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw]"
+            class="bg-[#E76A87] mb-[73px] text-white font-readmore px-10 py-2 rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw]"
             @click="next"
           >
             {{ currentStep.buttonLabel }}
@@ -302,7 +302,7 @@ async function next() {
             <p
               v-for="text in currentStep.content"
               :key="text"
-              class="text-[#472809] font-serif font-medium text-[clamp(15px,1.4vw,24px)] leading-relaxed"
+              class="text-[#472809] font-serif font-medium text-[clamp(15px,1.4vw,24px)] leading-relaxed "
             >
               {{ text }}
             </p>
@@ -313,7 +313,7 @@ async function next() {
             class="mb-[3vw] w-full max-w-[760px]"
           >
             <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-x-[5vw] gap-y-[0.6vw]"
+              class="grid grid-cols-1 md:grid-cols-2 gap-x-[5vw] gap-y-[0.6vw] "
             >
               <template
                 v-for="(row, index) in currentStep.poemRows"
@@ -335,11 +335,11 @@ async function next() {
           </div>
 
           <h2
-            class="text-[#472809] font-serif font-medium text-[clamp(16px,1.5vw,24px)] leading-relaxed mb-[2vw]"
+            class="text-[#472809] font-serif font-medium text-[clamp(16px,1.5vw,24px)] leading-relaxed mb-[73px]"
           >
             {{ currentStep.question }}
           </h2>
-          <div class="w-full max-w-[600px] flex flex-col gap-3 mb-[2vw]">
+          <div class="w-full max-w-[600px] flex flex-col gap-3 mb-[73px]">
             <button
               v-for="choice in currentStep.choices"
               :key="choice.id"
@@ -358,7 +358,7 @@ async function next() {
 
           <button
             type="button"
-            class="bg-[#E76A87] text-white px-10 py-2 font-readmore rounded-full border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw] disabled:opacity-50 disabled:cursor-not-allowed"
+            class="bg-[#E76A87] text-white px-10 py-2 font-readmore rounded-full  border border-[#000000] cursor-pointer text-[clamp(14px,1.2vw,18px)] shadow-md hover:scale-105 transition-transform mb-[2vw] disabled:opacity-50 disabled:cursor-not-allowed"
             :disabled="!canNext"
             @click="next"
           >

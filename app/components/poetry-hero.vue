@@ -11,12 +11,13 @@ const heroMap: Record<
     label: string;
     flowerClass?: string;
     flowerStyle?: string;
+    titleContainerClass?: string;
     titleSrc?: string;
   }
 > = {
   "/poem-parent": {
     flowerSrc: "/poetry/ดอกหน้า Poetry.png",
-    label: "Parent",
+    label: "Family",
   },
   "/poem-warning": {
     flowerSrc: "/warning/warning.png",
@@ -37,6 +38,7 @@ const heroMap: Record<
     flowerSrc: "/flowers/Flowers.png",
     label: "Flowers",
     titleSrc: "/flowers/Group 34.png",
+    titleContainerClass: "absolute inset-0",
   },
 };
 const current = computed(
@@ -80,7 +82,8 @@ const current = computed(
       </div>
 
       <div
-        class="relative z-[20] flex flex-col items-center justify-center flex-1 px-[5vw] md:px-0"
+        class="z-[20] flex flex-col items-center justify-center flex-1 px-[5vw] md:px-0"
+        :class="current.titleContainerClass ?? 'relative'"
       >
         <!-- custom title image (e.g. /flowers) -->
         <template v-if="current.titleSrc">
