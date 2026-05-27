@@ -61,7 +61,7 @@ const handleMouseEnter = (item: NavItem) => {
             :class="{ '-translate-y-[7px]': isOpen(item.label) }"
           />
           <div
-            class="flex items-center gap-1 sm:gap-2 whitespace-nowrap rounded-full bg-white cursor-pointer border border-[#8C7662] px-3 py-1 sm:px-4 sm:py-1.5 lg:px-[23px] lg:py-[6px] text-[9px] sm:text-[12px] lg:text-[14px] font-navbar text-[#6B4A34] shadow-sm transition-colors duration-200"
+            class="flex items-center gap-1 sm:gap-2 whitespace-nowrap rounded-full bg-white cursor-pointer border border-[#8C7662] px-3 py-1 sm:px-4 sm:py-1.5 lg:px-[23px] lg:py-[6px] text-[9px] sm:text-[12px] lg:text-[14px] font-navbar text-[#6B4A34] shadow-sm transition-colors duration-150 hover:brightness-90 active:brightness-75"
             :class="item.label"
           >
             {{ item.label }}
@@ -129,7 +129,7 @@ const handleMouseEnter = (item: NavItem) => {
           "
         />
         <div
-          class="whitespace-nowrap rounded-full border border-[#8C7662] bg-white px-3 py-1 sm:px-4 sm:py-1.5 lg:px-[23px] lg:py-[6px] text-[9px] sm:text-[12px] lg:text-[14px] font-navbar text-[#6B4A34] shadow-sm"
+          class="whitespace-nowrap rounded-full border border-[#8C7662] bg-white px-3 py-1 sm:px-4 sm:py-1.5 lg:px-[23px] lg:py-[6px] text-[9px] sm:text-[12px] lg:text-[14px] font-navbar text-[#6B4A34] shadow-sm transition-colors duration-150 hover:brightness-90 active:brightness-75"
         >
           {{ item.label }}
         </div>

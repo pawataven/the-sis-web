@@ -38,7 +38,7 @@ const emit = defineEmits(["close"]);
           >
             <div class="relative inline-block pr-14">
               <h2
-                class="text-[6vw] sm:text-[42px] lg:text-[48px] italic font-serif leading-tight"
+                class="text-[6vw] sm:text-[42px] lg:text-[48px] italic font-medium font-serif leading-tight"
                 :style="{ color: data.titleColor ?? '#F17E6A' }"
                 :class="{ 'underline underline-offset-4': data.hasUnderline }"
               >
@@ -52,7 +52,7 @@ const emit = defineEmits(["close"]);
 
             <p
               v-if="data.subtitle"
-              class="text-[16px] font-serif mt-1"
+              class="text-[16px] font-medium italic font-serif mt-1"
               :style="{ color: data.titleColor ?? '#F17E6A' }"
             >
               {{ data.subtitle }}
