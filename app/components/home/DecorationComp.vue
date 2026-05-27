@@ -11,7 +11,7 @@
 
     <img
       src="/home/butterfly.gif"
-      class="absolute -top-[-5%] -z-[3] -left-[-76%] sm:-top-[-9%] sm:-left-[-75%] md:-top-[-11%] md:-left-[-75%] lg:-top-[-10%] lg:-left-[-75%] w-[25vw] sm:w-[30vw] md:w-[30vw] lg:w-[100vw] max-w-[400px] scale-x-[-1] -rotate-16"
+      class="absolute -top-[-5%] z-[4] -left-[-76%] sm:-top-[-9%] sm:-left-[-75%] md:-top-[-11%] md:-left-[-75%] lg:-top-[-10%] lg:-left-[-75%] w-[25vw] sm:w-[30vw] md:w-[30vw] lg:w-[100vw] max-w-[400px] scale-x-[-1] -rotate-16"
       aria-hidden="true"
     />
 
@@ -23,7 +23,7 @@
 
     <img
       src="/home/butterfly.gif"
-      class="absolute -top-[-21%] -left-[9%] sm:-top-[-26%] sm:-left-[11%] md:-top-[-28%] md:-left-[11%] lg:-top-[-47%] lg:left-[5%] w-[25vw] sm:w-[30vw] md:w-[30vw] lg:w-[100vw] max-w-[400px] -rotate-30"
+      class="absolute -top-[-21%] -z-[3] -left-[9%] sm:-top-[-26%] sm:-left-[11%] md:-top-[-28%] md:-left-[11%] lg:-top-[-47%] lg:left-[5%] w-[25vw] sm:w-[30vw] md:w-[30vw] lg:w-[100vw] max-w-[400px] -rotate-30"
       aria-hidden="true"
     />
 
@@ -42,6 +42,12 @@
     <NuxtImg
       src="/home/cloud1.png"
       class="absolute -top-[-100%] -left-[25%] z-[3] sm:-top-[-95%] sm:-left-[30%] md:-top-[-95%] md:-left-[25%] lg:-top-[-83%] lg:-left-[20%] w-[95vw] sm:w-[95vw] md:w-[90vw] lg:w-[80vw] max-w-[1350px] scale-x-[-1]"
+      aria-hidden="true"
+    />
+
+      <img
+      src="/home/butterfly.gif"
+      class="absolute -top-[-95%] -left-[-70%] z-[3] sm:-top-[-96%] sm:-left-[-55%] md:-top-[-95%] md:-left-[-55%] lg:-top-[-100%] lg:-left-[-45%] w-[25vw] sm:w-[20vw] md:w-[20vw] lg:w-[100vw] max-w-[400px] -rotate-16"
       aria-hidden="true"
     />
 

@@ -34,7 +34,7 @@ const cards = [
       <NuxtImg :src="card.image" class="w-full h-auto select-none" />
       
       <div
-        class="absolute left-[44%] top-[34%] flex h-[88px] w-[44%] flex-col items-start justify-start pr-4 min-[390px]:pr-5 sm:left-[43%] sm:w-[42%] md:left-[42%] md:w-[41%] md:pr-8"
+        class="absolute left-[50%] top-[34%] flex h-[88px] w-[38%] flex-col items-start justify-start pr-4 min-[390px]:left-[48%] min-[390px]:w-[36%] min-[390px]:pr-5 sm:left-[46%] sm:w-[38%] md:left-[50%] md:w-[34%] md:pr-8"
       >
         <h2
           class="mb-[clamp(4px,1.4vw,8px)] font-serif text-[clamp(16px,7vw,52px)] leading-none text-[#5A2D0C]"
