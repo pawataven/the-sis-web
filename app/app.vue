@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import BackgroundMusicPlayer from "~/components/BackgroundMusicPlayer.vue";
 import DoorLoader from "~/components/DoorLoader.vue";
 import MobileMenu from "~/components/MobileMenu.vue";
 
@@ -14,6 +15,7 @@ useHead({
 
 <template>
   <MobileMenu />
+  <BackgroundMusicPlayer />
   <div class=" min-h-screen w-full overflow-x-hidden font-sans">
     <DoorLoader @done="loaded = true" />
     <NuxtRouteAnnouncer />

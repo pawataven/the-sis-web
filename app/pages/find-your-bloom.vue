@@ -7,6 +7,7 @@ import {
 import type { AnswerType } from "~/data/findBloomQuiz";
 
 const route = useRoute();
+const { enableQuizBackgroundMusic } = useBackgroundMusic();
 
 const answers = useState<Record<string, string>>(
   "find-bloom-answers",
@@ -167,6 +168,8 @@ async function next() {
   if (!canNext.value) {
     return;
   }
+
+  enableQuizBackgroundMusic();
 
   if (currentIndex.value < findBloomQuiz.length - 1) {
     await goToStep(currentIndex.value + 1);
