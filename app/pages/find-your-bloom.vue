@@ -234,7 +234,7 @@ async function next() {
           </p>
 
           <button
-          class="quiz-button find-bloom-button bg-[#E76A87] text-white font-readmore text-[12px] sm:text-[clamp(13px,1.3vw,18px)] px-4 sm:px-5 py-1 sm:py-1.5 cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
+          class="inline-flex h-[26px] w-[72px] mt-[20px] items-center font-readmore justify-center rounded-full border border-black bg-[#E86686] text-xs leading-none text-white hover:brightness-90 active:brightness-75 transition-colors duration-150 sm:h-[36px] sm:w-[104px] sm:text-[1rem] lg:h-[37px] lg:w-[108px] lg:text-lg"
             type="button"
             :class="quizButtonClass"
             @click="next"
@@ -289,7 +289,7 @@ async function next() {
           </div>
 
           <button
-          class="quiz-button find-bloom-button bg-[#E76A87] text-white font-readmore text-[12px] sm:text-[clamp(13px,1.3vw,18px)] px-4 sm:px-5 py-1 sm:py-1.5 cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
+          class="inline-flex h-[26px] w-[72px] mt-[30px] items-center font-readmore justify-center rounded-full border border-black bg-[#E86686] text-xs leading-none text-white hover:brightness-90 active:brightness-75 transition-colors duration-150 sm:h-[36px] sm:w-[104px] sm:text-[1rem] lg:h-[37px] lg:w-[108px] lg:text-lg"
             type="button"
             :class="quizButtonClass"
             @click="next"
@@ -366,7 +366,7 @@ async function next() {
           </div>
 
           <button
-          class="quiz-button find-bloom-button bg-[#E76A87] text-white font-readmore text-[12px] sm:text-[clamp(13px,1.3vw,18px)] px-4 sm:px-5 py-1 sm:py-1.5 cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
+          class="inline-flex h-[26px] w-[72px] items-center font-readmore justify-center rounded-full border border-black bg-[#E86686] text-xs leading-none text-white hover:brightness-90 active:brightness-75 transition-colors duration-150 sm:h-[36px] sm:w-[104px] sm:text-[1rem] lg:h-[37px] lg:w-[108px] lg:text-lg"
             type="button"
             :class="quizButtonClass"
             :disabled="!canNext"

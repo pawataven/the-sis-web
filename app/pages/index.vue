@@ -38,10 +38,10 @@ import ArchCardsMobile from "~/components/home/ArchCards-Mobile.vue";
         class="relative z-30 mx-auto flex min-h-[280px] max-w-[1200px] flex-col items-center justify-center px-[5%] pt-[2%] pb-[12%] sm:min-h-[340px] sm:pt-[3%] sm:pb-[10%] lg:min-h-[560px] lg:pb-[8%] lg:items-start lg:justify-start lg:px-[8%] lg:pt-16"
       >
         <div
-          class="flex w-full max-w-[340px] flex-col items-center justify-center rounded-[32px] border border-[#472809] bg-white px-5 py-4 sm:max-w-[460px] sm:rounded-[38px] sm:px-8 sm:py-5 lg:max-w-[464px] lg:rounded-[43px] lg:px-10 lg:py-6 lg:ml-[4%] xl:ml-[-10%]"
+          class="flex w-full max-w-[260px] flex-col items-center justify-center rounded-[24px] border border-[#472809] bg-white px-3 py-4 sm:max-w-[460px] sm:rounded-[38px] sm:px-8 sm:py-5 lg:max-w-[464px] lg:rounded-[43px] lg:px-10 lg:py-6 lg:ml-[4%] xl:ml-[-10%]"
         >
           <p
-            class="text-[#472809] leading-[1.55] text-center text-[clamp(14px,1.15vw,24px)] sm:leading-[1.65] sm:text-[clamp(16px,1.35vw,1.35rem)] lg:leading-[1.7] lg:text-[clamp(0.9rem,1.5vw,1.5rem)]"
+            class="text-[#472809] leading-[1.55] text-center text-[clamp(12px,1.15vw,22px)] sm:leading-[1.65] sm:text-[clamp(16px,1.35vw,1.35rem)] lg:leading-[1.7] lg:text-[clamp(0.9rem,1.5vw,1.5rem)]"
           >
             {{ FOOTER_CONTENT.description[0] }}
             <span class="font-bold">{{ FOOTER_CONTENT.description[1] }}</span>
@@ -55,7 +55,7 @@ import ArchCardsMobile from "~/components/home/ArchCards-Mobile.vue";
           <div class="mt-5 flex justify-center sm:mt-6">
             <NuxtLink
               :to="FOOTER_CONTENT.buttonLink"
-              class="inline-flex h-[34px] w-[96px] items-center font-readmore justify-center rounded-full border border-black bg-[#E86686] text-base leading-none text-white transition-colors duration-200 hover:bg-[#df4b6d] sm:h-[36px] sm:w-[104px] sm:text-[1rem] lg:h-[37px] lg:w-[108px] lg:text-lg"
+              class="inline-flex h-[26px] w-[72px] items-center font-readmore justify-center rounded-full border border-black bg-[#E86686] text-xs leading-none text-white hover:brightness-90 active:brightness-75 transition-colors duration-150 sm:h-[36px] sm:w-[104px] sm:text-[1rem] lg:h-[37px] lg:w-[108px] lg:text-lg"
             >
               {{ FOOTER_CONTENT.buttonText }}
             </NuxtLink>
