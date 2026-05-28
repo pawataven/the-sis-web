@@ -63,8 +63,8 @@ function getTitleStyle(layout: FlowerCardLayout) {
 
 function getBodyTextStyle() {
   return {
-    fontSize: "clamp(12px, 1.85vw, 16px)",
-    lineHeight: "1.45",
+    fontSize: "clamp(10px, 1.85vw, 16px)",
+    lineHeight: "1.4",
   }
 }
 

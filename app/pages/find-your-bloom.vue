@@ -19,7 +19,7 @@ const finalResultType = useState<AnswerType | null>(
 );
 
 const quizButtonClass =
-  "find-bloom-button bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150";
+  "flower-card-mobile-button bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150";
 
 function parseStepIndex(step: unknown) {
   const rawStep = Array.isArray(step) ? step[0] : step;
@@ -112,6 +112,10 @@ function selectChoice(choiceId: string) {
     ...answers.value,
     [step.id]: choiceId,
   };
+}
+
+function formatTextWithBreaks(text: string) {
+  return text.replace(/<br\s*\/?>/gi, "\n");
 }
 
 function createEmptyTypeCount(): Record<AnswerType, number> {
@@ -224,12 +228,13 @@ async function next() {
           <p
             v-for="text in currentStep.content"
             :key="text"
-            class="text-[#472809] font-readmore text-[clamp(16px,2vw,28px)] mb-[1.5vw]"
+            class="text-[#472809] font-readmore text-[clamp(16px,2vw,28px)] whitespace-pre-line mb-[1.5vw]"
           >
-            {{ text }}
+            {{ formatTextWithBreaks(text) }}
           </p>
 
           <button
+          class="quiz-button find-bloom-button bg-[#E76A87] text-white font-readmore text-[12px] sm:text-[clamp(13px,1.3vw,18px)] px-4 sm:px-5 py-1 sm:py-1.5 cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
             type="button"
             :class="quizButtonClass"
             @click="next"
@@ -255,9 +260,9 @@ async function next() {
             <p
               v-for="text in currentStep.content"
               :key="text"
-              class="text-[#472809] font-serif font-medium text-[clamp(16px,1.6vw,24px)] leading-relaxed"
+              class="text-[#472809] font-serif font-medium text-[clamp(16px,1.6vw,24px)] leading-relaxed whitespace-pre-line"
             >
-              {{ text }}
+              {{ formatTextWithBreaks(text) }}
             </p>
           </div>
 
@@ -265,9 +270,9 @@ async function next() {
             <p
               v-for="text in currentStep.contenttwo"
               :key="text"
-              class="text-[#472809] mt-[1vw] font-serif font-medium text-[clamp(16px,1.6vw,24px)] leading-relaxed"
+              class="text-[#472809] mt-[1vw] font-serif font-medium text-[clamp(16px,1.6vw,24px)] leading-relaxed whitespace-pre-line"
             >
-              {{ text }}
+              {{ formatTextWithBreaks(text) }}
             </p>
           </div>
 
@@ -284,6 +289,7 @@ async function next() {
           </div>
 
           <button
+          class="quiz-button find-bloom-button bg-[#E76A87] text-white font-readmore text-[12px] sm:text-[clamp(13px,1.3vw,18px)] px-4 sm:px-5 py-1 sm:py-1.5 cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
             type="button"
             :class="quizButtonClass"
             @click="next"
@@ -296,7 +302,7 @@ async function next() {
       <!-- Question -->
       <template v-else-if="currentStep?.type === 'question'">
         <div
-          class="flex-1 flex flex-col items-center justify-center text-center px-[5vw] max-w-[900px]"
+          class="flex-1 flex flex-col items-center justify-center text-center px-[5vw] max-w-[1040px]"
         >
           <div
             v-if="currentStep.content?.length"
@@ -305,9 +311,9 @@ async function next() {
             <p
               v-for="text in currentStep.content"
               :key="text"
-              class="text-[#472809] font-serif font-medium text-[clamp(15px,1.4vw,24px)] leading-relaxed "
+              class="text-[#472809] font-serif font-medium text-[clamp(15px,1.4vw,24px)] leading-relaxed whitespace-pre-line"
             >
-              {{ text }}
+              {{ formatTextWithBreaks(text) }}
             </p>
           </div>
 
@@ -338,16 +344,16 @@ async function next() {
           </div>
 
           <h2
-            class="text-[#472809] font-serif font-medium text-[clamp(16px,1.5vw,24px)] leading-relaxed mb-[73px]"
+            class="w-full text-[#472809] font-serif font-medium text-[clamp(16px,1.5vw,24px)] leading-relaxed whitespace-pre-line mb-[73px]"
           >
-            {{ currentStep.question }}
+            {{ formatTextWithBreaks(currentStep.question) }}
           </h2>
           <div class="w-full max-w-[600px] flex flex-col gap-3 mb-[73px]">
             <button
               v-for="choice in currentStep.choices"
               :key="choice.id"
               type="button"
-              class="w-full bg-white text-[#472809] px-6 py-2 rounded-full border border-[#472809] cursor-pointer font-serif text-[clamp(14px,1.2vw,18px)] hover:scale-[1.02] transition-transform"
+              class="w-full bg-white text-[#472809] px-5 py-1.5 rounded-full border border-[#472809] cursor-pointer font-serif text-[clamp(13px,1.05vw,16px)] hover:scale-[1.02] transition-transform"
               :style="{
                 backgroundColor:
                   selectedChoiceId === choice.id ? '#E86686' : '#FFFFFF',
@@ -360,6 +366,7 @@ async function next() {
           </div>
 
           <button
+          class="quiz-button find-bloom-button bg-[#E76A87] text-white font-readmore text-[12px] sm:text-[clamp(13px,1.3vw,18px)] px-4 sm:px-5 py-1 sm:py-1.5 cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
             type="button"
             :class="quizButtonClass"
             :disabled="!canNext"
