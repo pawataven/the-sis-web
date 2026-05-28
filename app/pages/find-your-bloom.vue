@@ -257,7 +257,7 @@ async function next() {
       <!-- Page Story -->
       <template v-else-if="currentStep?.type === 'story'">
         <div
-          class="flex-1 flex flex-col items-center justify-center text-center pt-[2vw] px-[5vw] max-w-[900px]"
+          class="flex-1 flex flex-col items-center justify-center text-center px-[1vw] max-w-[1040px]"
         >
           <div class="mb-[2vw]">
             <p
@@ -305,7 +305,7 @@ async function next() {
       <!-- Question -->
       <template v-else-if="currentStep?.type === 'question'">
         <div
-          class="flex-1 flex flex-col items-center justify-center text-center px-[5vw] max-w-[1040px]"
+          class="flex-1 flex flex-col items-center justify-center text-center px-[1vw] max-w-[1040px]"
         >
           <div
             v-if="currentStep.content?.length"
