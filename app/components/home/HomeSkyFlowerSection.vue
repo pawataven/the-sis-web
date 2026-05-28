@@ -1,3 +1,31 @@
+<script setup lang="ts">
+import { onMounted, ref } from "vue"
+
+const flowerGifSrc = "/home/flowergif.gif"
+const flowerFallbackSrc = "/home/flowergif.png"
+const flowerImageSrc = ref(flowerFallbackSrc)
+
+function shouldUseFlowerGif() {
+  const userAgent = navigator.userAgent
+  const platform = navigator.platform
+  const isIOS =
+    /iPad|iPhone|iPod/i.test(userAgent) ||
+    (platform === "MacIntel" && navigator.maxTouchPoints > 1)
+  const isKnownGifBrowser =
+    /Chrome|Chromium|Firefox|Edg|OPR|Opera|SamsungBrowser|Android/i.test(
+      userAgent,
+    )
+
+  return !isIOS && isKnownGifBrowser
+}
+
+onMounted(() => {
+  if (shouldUseFlowerGif()) {
+    flowerImageSrc.value = flowerGifSrc
+  }
+})
+</script>
+
 <template>
   <div class="relative w-full max-w-[1440px] overflow-x-clip">
     <div
@@ -21,10 +49,17 @@
               class="absolute left-1/2 top-[66%] z-10 w-[88%] h-[50%] -translate-x-1/2 -translate-y-1/2 overflow-hidden"
             >
               <img
-                src="/home/flowergif.png"
+                :src="flowerImageSrc"
                 alt="Animated flower"
                 class="h-full w-full object-contain object-center"
               >
+              <noscript>
+                <img
+                  src="/home/flowergif.png"
+                  alt="Animated flower"
+                  class="h-full w-full object-contain object-center"
+                >
+              </noscript>
             </div>
 
             <div

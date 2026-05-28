@@ -38,7 +38,7 @@ async function syncPlayback() {
     audio.load();
   }
 
-  audio.volume = 0.05;
+  audio.volume = 0.1;
   try {
     await audio.play();
     removeUnlockListeners?.();

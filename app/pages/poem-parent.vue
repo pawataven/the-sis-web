@@ -70,7 +70,7 @@ function closePoem() {
       <div class="relative mb-[6vw]">
         <img src="/poetry/family 1.png" loading="lazy" alt="ภาพประกอบบทกวีเพลงยาวถวายโอวาท ของสุนทรภู่ สื่อถึงความกตัญญูต่อบิดามารดา และคุณค่าของครอบครัวในวรรณคดีไทย" class="w-full h-auto pointer-events-none" />
         <!-- ชื่อ+ผู้แต่ง: ปรับ pl(ซ้าย) pr(ขวา) -->
-        <div class="absolute inset-0 flex items-center pl-[30%] pr-[12%] -translate-y-[10%]">
+        <div class="absolute inset-0 flex items-center pl-[10%] pr-[12%] -translate-x-[-4%] -translate-y-[15%]">
           <div class="flex flex-col items-end text-right gap-[0.6em] w-full">
             <h3 class="font-serif font-medium text-[#472809]" style="font-size: clamp(14px, 2.8vw, 40px)">เพลงยาวถวายโอวาท</h3>
             <p class="text-[#472809] font-light font-kanit" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
@@ -78,7 +78,7 @@ function closePoem() {
         </div>
         <!-- ปุ่ม: bottom=ขึ้นลง, right=ซ้ายขวา -->
         <button @click="poetryList[0] && openPoem(poetryList[0])"
-          class="absolute bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
+          class="absolute bg-[#E76A87] -translate-y-[-30%] -translate-x-[-40%] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
           style="bottom: 33%; right: 12%; font-size: clamp(6px, 2vw, 16px); padding: clamp(2px,0.6vw,8px) clamp(6px,1.8vw,26px)">
           Read more
         </button>
@@ -88,7 +88,7 @@ function closePoem() {
       <div class="relative mb-[6vw]">
         <img src="/poetry/fam 2.png" loading="lazy" alt="ภาพประกอบบทกวีสวัสดิรักษา ของสุนทรภู่ สื่อถึงการอบรมสั่งสอนของผู้ใหญ่ และมารยาทอันดีงามในครอบครัว" class="w-full h-auto pointer-events-none" />
         <!-- ชื่อ+ผู้แต่ง: ปรับ pr(ขวา) pl(ซ้าย) -->
-        <div class="absolute inset-0 flex items-center pr-[42%] pl-[10%] -translate-y-[10%]">
+        <div class="absolute inset-0 flex items-center pr-[42%] pl-[10%] -translate-y-[10%] -translate-x-[4%]">
           <div class="flex flex-col items-start text-left gap-[0.6em] w-full">
             <h3 class="font-serif font-medium text-[#472809]" style="font-size: clamp(14px, 2.8vw, 40px)">สวัสดิรักษา</h3>
             <p class="text-[#472809] font-light font-kanit" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
@@ -96,7 +96,7 @@ function closePoem() {
         </div>
         <!-- ปุ่ม: bottom=ขึ้นลง, left=ซ้ายขวา -->
         <button @click="poetryList[1] && openPoem(poetryList[1])"
-          class="absolute bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
+          class="absolute bg-[#E76A87] -translate-y-[-100%] -translate-x-[33%] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
           style="bottom: 33%; left: 10%; font-size: clamp(6px, 2vw, 16px); padding: clamp(2px,0.6vw,8px) clamp(6px,1.8vw,26px)">
           Read more
         </button>
@@ -106,7 +106,7 @@ function closePoem() {
       <div class="relative mb-[6vw]">
         <img src="/poetry/fam 3.png" loading="lazy" alt="ภาพประกอบบทกวีขุนช้างขุนแผน ตอนที่สื่อถึงความรักและความผูกพันในครอบครัว จากวรรณคดีไทยของสุนทรภู่" class="w-full h-auto pointer-events-none" />
         <!-- ชื่อ+ผู้แต่ง: ปรับ pl(ซ้าย) pr(ขวา) -->
-        <div class="absolute inset-0 flex items-center pl-[42%] pr-[14%] -translate-y-[10%]">
+        <div class="absolute inset-0 flex items-center pl-[42%] pr-[14%] -translate-y-[10%] -translate-x-[-4%]">
           <div class="flex flex-col items-end text-right gap-[0.6em] w-full">
             <h3 class="font-serif font-medium text-[#472809]" style="font-size: clamp(14px, 2.8vw, 40px)">ขุนช้างขุนแผน</h3>
             <p class="text-[#472809] font-light font-kanit" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
@@ -114,7 +114,7 @@ function closePoem() {
         </div>
         <!-- ปุ่ม: bottom=ขึ้นลง, right=ซ้ายขวา -->
         <button @click="poetryList[2] && openPoem(poetryList[2])"
-          class="absolute bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
+          class="absolute bg-[#E76A87] text-white font-readmore cursor-pointer -translate-y-[-135%] -translate-x-[-35%] border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
           style="bottom: 33%; right: 14%; font-size: clamp(6px, 2vw, 16px); padding: clamp(2px,0.6vw,8px) clamp(6px,1.8vw,26px)">
           Read more
         </button>
@@ -124,7 +124,7 @@ function closePoem() {
       <div class="relative mb-[6vw]">
         <img src="/poetry/fam 4.png" loading="lazy" alt="ภาพประกอบบทกวีสุภาษิตสอนหญิง ของสุนทรภู่ สื่อถึงคำสอนและมารยาทของสตรีในครอบครัวไทย" class="w-full h-auto pointer-events-none" />
         <!-- ชื่อ+ผู้แต่ง: ปรับ pr(ขวา) pl(ซ้าย) -->
-        <div class="absolute inset-0 flex items-center pr-[42%] pl-[10%] -translate-y-[10%]">
+        <div class="absolute inset-0 flex items-center pr-[42%] pl-[10%] -translate-y-[10%] -translate-x-[1%]">
           <div class="flex flex-col items-start text-left gap-[0.6em] w-full">
             <h3 class="font-serif font-medium text-[#472809]" style="font-size: clamp(14px, 2.8vw, 40px)">สุภาษิตสอนหญิง</h3>
             <p class="text-[#472809] font-light font-kanit" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
@@ -132,7 +132,7 @@ function closePoem() {
         </div>
         <!-- ปุ่ม: bottom=ขึ้นลง, left=ซ้ายขวา -->
         <button @click="poetryList[3] && openPoem(poetryList[3])"
-          class="absolute bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
+          class="absolute bg-[#E76A87] text-white font-readmore -translate-y-[-100%] -translate-x-[10%] cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
           style="bottom: 30%; left: 10%; font-size: clamp(6px, 2vw, 16px); padding: clamp(2px,0.6vw,8px) clamp(6px,1.8vw,26px)">
           Read more
         </button>
@@ -142,7 +142,7 @@ function closePoem() {
       <div class="relative mb-[6vw]">
         <img src="/poetry/fam 5.png" loading="lazy" alt="ภาพประกอบบทกวีพระอภัยมณี ตอนฤาษีช่วยสุดสาคร ของสุนทรภู่ สื่อถึงความรักและความผูกพันระหว่างบิดาและบุตร" class="w-full h-auto pointer-events-none" />
         <!-- ชื่อ+ผู้แต่ง: ปรับ pl(ซ้าย) pr(ขวา) -->
-        <div class="absolute inset-0 flex items-center pl-[42%] pr-[20%] -translate-y-[10%]">
+        <div class="absolute inset-0 flex items-center pl-[42%] pr-[20%] -translate-y-[10%] translate-x-[11%]">
           <div class="flex flex-col items-end text-right gap-[0.6em] w-full">
             <h3 class="font-serif font-medium text-[#472809]" style="font-size: clamp(14px, 2.8vw, 40px)">พระอภัยมณี <br>ตอนฤาษีช่วยสุดสาคร</h3>
             <p class="text-[#472809] font-light font-kanit" style="font-size: clamp(10px, 1.5vw, 24px)">ผู้แต่ง: สุนทรภู่</p>
@@ -150,7 +150,7 @@ function closePoem() {
         </div>
         <!-- ปุ่ม: bottom=ขึ้นลง, right=ซ้ายขวา -->
         <button @click="poetryList[4] && openPoem(poetryList[4])"
-          class="absolute bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
+          class="absolute bg-[#E76A87] translate-x-[90%] translate-y-[50%] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
           style="bottom: 25%; right: 20%; font-size: clamp(6px, 2vw, 16px); padding: clamp(2px,0.6vw,8px) clamp(6px,1.8vw,26px)">
           Read more
         </button>
