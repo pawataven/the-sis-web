@@ -21,7 +21,7 @@
               class="absolute left-1/2 top-[66%] z-10 w-[88%] h-[50%] -translate-x-1/2 -translate-y-1/2 overflow-hidden"
             >
               <img
-                src="/home/flowergif.gif"
+                src="/home/flowergif.png"
                 alt="Animated flower"
                 class="h-full w-full object-contain object-center"
               >
