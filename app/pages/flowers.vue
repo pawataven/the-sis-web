@@ -162,7 +162,7 @@ function openCard(card: FlowerCard) {
                 class="flower-card-mobile-button bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
                 @click="openCard(card)"
               >
-                Submit
+                Read more
               </button>
             </div>
           </div>
@@ -204,7 +204,7 @@ function openCard(card: FlowerCard) {
                   class="flower-card-button bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150"
                   @click="openCard(card)"
                 >
-                  Submit
+                  Read more
                 </button>
               </div>
             </div>
