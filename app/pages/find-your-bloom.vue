@@ -223,20 +223,19 @@ async function next() {
 
   finalResultType.value = resultType.value;
 
+    await goToStep(currentIndex.value + 1);
+    return;
+  }
+
+  finalResultType.value = resultType.value;
+
   await navigateTo("/quiz-result");
 }
 </script>
 
 <template>
   <div
-    class="min-h-screen flex flex-col"
-    style="
-      background-image: url('/Learnmore/painted-relief-texture (1).jpg');
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    "
+    class="min-h-screen flex flex-col page-bg-fixed"
   >
     <!-- Navbar -->
     <div
@@ -516,6 +515,22 @@ async function next() {
 </template>
 
 <style scoped>
+.page-bg-fixed {
+  position: relative;
+}
+
+.page-bg-fixed::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/Learnmore/painted-relief-texture (1).jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
 .find-bloom-button {
   min-width: clamp(74px, 30cqw, 112px);
   min-height: clamp(28px, 10cqw, 40px);

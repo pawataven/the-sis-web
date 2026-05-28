@@ -140,14 +140,7 @@ async function playAgain() {
 
 <template>
   <div
-    class="flex flex-col min-h-screen"
-    style="
-      background-image: url(&quot;/Learnmore/painted-relief-texture (1).jpg&quot;);
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    "
+    class="flex flex-col min-h-screen page-bg-fixed"
   >
     <!-- Navbar -->
     <div
@@ -243,3 +236,21 @@ async function playAgain() {
     </div>
   </div>
 </template>
+
+<style scoped>
+.page-bg-fixed {
+  position: relative;
+}
+
+.page-bg-fixed::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/Learnmore/painted-relief-texture (1).jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+</style>
