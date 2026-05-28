@@ -240,6 +240,10 @@ async function playAgain() {
 <style scoped>
 .page-bg-fixed {
   position: relative;
+  background-image: url('/Learnmore/painted-relief-texture (1).jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 .page-bg-fixed::before {
