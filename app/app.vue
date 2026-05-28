@@ -6,6 +6,13 @@ import MobileMenu from "~/components/MobileMenu.vue";
 
 const loaded = ref(false);
 
+// Safety net: reset body scroll lock on every route change
+// so a stale overflow:hidden from modals never persists after navigation
+const router = useRouter();
+router.afterEach(() => {
+  document.body.style.overflow = "";
+});
+
 useHead({
   title: "Message in Flowers",
   htmlAttrs: {

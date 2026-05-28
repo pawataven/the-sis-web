@@ -21,6 +21,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
+  document.body.style.overflow = ""
   if (previousScrollRestoration === null) return
   window.history.scrollRestoration = previousScrollRestoration
 })

@@ -2,7 +2,7 @@
 import PoetryModal from "@/components/PoetryModal.vue";
 import { poetryList } from "@/data/poetryData";
 import type { Poetry } from "@/data/poetryData";
-import { ref } from "vue";
+import { ref, onBeforeUnmount } from "vue";
 
 
 
@@ -20,6 +20,11 @@ function closePoem() {
   isPoetryModalOpen.value = false;
   document.body.style.overflow = "";
 }
+
+onBeforeUnmount(() => {
+  document.body.style.overflow = "";
+  isPoetryModalOpen.value = false;
+});
 </script>
 
 <template>

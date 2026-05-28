@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const visible = ref(false);
 const open = ref(false);
@@ -16,6 +16,10 @@ onMounted(() => {
   sessionStorage.setItem("hasVisited", "true");
   visible.value = true;
   document.body.style.overflow = "hidden";
+});
+
+onBeforeUnmount(() => {
+  document.body.style.overflow = "";
 });
 
 function handleClick() {
