@@ -1,9 +1,19 @@
+export interface FlowerPopupImageStyle {
+  width?: string;
+  maxWidth?: string;
+  height?: string;
+  top?: string;
+  left?: string;
+  scale?: number;
+}
+
 export interface Flower {
   id: string;
   name: string;
   titleEn: string;
   titleTh: string;
   image: string;
+  popupImageStyle?: FlowerPopupImageStyle;
   description: string;
   meaning: string;
   origin: string;
@@ -156,6 +166,10 @@ export const flowerList: Flower[] = [
     titleEn: "azalea flower",
     titleTh: "กุหลาบพันปี",
     image: "/flowers/popupImg/Azalea Flower.png",
+    popupImageStyle: {
+      width: "200%",
+      maxWidth: "530px",
+    },
     description: "ความเปราะบาง / ความพอประมาณ <br>(Fragility/ Temperance)",
     meaning: "ความเปราะบาง /  ความพอประมาณ",
     origin:

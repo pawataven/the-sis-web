@@ -1,4 +1,4 @@
-import type { AnswerType } from "~/data/findBloomQuiz"
+import type { AnswerType, QuizLanguage } from "~/data/findBloomQuiz"
 
 export interface QuizResult {
   id: AnswerType
@@ -67,3 +67,47 @@ export const quizResults: QuizResult[] = [
     // poemTitle: "พระอภัยมณี ตอนสุดสาครเข้าเมืองการะเวก",
   },
 ]
+
+export const quizResultsEn: QuizResult[] = [
+  {
+    id: "love",
+    description:
+      "Your charm is not something you force. It appears naturally through a rare sense of passion. You see the world through love and notice beauty in tiny details that others pass by. You represent the Pitsamai Bouquet, a spirit of romance and affection.",
+    tags: ["Charming", "Passionate", "Devoted"],
+    flowers: ["Apple Blossom", "Rose", "Iris", "Ivy"],
+    poemPath: "/poem-love",
+    flowerImage: "/Result/love-bq.png",
+  },
+  {
+    id: "sadness",
+    description:
+      "You feel things more deeply than most people, not because you are different, but because you choose to look closely and understand sincerely. Your sensitivity is not a weakness. It is a gift that helps you sense feelings others may overlook. You represent the Dewdrop Bouquet, delicate and responsive emotion.",
+    tags: ["Sensitive", "Empathetic", "Deep"],
+    flowers: ["Hyacinth", "Lily of the Valley", "Cyclamen", "Forget-Me-Not"],
+    poemPath: "/poem-sadness",
+    flowerImage: "/Result/sad-bq.png",
+  },
+  {
+    id: "family",
+    description:
+      "You often think ahead for others, not out of fear, but because you care enough to keep people around you from trouble. You choose what benefits the group even when it costs your own comfort, and that makes you someone people can rely on. You represent the Warmth Bouquet, a symbol of comfort and trust.",
+    tags: ["Warm", "Selfless", "Reliable"],
+    flowers: ["Sunflower", "Daisy", "Jasmine", "Carnation"],
+    poemPath: "/poem-parent",
+    flowerImage: "/Result/fam-bq.png",
+  },
+  {
+    id: "warning",
+    description:
+      "You see things as they are, and that helps you decide quickly and confidently. Your thoughts come from what can be observed and proven, not from passing impulse. You represent the Flame Blossom Bouquet, someone who knows what must be done and acts with reason.",
+    tags: ["Leader", "Decisive", "Independent"],
+    flowers: ["Marigold", "Tansy", "Oleander", "Black Dahlia"],
+    poemPath: "/poem-warning",
+    flowerImage: "/Result/warn-bq.png",
+  },
+]
+
+export const quizResultsByLanguage: Record<QuizLanguage, QuizResult[]> = {
+  th: quizResults,
+  en: quizResultsEn,
+}

@@ -73,7 +73,7 @@ onMounted(() => {
               />
 
               <p
-                class="mt-[3%] text-[clamp(0.45rem,1.6vw,1.25rem)] leading-normal font-medium"
+                class="mt-[3%] text-[clamp(0.4rem,1.6vw,1.25rem)] leading-normal font-medium"
               >
                 ปลดล็อกความหมายที่ซ่อนเร้นในบทกวี
                 <br />

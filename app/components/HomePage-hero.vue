@@ -21,7 +21,7 @@ import NavigationBar from "@/layouts/NavigationBar.vue";
       >
         <NuxtImg
           src="/home/บทกลอนซ่อนบุษบา.png"
-          class="min-[360px]:max-w-[161px] sm:max-w-[361px] md:max-w-[361px] lg:max-w-[461px] xl:max-w-[631px] h-auto select-none"
+          class="min-[20px]:max-w-[161px] sm:max-w-[361px] md:max-w-[361px] lg:max-w-[461px] xl:max-w-[631px] h-auto select-none"
           format="webp"
         />
       </div>

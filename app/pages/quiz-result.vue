@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import NavigationBar from "~/layouts/NavigationBar.vue";
-import { quizResults } from "@/data/quizResultData";
-import { answerTypes, findBloomQuiz } from "~/data/findBloomQuiz";
-import type { AnswerType } from "~/data/findBloomQuiz";
+import { quizResultsByLanguage } from "@/data/quizResultData";
+import { answerTypes, findBloomQuizByLanguage } from "~/data/findBloomQuiz";
+import type { AnswerType, QuizLanguage } from "~/data/findBloomQuiz";
 
 const answers = useState<Record<string, string>>(
   "find-bloom-answers",
@@ -14,9 +14,24 @@ const finalResultType = useState<AnswerType | null>(
   () => null,
 );
 
-const resultByType = Object.fromEntries(
-  quizResults.map((result) => [result.id, result]),
-) as Record<AnswerType, (typeof quizResults)[number]>;
+const quizLanguage = useState<QuizLanguage>(
+  "find-bloom-language",
+  () => "th",
+);
+
+const activeQuiz = computed(() => {
+  return findBloomQuizByLanguage[quizLanguage.value];
+});
+
+const activeQuizResults = computed(() => {
+  return quizResultsByLanguage[quizLanguage.value];
+});
+
+const resultByType = computed(() => {
+  return Object.fromEntries(
+    activeQuizResults.value.map((result) => [result.id, result]),
+  ) as Record<AnswerType, (typeof activeQuizResults.value)[number]>;
+});
 
 if (!finalResultType.value) {
   await navigateTo({
@@ -30,7 +45,23 @@ const result = computed(() => {
     return null;
   }
 
-  return resultByType[finalResultType.value] ?? null;
+  return resultByType.value[finalResultType.value] ?? null;
+});
+
+const resultPageText = computed(() => {
+  if (quizLanguage.value === "en") {
+    return {
+      playAgain: "Play again",
+      missingResult: "No quiz result found",
+      restart: "Back to quiz",
+    };
+  }
+
+  return {
+    playAgain: "เล่นใหม่",
+    missingResult: "ไม่พบผลลัพธ์ของแบบทดสอบ",
+    restart: "กลับไปทำแบบทดสอบ",
+  };
 });
 
 function createEmptyTypeCount(): Record<AnswerType, number> {
@@ -45,7 +76,7 @@ function createEmptyTypeCount(): Record<AnswerType, number> {
 const answerTypeCount = computed(() => {
   const count = createEmptyTypeCount();
 
-  for (const step of findBloomQuiz) {
+  for (const step of activeQuiz.value) {
     if (step.type !== "question") {
       continue;
     }
@@ -154,7 +185,7 @@ async function playAgain() {
         <!-- Description -->
         <div class="max-w-[90vw] sm:max-w-[700px] text-center mt-[40px] sm:mt-[60px] md:mt-[83px] px-2 sm:px-0">
           <p
-            class="text-[#2c1a0e] font-serif leading-[1.8] sm:leading-[2] text-[13px] sm:text-[clamp(13px,1.1vw,22px)]"
+            class="text-[#2c1a0e] font-kanit leading-[1.8] sm:leading-[2] text-[13px] sm:text-[clamp(13px,1.1vw,22px)]"
           >
             {{ result.description }}
           </p>
@@ -180,7 +211,7 @@ async function playAgain() {
           class="inline-flex h-[26px] w-[72px] mt-[71px] cursor-pointer items-center font-readmore justify-center rounded-full border border-black bg-[#E86686] text-xs leading-none text-white hover:brightness-90 active:brightness-75 transition-colors duration-150 sm:h-[36px] sm:w-[104px] sm:text-[1rem] lg:h-[37px] lg:w-[108px] lg:text-lg"
           @click="playAgain"
         >
-          เล่นใหม่
+          {{ resultPageText.playAgain }}
         </button>
       </template>
 
@@ -189,7 +220,7 @@ async function playAgain() {
           <p
             class="text-[#2c1a0e] font-serif text-[clamp(16px,1.5vw,24px)] mb-4"
           >
-            ไม่พบผลลัพธ์ของแบบทดสอบ
+            {{ resultPageText.missingResult }}
           </p>
 
           <button
@@ -197,7 +228,7 @@ async function playAgain() {
             class="inline-flex h-[26px] w-[72px] items-center font-readmore justify-center rounded-full border border-black bg-[#E86686] text-xs leading-none text-white hover:brightness-90 active:brightness-75 transition-colors duration-150 sm:h-[36px] sm:w-[104px] sm:text-[1rem] lg:h-[37px] lg:w-[108px] lg:text-lg"
             @click="playAgain"
           >
-            กลับไปทำแบบทดสอบ
+            {{ resultPageText.restart }}
           </button>
         </div>
       </template>

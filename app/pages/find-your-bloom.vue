@@ -2,12 +2,16 @@
 import NavigationBar from "~/layouts/NavigationBar.vue";
 import {
   answerTypes,
-  findBloomQuiz,
+  findBloomQuizByLanguage,
 } from "~/data/findBloomQuiz";
-import type { AnswerType } from "~/data/findBloomQuiz";
+import type { AnswerType, QuizLanguage } from "~/data/findBloomQuiz";
 
 const route = useRoute();
-const { enableQuizBackgroundMusic } = useBackgroundMusic();
+const {
+  isEnabled: isBackgroundMusicEnabled,
+  enableQuizBackgroundMusic,
+  disableBackgroundMusic,
+} = useBackgroundMusic();
 
 const answers = useState<Record<string, string>>(
   "find-bloom-answers",
@@ -18,6 +22,30 @@ const finalResultType = useState<AnswerType | null>(
   "find-bloom-result-type",
   () => null
 );
+
+const quizLanguage = useState<QuizLanguage>(
+  "find-bloom-language",
+  () => "th"
+);
+
+const quizLanguageOptions: { value: QuizLanguage; label: string }[] = [
+  { value: "th", label: "ไทย" },
+  { value: "en", label: "EN" },
+];
+
+const activeQuiz = computed(() => {
+  return findBloomQuizByLanguage[quizLanguage.value];
+});
+
+const musicToggleLabel = computed(() => {
+  if (quizLanguage.value === "en") {
+    return isBackgroundMusicEnabled.value
+      ? "Turn music off"
+      : "Turn music on";
+  }
+
+  return isBackgroundMusicEnabled.value ? "ปิดเพลง" : "เปิดเพลง";
+});
 
 const quizButtonClass =
   "flower-card-mobile-button bg-[#E76A87] text-white font-readmore cursor-pointer border border-black rounded-full shadow-md hover:brightness-90 active:brightness-75 transition-colors duration-150";
@@ -34,7 +62,7 @@ function parseStepIndex(step: unknown) {
   if (
     !Number.isInteger(parsedStep) ||
     parsedStep < 0 ||
-    parsedStep >= findBloomQuiz.length
+    parsedStep >= activeQuiz.value.length
   ) {
     return 0;
   }
@@ -47,12 +75,12 @@ const currentIndex = computed(() => {
 });
 
 const currentStep = computed(() => {
-  return findBloomQuiz[currentIndex.value];
+  return activeQuiz.value[currentIndex.value];
 });
 
 async function goToStep(index: number) {
   const nextIndex =
-    index >= 0 && index < findBloomQuiz.length ? index : 0;
+    index >= 0 && index < activeQuiz.value.length ? index : 0;
 
   await navigateTo({
     path: "/find-your-bloom",
@@ -77,6 +105,25 @@ watchEffect(() => {
     );
   }
 });
+
+function setQuizLanguage(language: QuizLanguage) {
+  if (quizLanguage.value === language) {
+    return;
+  }
+
+  quizLanguage.value = language;
+  answers.value = {};
+  finalResultType.value = null;
+}
+
+function toggleBackgroundMusic() {
+  if (isBackgroundMusicEnabled.value) {
+    disableBackgroundMusic();
+    return;
+  }
+
+  enableQuizBackgroundMusic();
+}
 
 const selectedChoiceId = computed(() => {
   const step = currentStep.value;
@@ -131,7 +178,7 @@ function createEmptyTypeCount(): Record<AnswerType, number> {
 const typeCount = computed(() => {
   const count = createEmptyTypeCount();
 
-  for (const step of findBloomQuiz) {
+  for (const step of activeQuiz.value) {
     if (step.type !== "question") {
       continue;
     }
@@ -169,9 +216,7 @@ async function next() {
     return;
   }
 
-  enableQuizBackgroundMusic();
-
-  if (currentIndex.value < findBloomQuiz.length - 1) {
+  if (currentIndex.value < activeQuiz.value.length - 1) {
     await goToStep(currentIndex.value + 1);
     return;
   }
@@ -231,10 +276,89 @@ async function next() {
           <p
             v-for="text in currentStep.content"
             :key="text"
-            class="text-[#472809] font-readmore text-[clamp(16px,2vw,28px)] whitespace-pre-line mb-[1.5vw]"
+            class="text-[#472809] font-kanit text-[clamp(16px,2vw,28px)] whitespace-pre-line mb-[1.5vw]"
           >
             {{ formatTextWithBreaks(text) }}
           </p>
+
+          <div class="mt-[18px] flex justify-center">
+            <div
+              class="inline-flex h-[30px] items-center gap-0.5 rounded-full border border-[#B99781] bg-white/70 pl-1 pr-0 shadow-none backdrop-blur-sm sm:h-[42px] sm:gap-2 sm:bg-white/80 sm:pl-2 sm:shadow-sm"
+              aria-label="Choose quiz language"
+            >
+              <span
+                class="flex h-[18px] w-[18px] items-center justify-center rounded-full text-[#6B4A34] sm:h-[28px] sm:w-[28px]"
+                aria-hidden="true"
+              >
+                <svg
+                  class="h-[12px] w-[12px] sm:h-[17px] sm:w-[17px]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M2 12h20" />
+                  <path d="M12 2a15.3 15.3 0 0 1 0 20" />
+                  <path d="M12 2a15.3 15.3 0 0 0 0 20" />
+                </svg>
+              </span>
+
+              <div class="flex rounded-full bg-[#F7EFEA] p-[1px] sm:p-[2px]">
+                <button
+                  v-for="option in quizLanguageOptions"
+                  :key="option.value"
+                  type="button"
+                  class="h-[19px] min-w-[30px] rounded-full px-1.5 font-readmore text-[9px] leading-none transition-colors duration-150 sm:h-[26px] sm:min-w-[46px] sm:px-3 sm:text-[12px]"
+                  :class="
+                    quizLanguage === option.value
+                      ? 'bg-[#E86686] text-white shadow-sm'
+                      : 'text-[#6B4A34] hover:bg-white/80'
+                  "
+                  :aria-pressed="quizLanguage === option.value"
+                  @click="setQuizLanguage(option.value)"
+                >
+                  {{ option.label }}
+                </button>
+              </div>
+
+              <button
+                type="button"
+                class="relative flex h-[28px] w-[28px] items-center justify-center rounded-full border border-[#D8BCAF] bg-white text-[#6B4A34] shadow-sm transition-colors duration-150 hover:bg-[#FFF6F7] active:scale-95 sm:h-[40px] sm:w-[40px]"
+                :class="{
+                  'border-[#E86686] bg-[#FFE8EE] text-[#E86686]':
+                    isBackgroundMusicEnabled,
+                }"
+                :aria-label="musicToggleLabel"
+                :aria-pressed="isBackgroundMusicEnabled"
+                :title="musicToggleLabel"
+                @click="toggleBackgroundMusic"
+              >
+                <svg
+                  class="h-[13px] w-[13px] sm:h-[18px] sm:w-[18px]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M9 18V5l12-2v13" />
+                  <circle cx="6" cy="18" r="3" />
+                  <circle cx="18" cy="16" r="3" />
+                </svg>
+
+                <span
+                  v-if="!isBackgroundMusicEnabled"
+                  class="absolute h-[17px] w-[1.5px] rotate-45 rounded-full bg-[#6B4A34] sm:h-[24px] sm:w-[2px]"
+                  aria-hidden="true"
+                />
+              </button>
+            </div>
+          </div>
 
           <button
           class="inline-flex h-[26px] w-[72px] mt-[20px] items-center font-readmore justify-center rounded-full border border-black bg-[#E86686] text-xs leading-none text-white hover:brightness-90 active:brightness-75 transition-colors duration-150 sm:h-[36px] sm:w-[104px] sm:text-[1rem] lg:h-[37px] lg:w-[108px] lg:text-lg"
@@ -247,7 +371,7 @@ async function next() {
 
           <p
             v-if="currentStep.description"
-            class="text-[#4728097A] mt-[51px] mx-auto w-full px-0 font-serif text-[clamp(16px,1.1vw,20px)] leading-relaxed"
+            class="text-[#4728097A] mt-[51px] font-kanit mx-auto w-full px-0 font-serif text-[clamp(16px,1.1vw,20px)] leading-relaxed"
           >
             {{ currentStep.description }}
           </p>
@@ -263,7 +387,7 @@ async function next() {
             <p
               v-for="text in currentStep.content"
               :key="text"
-              class="text-[#472809] font-serif font-medium text-[clamp(16px,1.6vw,24px)] leading-relaxed whitespace-pre-line"
+              class="text-[#472809] font-kanit font-medium text-[clamp(16px,1.6vw,24px)] leading-relaxed whitespace-pre-line"
             >
               {{ formatTextWithBreaks(text) }}
             </p>
@@ -273,7 +397,7 @@ async function next() {
             <p
               v-for="text in currentStep.contenttwo"
               :key="text"
-              class="text-[#472809] mt-[1vw] font-serif font-medium text-[clamp(16px,1.6vw,24px)] leading-relaxed whitespace-pre-line"
+              class="text-[#472809] mt-[1vw] font-kanit font-medium text-[clamp(16px,1.6vw,24px)] leading-relaxed whitespace-pre-line"
             >
               {{ formatTextWithBreaks(text) }}
             </p>
@@ -305,7 +429,7 @@ async function next() {
       <!-- Question -->
       <template v-else-if="currentStep?.type === 'question'">
         <div
-          class="flex-1 flex flex-col items-center justify-center text-center px-[1vw] max-w-[1040px]"
+          class="flex-1 flex flex-col items-center  justify-center text-center px-[1vw] max-w-[1040px]"
         >
           <div
             v-if="currentStep.content?.length"
@@ -314,7 +438,7 @@ async function next() {
             <p
               v-for="text in currentStep.content"
               :key="text"
-              class="text-[#472809] font-serif font-medium text-[clamp(15px,1.4vw,24px)] leading-relaxed whitespace-pre-line"
+              class="text-[#472809] font-kanit font-medium text-[clamp(15px,1.4vw,24px)] leading-relaxed whitespace-pre-line"
             >
               {{ formatTextWithBreaks(text) }}
             </p>
@@ -332,13 +456,13 @@ async function next() {
                 :key="index"
               >
                 <p
-                  class="text-[#472809] font-serif font-medium italic text-[clamp(16px,1.6vw,26px)] leading-relaxed text-center md:text-left md:whitespace-nowrap"
+                  class="text-[#472809] font-kanit font-medium italic text-[clamp(16px,1.6vw,26px)] leading-relaxed text-center md:text-left md:whitespace-nowrap"
                 >
                   {{ row.left }}
                 </p>
 
                 <p
-                  class="text-[#472809] font-serif font-medium italic text-[clamp(16px,1.6vw,26px)] leading-relaxed text-center md:text-left md:whitespace-nowrap"
+                  class="text-[#472809] font-kanit font-medium italic text-[clamp(16px,1.6vw,26px)] leading-relaxed text-center md:text-left md:whitespace-nowrap"
                 >
                   {{ row.right }}
                 </p>
@@ -347,7 +471,7 @@ async function next() {
           </div>
 
           <h2
-            class="w-full text-[#472809] font-serif font-medium text-[clamp(16px,1.5vw,24px)] leading-relaxed whitespace-pre-line mb-[73px]"
+            class="w-full text-[#472809] font-kanit font-medium text-[clamp(16px,1.5vw,24px)] leading-relaxed whitespace-pre-line mb-[73px]"
           >
             {{ formatTextWithBreaks(currentStep.question) }}
           </h2>
@@ -356,7 +480,7 @@ async function next() {
               v-for="choice in currentStep.choices"
               :key="choice.id"
               type="button"
-              class="w-full bg-white text-[#472809] px-5 py-1.5 rounded-full border border-[#472809] cursor-pointer font-serif text-[clamp(13px,1.05vw,16px)] hover:scale-[1.02] transition-transform"
+              class="w-full bg-white text-[#472809] font-kanit px-5 py-1.5 rounded-full border border-[#472809] cursor-pointer text-[clamp(13px,1.05vw,16px)] lg:text-[18px] hover:scale-[1.02] transition-transform"
               :style="{
                 backgroundColor:
                   selectedChoiceId === choice.id ? '#E86686' : '#FFFFFF',

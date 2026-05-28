@@ -23,7 +23,7 @@
 
     <img
       src="/home/butterfly.gif"
-      class="absolute -top-[-21%] -z-[3] -left-[9%] sm:-top-[-26%] sm:-left-[11%] md:-top-[-28%] md:-left-[11%] lg:-top-[-47%] lg:left-[5%] w-[25vw] sm:w-[30vw] md:w-[30vw] lg:w-[100vw] max-w-[400px] -rotate-30"
+      class="absolute -top-[-21%] z-[200] -left-[9%] sm:-top-[-26%] sm:-left-[11%] md:-top-[-28%] md:-left-[11%] lg:-top-[-47%] lg:left-[5%] w-[25vw] sm:w-[30vw] md:w-[30vw] lg:w-[100vw] max-w-[400px] -rotate-30"
       aria-hidden="true"
     />
 

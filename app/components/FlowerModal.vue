@@ -7,6 +7,20 @@ defineProps<{
 }>()
 
 const emit = defineEmits(["close"])
+
+function getPopupImageStyle(data: Flower) {
+  const imageStyle = data.popupImageStyle
+  const scale = imageStyle?.scale ?? 1
+
+  return {
+    width: imageStyle?.width ?? "85%",
+    maxWidth: imageStyle?.maxWidth ?? "370px",
+    height: imageStyle?.height ?? "auto",
+    top: imageStyle?.top ?? "50%",
+    left: imageStyle?.left ?? "50%",
+    transform: `translate(-50%, -50%) scale(${scale})`,
+  }
+}
 </script>
 
 <template>
@@ -55,7 +69,8 @@ const emit = defineEmits(["close"])
             <img
               :src="data.image"
               :alt="data.titleEn"
-              class="absolute top-1/2 left-1/2 max-w-[370px] w-[85%] -translate-x-1/2 -translate-y-1/2 object-contain"
+              class="absolute object-contain"
+              :style="getPopupImageStyle(data)"
             />
           </div>
 
