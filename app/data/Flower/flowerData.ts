@@ -758,7 +758,7 @@ export const flowerCards: FlowerCard[] = [
       buttonRight: "4%",
       buttonBottom: "-1%",
       mobileText: {
-        left: "45%",
+        left: "50%",
         right: "7%",
         top: "20%",
         bottom: "24%",
@@ -778,7 +778,7 @@ export const flowerCards: FlowerCard[] = [
     modalIndex: 7,
     alt: cardVisuals[7]!.alt,
     layout: {
-      contentLeft: "50%",
+      contentLeft: "55%",
       contentRight: "5%",
       contentTop: "16%",
       contentBottom: "18%",

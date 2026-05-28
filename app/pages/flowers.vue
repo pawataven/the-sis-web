@@ -97,7 +97,7 @@ function getMobileTitleStyle(layout: FlowerCardLayout) {
 
 function getMobileBodyStyle(layout: FlowerCardLayout) {
   return {
-    fontSize: bumpPxSize(layout.mobileText?.bodySize, 2, "16px"),
+    fontSize: bumpPxSize(layout.mobileText?.bodySize, 1, "16px"),
     lineHeight: layout.mobileText?.bodyLineHeight ?? "1.3",
     maxHeight: bumpPxSize(layout.mobileText?.bodyMaxHeight, 8, "68px"),
   }
