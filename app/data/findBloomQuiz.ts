@@ -74,7 +74,7 @@ export const findBloomQuiz: QuizStep[] = [
     content: [
       "แต่ไม่ต้องกังวลใจ เรามีวิธีพาคุณกลับไปยังโลกปัจจุบัน ดังนั้นตั้งใจทำหน้าที่ให้ดีแล้ววิธีจะปรากฏ",
     ],
-    imageSrc: "/bloom/IMG_8481.png",
+    imageSrc: "/bloom/img1.png",
     imageAlt: "Boat journey scene",
     contenttwo: [],
     buttonLabel: "Next",
