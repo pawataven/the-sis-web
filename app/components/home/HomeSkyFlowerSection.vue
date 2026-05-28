@@ -18,6 +18,16 @@
             />
 
             <div
+              class="absolute left-1/2 top-[66%] z-10 w-[88%] h-[50%] -translate-x-1/2 -translate-y-1/2 overflow-hidden"
+            >
+              <img
+                src="/home/"
+                alt="Animated flower"
+                class="h-full w-full object-contain object-center"
+              >
+            </div>
+
+            <div
               class="absolute left-1/2 top-[20%] z-30 w-[80%] -translate-x-1/2 text-center text-[#3A1A05]"
             >
               <img
