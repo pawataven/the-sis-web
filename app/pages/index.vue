@@ -23,7 +23,7 @@ import ArchCardsMobile from "~/components/home/ArchCards-Mobile.vue";
         <ArchCardsMobile />
       </div>
 
-      <div class="relative z-0 w-full px-4 mt-1 sm:mt-2 md:mt-4 lg:-mt-[17%]">
+      <div class="relative z-0 w-full px-4 mt-1 sm:mt-2 md:mt-4 lg:-mt-[min(17%,300px)]">
         <div class="flex justify-center">
           <NuxtImg
             src="/home/cloud-bg.png"

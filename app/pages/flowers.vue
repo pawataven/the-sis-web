@@ -97,9 +97,11 @@ function getMobileTitleStyle(layout: FlowerCardLayout) {
 
 function getMobileBodyStyle(layout: FlowerCardLayout) {
   return {
-    fontSize: bumpPxSize(layout.mobileText?.bodySize, 1, "16px"),
+    fontSize: bumpPxSize(layout.mobileText?.bodySize, 1, "12px"),
     lineHeight: layout.mobileText?.bodyLineHeight ?? "1.3",
-    maxHeight: bumpPxSize(layout.mobileText?.bodyMaxHeight, 8, "68px"),
+    maxHeight: layout.mobileText?.bodyMaxHeight
+      ? bumpPxSize(layout.mobileText.bodyMaxHeight, 8, "68px")
+      : undefined,
   }
 }
 
@@ -140,11 +142,11 @@ function openCard(card: FlowerCard) {
             />
 
             <div
-              class="absolute overflow-hidden rounded-r-[12px]"
+              class="absolute min-w-0 overflow-hidden rounded-r-[12px]"
               :style="getMobileTextStyle(card.layout)"
             >
               <h2
-                class="truncate font-serif leading-none text-[#3d1600]"
+                class="font-serif leading-none text-[#3d1600]"
                 :style="getMobileTitleStyle(card.layout)"
               >
                 {{ card.name }}
@@ -152,7 +154,7 @@ function openCard(card: FlowerCard) {
 
               <p
                 v-html="card.description"
-                class="mt-1 overflow-hidden font-light uppercase text-[#3d1600]"
+                class="mt-0.5 overflow-hidden font-light uppercase text-[#3d1600]"
                 :style="getMobileBodyStyle(card.layout)"
               />
             </div>
