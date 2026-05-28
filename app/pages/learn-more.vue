@@ -4,14 +4,7 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
 
 <template>
   <div
-    class="min-h-screen flex flex-col"
-    style="
-      background-image: url(&quot;/Learnmore/painted-relief-texture (1).jpg&quot;);
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    "
+    class="min-h-screen flex flex-col page-bg-fixed"
   >
     <!-- Navbar -->
     <div
@@ -338,3 +331,25 @@ import NavigationBar from "~/layouts/NavigationBar.vue";
     </main>
   </div>
 </template>
+
+<style scoped>
+.page-bg-fixed {
+  position: relative;
+  background-image: url('/Learnmore/painted-relief-texture (1).jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.page-bg-fixed::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/Learnmore/painted-relief-texture (1).jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+</style>
