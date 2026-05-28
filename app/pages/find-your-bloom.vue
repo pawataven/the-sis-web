@@ -223,14 +223,8 @@ async function next() {
 
   finalResultType.value = resultType.value;
 
-    await goToStep(currentIndex.value + 1);
-    return;
-  }
-
-  finalResultType.value = resultType.value;
-
   await navigateTo("/quiz-result");
-  
+}
 </script>
 
 <template>
