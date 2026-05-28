@@ -91,13 +91,17 @@ function getMobileTextStyle(layout: FlowerCardLayout) {
 
 function getMobileTitleStyle(layout: FlowerCardLayout) {
   return {
-    fontSize: bumpPxSize(layout.mobileText?.titleSize, 3, "20px"),
+    fontSize: layout.mobileText?.titleSize
+      ? `clamp(14px, 5.1cqw, ${bumpPxSize(layout.mobileText.titleSize, 3, "20px")})`
+      : "clamp(16px, 5.6cqw, 20px)",
   }
 }
 
 function getMobileBodyStyle(layout: FlowerCardLayout) {
   return {
-    fontSize: bumpPxSize(layout.mobileText?.bodySize, 1, "12px"),
+    fontSize: layout.mobileText?.bodySize
+      ? `clamp(7px, 2.5cqw, ${bumpPxSize(layout.mobileText.bodySize, 1, "12px")})`
+      : "clamp(9px, 3.2cqw, 12px)",
     lineHeight: layout.mobileText?.bodyLineHeight ?? "1.3",
     maxHeight: layout.mobileText?.bodyMaxHeight
       ? bumpPxSize(layout.mobileText.bodyMaxHeight, 8, "68px")
@@ -146,7 +150,7 @@ function openCard(card: FlowerCard) {
               :style="getMobileTextStyle(card.layout)"
             >
               <h2
-                class="font-serif leading-none text-[#3d1600]"
+                class="break-words font-serif leading-none text-[#3d1600]"
                 :style="getMobileTitleStyle(card.layout)"
               >
                 {{ card.name }}
