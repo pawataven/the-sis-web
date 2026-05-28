@@ -7,9 +7,19 @@ import MobileMenu from "~/components/MobileMenu.vue";
 const loaded = ref(false);
 
 useHead({
+  title: "Message in Flowers",
   htmlAttrs: {
     lang: "th",
   },
+  meta: [
+    { name: "application-name", content: "Message in Flowers" },
+    { property: "og:site_name", content: "Message in Flowers" },
+    { property: "og:title", content: "Message in Flowers" },
+    { name: "twitter:title", content: "Message in Flowers" },
+  ],
+  link: [
+    { rel: "icon", type: "image/png", href: "/logo/door-icon.png" },
+  ],
 });
 </script>
 
