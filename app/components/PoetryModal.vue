@@ -11,7 +11,6 @@ const emit = defineEmits(["close"]);
 
 const scrollArea = ref<HTMLElement | null>(null);
 
-// Reset scroll position every time modal opens
 watch(
   () => props.isOpen,
   (open) => {
@@ -29,28 +28,29 @@ watch(
     <Transition name="modal">
       <div
         v-if="isOpen && data"
-        class="fixed inset-0 z-[10000] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+        class="fixed inset-0 z-[10000] flex items-center justify-center bg-black/50 backdrop-blur-sm p-2 sm:p-4"
         @click.self="emit('close')"
       >
         <div
-          class="modal-card relative w-full max-w-[626px] max-h-[805px] h-[95vh] h-[95dvh] shadow-2xl flex flex-col overflow-hidden"
-          style="background-image: url('/popup/Bg popup.png'); background-size: cover; background-position: center;"
+          ref="scrollArea"
+          class="modal-card relative w-full max-w-[626px] max-h-[805px] h-[95vh] h-[95dvh] shadow-2xl flex flex-col overflow-y-auto"
+          style="background-image: url('/popup/Bg popup.png'); background-size: cover; background-position: center; -webkit-overflow-scrolling: touch;"
         >
           <img
             src="/popup/Bg flower.png"
             class="absolute right-0 bottom-0 w-[70%] opacity-30 z-0 pointer-events-none"
           />
 
+          <!-- Sticky close button — always visible -->
           <button
             @click="emit('close')"
-            class="absolute top-2 right-3 sm:top-4 sm:right-6 cursor-pointer text-gray-400 hover:text-black text-xl sm:text-2xl z-50 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center"
+            class="sticky top-0 self-end cursor-pointer text-gray-500 hover:text-black text-xl sm:text-2xl z-50 w-10 h-10 flex items-center justify-center mr-1 mt-1 sm:mr-2 sm:mt-2 flex-shrink-0"
           >
             ✕
           </button>
 
-          <!-- Header: stays fixed -->
           <div
-            class="relative z-10 px-6 sm:px-10 pt-6 sm:pt-8 pb-0 flex flex-col items-start flex-shrink-0"
+            class="relative z-10 px-6 sm:px-10 pb-0 flex flex-col items-start flex-shrink-0 -mt-4"
           >
             <div class="relative inline-block pr-8 sm:pr-14">
               <h2
@@ -81,8 +81,7 @@ watch(
             </div>
           </div>
 
-          <!-- Image: stays fixed -->
-          <div class="relative z-10 w-full flex-shrink-0" style="height: 38%">
+          <div class="relative z-10 w-full flex-shrink-0" style="height: 38%; min-height: 220px">
             <img
               :src="data.imageSrc"
               class="absolute w-[85%] max-w-125 object-contain"
@@ -90,11 +89,8 @@ watch(
             />
           </div>
 
-          <!-- Content: only this part scrolls -->
           <div
-            ref="scrollArea"
-            class="relative z-10 flex flex-col flex-1 overflow-y-auto min-h-0 px-6 sm:px-10 pb-6"
-            style="-webkit-overflow-scrolling: touch;"
+            class="relative z-10 flex flex-col px-6 sm:px-10 pb-6"
           >
             <div
               class="poem-display italic text-[#472809] leading-[1.9] font-medium mt-5 sm:mt-16" style="font-size: clamp(13px, 1.5vw, 17px)"

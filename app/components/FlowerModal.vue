@@ -11,7 +11,6 @@ const emit = defineEmits(["close"])
 
 const scrollArea = ref<HTMLElement | null>(null);
 
-// Reset scroll position every time modal opens
 watch(
   () => props.isOpen,
   (open) => {
@@ -43,12 +42,13 @@ function getPopupImageStyle(data: Flower) {
     <Transition name="modal">
       <div
         v-if="isOpen && data"
-        class="fixed inset-0 z-[10000] uppercase flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+        class="fixed inset-0 z-[10000] uppercase flex items-center justify-center bg-black/50 backdrop-blur-sm p-2 sm:p-4"
         @click.self="emit('close')"
       >
         <div
-          class="modal-card relative flex h-[95vh] h-[95dvh] max-h-[805px] w-full max-w-[626px] flex-col overflow-hidden shadow-2xl"
-          style="background-image: url('/popup/Bg popup.png'); background-size: cover; background-position: center;"
+          ref="scrollArea"
+          class="modal-card relative flex h-[95vh] h-[95dvh] max-h-[805px] w-full max-w-[626px] flex-col overflow-y-auto shadow-2xl"
+          style="background-image: url('/popup/Bg popup.png'); background-size: cover; background-position: center; -webkit-overflow-scrolling: touch;"
         >
           <img
             src="/popup/Bg flower.png"
@@ -56,15 +56,15 @@ function getPopupImageStyle(data: Flower) {
             alt=""
           />
 
+          <!-- Sticky close button — always visible -->
           <button
             @click="emit('close')"
-            class="absolute top-2 right-3 sm:top-4 sm:right-6 cursor-pointer text-gray-400 hover:text-black text-xl sm:text-2xl z-50 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center"
+            class="sticky top-0 self-end cursor-pointer text-gray-500 hover:text-black text-xl sm:text-2xl z-50 w-10 h-10 flex items-center justify-center mr-1 mt-1 sm:mr-2 sm:mt-2 flex-shrink-0"
           >
             ✕
           </button>
 
-          <!-- Header: stays fixed -->
-          <div class="relative z-10 flex flex-shrink-0 flex-col items-start px-6 pt-6 pb-0 sm:px-10 sm:pt-8">
+          <div class="relative z-10 flex flex-shrink-0 flex-col items-start px-6 pb-0 sm:px-10 -mt-4">
             <div class="relative inline-block pr-8 sm:pr-14">
               <h2 class="font-serif text-[5.5vw] leading-tight text-[#472809] uppercase sm:text-[38px] lg:text-[44px]">
                 {{ data.titleEn }}
@@ -81,8 +81,7 @@ function getPopupImageStyle(data: Flower) {
             </div>
           </div>
 
-          <!-- Image: stays fixed -->
-          <div class="relative z-10 w-full flex-shrink-0" style="height: 45%">
+          <div class="relative z-10 w-full flex-shrink-0" style="height: 45%; min-height: 220px">
             <img
               :src="data.image"
               :alt="data.titleEn"
@@ -91,11 +90,8 @@ function getPopupImageStyle(data: Flower) {
             />
           </div>
 
-          <!-- Content: only this part scrolls -->
           <div
-            ref="scrollArea"
-            class="relative z-10 flex flex-1 flex-col overflow-y-auto min-h-0 px-6 pb-6 sm:px-10"
-            style="-webkit-overflow-scrolling: touch;"
+            class="relative z-10 flex flex-col px-6 pb-6 sm:px-10"
           >
             <div class="mt-2 text-[#472809]">
               <p class="text-[15px] leading-relaxed font-light">
