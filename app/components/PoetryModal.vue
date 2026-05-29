@@ -48,6 +48,7 @@ watch(
             ✕
           </button>
 
+          <!-- Header: stays fixed -->
           <div
             class="relative z-10 px-6 sm:px-10 pt-6 sm:pt-8 pb-0 flex flex-col items-start flex-shrink-0"
           >
@@ -80,31 +81,31 @@ watch(
             </div>
           </div>
 
+          <!-- Image: stays fixed -->
+          <div class="relative z-10 w-full flex-shrink-0" style="height: 38%">
+            <img
+              :src="data.imageSrc"
+              class="absolute w-[85%] max-w-125 object-contain"
+              :style="{ left: `calc(50% + ${data.imageOffsetX ?? 0}%)`, top: '50%', transform: `translateX(-50%) translateY(${data.imageOffsetY ?? -50}%)` }"
+            />
+          </div>
+
+          <!-- Content: only this part scrolls -->
           <div
             ref="scrollArea"
-            class="relative z-10 flex flex-col flex-1 overflow-y-auto min-h-0"
+            class="relative z-10 flex flex-col flex-1 overflow-y-auto min-h-0 px-6 sm:px-10 pb-6"
           >
-            <div class="w-full flex-shrink-0" style="height: 45%; min-height: 200px">
-              <img
-                :src="data.imageSrc"
-                class="absolute w-[85%] max-w-125 object-contain"
-                :style="{ left: `calc(50% + ${data.imageOffsetX ?? 0}%)`, top: '50%', transform: `translateX(-50%) translateY(${data.imageOffsetY ?? -50}%)` }"
-              />
-            </div>
-
-            <div class="px-6 sm:px-10 pb-6">
-              <div
-                class="poem-display italic text-[#472809] leading-[1.9] font-medium mt-5 sm:mt-16" style="font-size: clamp(13px, 1.5vw, 17px)"
-                v-html="data.poem"
-              />
-              <div class="mt-4 text-[#472809]">
-                <p class="text-[16px] leading-relaxed">
-                  <span class="font-medium border-b border-[#472809] mr-2"
-                    >ความหมาย:</span
-                  >
-                  <span v-html="data.meaning"></span>
-                </p>
-              </div>
+            <div
+              class="poem-display italic text-[#472809] leading-[1.9] font-medium mt-5 sm:mt-16" style="font-size: clamp(13px, 1.5vw, 17px)"
+              v-html="data.poem"
+            />
+            <div class="mt-4 text-[#472809]">
+              <p class="text-[16px] leading-relaxed">
+                <span class="font-medium border-b border-[#472809] mr-2"
+                  >ความหมาย:</span
+                >
+                <span v-html="data.meaning"></span>
+              </p>
             </div>
           </div>
         </div>
