@@ -42,12 +42,12 @@ function getPopupImageStyle(data: Flower) {
     <Transition name="modal">
       <div
         v-if="isOpen && data"
-        class="fixed inset-0 z-[10000] uppercase flex items-center justify-center bg-black/50 backdrop-blur-sm p-2 sm:p-4"
+        class="fixed inset-0 z-[10000] uppercase flex items-center justify-center bg-black/50 backdrop-blur-sm p-6 sm:p-4"
         @click.self="emit('close')"
       >
         <div
           ref="scrollArea"
-          class="modal-card relative flex h-[95vh] h-[95dvh] max-h-[805px] w-full max-w-[626px] flex-col overflow-y-auto shadow-2xl"
+          class="modal-card relative flex h-[75vh] h-[75dvh] sm:h-[95vh] sm:h-[95dvh] max-h-[805px] w-full max-w-[626px] flex-col overflow-y-auto shadow-2xl rounded-xl"
           style="background-image: url('/popup/Bg popup.png'); background-size: cover; background-position: center; -webkit-overflow-scrolling: touch;"
         >
           <img

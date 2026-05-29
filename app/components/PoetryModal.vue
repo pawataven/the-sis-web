@@ -28,12 +28,12 @@ watch(
     <Transition name="modal">
       <div
         v-if="isOpen && data"
-        class="fixed inset-0 z-[10000] flex items-center justify-center bg-black/50 backdrop-blur-sm p-2 sm:p-4"
+        class="fixed inset-0 z-[10000] flex items-center justify-center bg-black/50 backdrop-blur-sm p-6 sm:p-4"
         @click.self="emit('close')"
       >
         <div
           ref="scrollArea"
-          class="modal-card relative w-full max-w-[626px] max-h-[805px] h-[95vh] h-[95dvh] shadow-2xl flex flex-col overflow-y-auto"
+          class="modal-card relative w-full max-w-[626px] max-h-[805px] h-[75vh] h-[75dvh] sm:h-[95vh] sm:h-[95dvh] shadow-2xl flex flex-col overflow-y-auto rounded-xl"
           style="background-image: url('/popup/Bg popup.png'); background-size: cover; background-position: center; -webkit-overflow-scrolling: touch;"
         >
           <img
