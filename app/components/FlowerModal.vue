@@ -63,6 +63,7 @@ function getPopupImageStyle(data: Flower) {
             ✕
           </button>
 
+          <!-- Header: stays fixed -->
           <div class="relative z-10 flex flex-shrink-0 flex-col items-start px-6 pt-6 pb-0 sm:px-10 sm:pt-8">
             <div class="relative inline-block pr-8 sm:pr-14">
               <h2 class="font-serif text-[5.5vw] leading-tight text-[#472809] uppercase sm:text-[38px] lg:text-[44px]">
@@ -80,40 +81,40 @@ function getPopupImageStyle(data: Flower) {
             </div>
           </div>
 
+          <!-- Image: stays fixed -->
+          <div class="relative z-10 w-full flex-shrink-0" style="height: 45%">
+            <img
+              :src="data.image"
+              :alt="data.titleEn"
+              class="absolute object-contain"
+              :style="getPopupImageStyle(data)"
+            />
+          </div>
+
+          <!-- Content: only this part scrolls -->
           <div
             ref="scrollArea"
-            class="relative z-10 flex flex-col flex-1 overflow-y-auto min-h-0"
+            class="relative z-10 flex flex-1 flex-col overflow-y-auto min-h-0 px-6 pb-6 sm:px-10"
           >
-            <div class="w-full flex-shrink-0 relative" style="height: 45%; min-height: 200px">
-              <img
-                :src="data.image"
-                :alt="data.titleEn"
-                class="absolute object-contain"
-                :style="getPopupImageStyle(data)"
-              />
+            <div class="mt-2 text-[#472809]">
+              <p class="text-[15px] leading-relaxed font-light">
+                <span class="mr-2 border-b border-[#472809] font-medium">ความหมาย:</span>
+                {{ data.meaning }}
+              </p>
             </div>
 
-            <div class="px-6 pb-6 sm:px-10">
-              <div class="mt-2 text-[#472809]">
-                <p class="text-[15px] leading-relaxed font-light">
-                  <span class="mr-2 border-b border-[#472809] font-medium">ความหมาย:</span>
-                  {{ data.meaning }}
-                </p>
-              </div>
+            <div v-if="data.origin" class="mt-3.25 text-[#472809]">
+              <p class="text-[15px] leading-relaxed font-light">
+                <span class="mr-2 border-b border-[#472809] font-medium">ที่มา:</span>
+                {{ data.origin }}
+              </p>
+            </div>
 
-              <div v-if="data.origin" class="mt-3.25 text-[#472809]">
-                <p class="text-[15px] leading-relaxed font-light">
-                  <span class="mr-2 border-b border-[#472809] font-medium">ที่มา:</span>
-                  {{ data.origin }}
-                </p>
-              </div>
-
-              <div v-if="data.duo" class="mt-3.25 text-[#472809]">
-                <p class="text-[15px] leading-relaxed font-light">
-                  <span class="mr-2 border-b border-[#472809] font-medium">สามารถจับคู่กับ:<br></span>
-                  <span v-html="data.duo" />
-                </p>
-              </div>
+            <div v-if="data.duo" class="mt-3.25 text-[#472809]">
+              <p class="text-[15px] leading-relaxed font-light">
+                <span class="mr-2 border-b border-[#472809] font-medium">สามารถจับคู่กับ:<br></span>
+                <span v-html="data.duo" />
+              </p>
             </div>
           </div>
         </div>
