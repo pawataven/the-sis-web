@@ -2,7 +2,7 @@
 import NavigationBar from "~/layouts/NavigationBar.vue";
 import { quizResultsByLanguage } from "@/data/quizResultData";
 import { answerTypes, findBloomQuizByLanguage } from "~/data/findBloomQuiz";
-import type { AnswerType, QuizLanguage } from "~/data/findBloomQuiz";
+import type { AnswerType } from "~/data/findBloomQuiz";
 
 const answers = useState<Record<string, string>>(
   "find-bloom-answers",
@@ -14,10 +14,7 @@ const finalResultType = useState<AnswerType | null>(
   () => null,
 );
 
-const quizLanguage = useState<QuizLanguage>(
-  "find-bloom-language",
-  () => "th",
-);
+const quizLanguage = useFindBloomLanguage();
 
 const activeQuiz = computed(() => {
   return findBloomQuizByLanguage[quizLanguage.value];

@@ -23,10 +23,7 @@ const finalResultType = useState<AnswerType | null>(
   () => null
 );
 
-const quizLanguage = useState<QuizLanguage>(
-  "find-bloom-language",
-  () => "th"
-);
+const quizLanguage = useFindBloomLanguage();
 
 const quizLanguageOptions: { value: QuizLanguage; label: string }[] = [
   { value: "th", label: "ไทย" },
