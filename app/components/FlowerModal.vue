@@ -43,19 +43,19 @@ function getPopupImageStyle(data: Flower) {
 
           <button
             @click="emit('close')"
-            class="absolute top-4 right-6 cursor-pointer text-gray-400 hover:text-black text-2xl z-50"
+            class="absolute top-2 right-3 sm:top-4 sm:right-6 cursor-pointer text-gray-400 hover:text-black text-xl sm:text-2xl z-50 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center"
           >
             ✕
           </button>
 
           <div class="relative z-10 flex flex-shrink-0 flex-col items-start px-6 pt-6 pb-0 sm:px-10 sm:pt-8">
-            <div class="relative inline-block pr-14">
+            <div class="relative inline-block pr-8 sm:pr-14">
               <h2 class="font-serif text-[5.5vw] leading-tight text-[#472809] uppercase sm:text-[38px] lg:text-[44px]">
                 {{ data.titleEn }}
               </h2>
               <img
                 src="/poetry/butterfly.gif"
-                class="pointer-events-none absolute -top-[20px] -right-[60px] w-[120px] scale-x-[-1]"
+                class="pointer-events-none absolute -top-[10px] -right-[30px] w-[60px] sm:-top-[20px] sm:-right-[60px] sm:w-[120px] scale-x-[-1]"
                 alt=""
               />
             </div>

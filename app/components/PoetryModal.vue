@@ -28,7 +28,7 @@ const emit = defineEmits(["close"]);
 
           <button
             @click="emit('close')"
-            class="absolute top-4 right-6 cursor-pointer text-gray-400 hover:text-black text-2xl z-50"
+            class="absolute top-2 right-3 sm:top-4 sm:right-6 cursor-pointer text-gray-400 hover:text-black text-xl sm:text-2xl z-50 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center"
           >
             ✕
           </button>
@@ -36,7 +36,7 @@ const emit = defineEmits(["close"]);
           <div
             class="relative z-10 px-6 sm:px-10 pt-6 sm:pt-8 pb-0 flex flex-col items-start flex-shrink-0"
           >
-            <div class="relative inline-block pr-14">
+            <div class="relative inline-block pr-8 sm:pr-14">
               <h2
                 class="text-[6vw] sm:text-[42px] lg:text-[48px] italic font-medium font-serif leading-tight"
                 :style="{ color: data.titleColor ?? '#F17E6A' }"
@@ -46,7 +46,7 @@ const emit = defineEmits(["close"]);
               </h2>
               <img
                 src="/poetry/butterfly.gif"
-                class="absolute -right-[60px] -top-[20px] w-[120px] scale-x-[-1] pointer-events-none"
+                class="absolute -right-[30px] -top-[10px] w-[60px] sm:-right-[60px] sm:-top-[20px] sm:w-[120px] scale-x-[-1] pointer-events-none"
               />
             </div>
 
