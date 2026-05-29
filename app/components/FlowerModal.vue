@@ -1,12 +1,27 @@
 <script setup lang="ts">
+import { ref, watch } from "vue";
 import type { Flower } from "~/data/Flower/flowerData"
 
-defineProps<{
+const props = defineProps<{
   isOpen: boolean
   data: Flower | null
 }>()
 
 const emit = defineEmits(["close"])
+
+const scrollArea = ref<HTMLElement | null>(null);
+
+// Reset scroll position every time modal opens
+watch(
+  () => props.isOpen,
+  (open) => {
+    if (open) {
+      nextTick(() => {
+        if (scrollArea.value) scrollArea.value.scrollTop = 0;
+      });
+    }
+  }
+);
 
 function getPopupImageStyle(data: Flower) {
   const imageStyle = data.popupImageStyle
@@ -32,7 +47,7 @@ function getPopupImageStyle(data: Flower) {
         @click.self="emit('close')"
       >
         <div
-          class="modal-card relative flex h-[95vh] max-h-[805px] w-full max-w-[626px] flex-col overflow-hidden shadow-2xl"
+          class="modal-card relative flex h-[95vh] h-[95dvh] max-h-[805px] w-full max-w-[626px] flex-col overflow-hidden shadow-2xl"
           style="background-image: url('/popup/Bg popup.png'); background-size: cover; background-position: center;"
         >
           <img
@@ -65,35 +80,40 @@ function getPopupImageStyle(data: Flower) {
             </div>
           </div>
 
-          <div class="relative z-10 w-full flex-shrink-0" style="height: 45%">
-            <img
-              :src="data.image"
-              :alt="data.titleEn"
-              class="absolute object-contain"
-              :style="getPopupImageStyle(data)"
-            />
-          </div>
-
-          <div class="relative z-10 flex flex-1 flex-col overflow-y-auto px-6 pb-6 sm:px-10">
-            <div class="mt-2 text-[#472809]">
-              <p class="text-[15px] leading-relaxed font-light">
-                <span class="mr-2 border-b border-[#472809] font-medium">ความหมาย:</span>
-                {{ data.meaning }}
-              </p>
+          <div
+            ref="scrollArea"
+            class="relative z-10 flex flex-col flex-1 overflow-y-auto min-h-0"
+          >
+            <div class="w-full flex-shrink-0 relative" style="height: 45%; min-height: 200px">
+              <img
+                :src="data.image"
+                :alt="data.titleEn"
+                class="absolute object-contain"
+                :style="getPopupImageStyle(data)"
+              />
             </div>
 
-            <div v-if="data.origin" class="mt-3.25 text-[#472809]">
-              <p class="text-[15px] leading-relaxed font-light">
-                <span class="mr-2 border-b border-[#472809] font-medium">ที่มา:</span>
-                {{ data.origin }}
-              </p>
-            </div>
+            <div class="px-6 pb-6 sm:px-10">
+              <div class="mt-2 text-[#472809]">
+                <p class="text-[15px] leading-relaxed font-light">
+                  <span class="mr-2 border-b border-[#472809] font-medium">ความหมาย:</span>
+                  {{ data.meaning }}
+                </p>
+              </div>
 
-            <div v-if="data.duo" class="mt-3.25 text-[#472809]">
-              <p class="text-[15px] leading-relaxed font-light">
-                <span class="mr-2 border-b border-[#472809] font-medium">สามารถจับคู่กับ:<br></span>
-                <span v-html="data.duo" />
-              </p>
+              <div v-if="data.origin" class="mt-3.25 text-[#472809]">
+                <p class="text-[15px] leading-relaxed font-light">
+                  <span class="mr-2 border-b border-[#472809] font-medium">ที่มา:</span>
+                  {{ data.origin }}
+                </p>
+              </div>
+
+              <div v-if="data.duo" class="mt-3.25 text-[#472809]">
+                <p class="text-[15px] leading-relaxed font-light">
+                  <span class="mr-2 border-b border-[#472809] font-medium">สามารถจับคู่กับ:<br></span>
+                  <span v-html="data.duo" />
+                </p>
+              </div>
             </div>
           </div>
         </div>

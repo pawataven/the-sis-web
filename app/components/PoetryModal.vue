@@ -1,12 +1,27 @@
 <script setup lang="ts">
+import { ref, watch } from "vue";
 import type { Poetry } from "~/data/poetryData";
 
-defineProps<{
+const props = defineProps<{
   isOpen: boolean;
   data: Poetry | null;
 }>();
 
 const emit = defineEmits(["close"]);
+
+const scrollArea = ref<HTMLElement | null>(null);
+
+// Reset scroll position every time modal opens
+watch(
+  () => props.isOpen,
+  (open) => {
+    if (open) {
+      nextTick(() => {
+        if (scrollArea.value) scrollArea.value.scrollTop = 0;
+      });
+    }
+  }
+);
 </script>
 
 <template>
@@ -18,7 +33,7 @@ const emit = defineEmits(["close"]);
         @click.self="emit('close')"
       >
         <div
-          class="modal-card relative w-full max-w-[626px] max-h-[805px] h-[95vh] shadow-2xl flex flex-col overflow-hidden"
+          class="modal-card relative w-full max-w-[626px] max-h-[805px] h-[95vh] h-[95dvh] shadow-2xl flex flex-col overflow-hidden"
           style="background-image: url('/popup/Bg popup.png'); background-size: cover; background-position: center;"
         >
           <img
@@ -65,28 +80,31 @@ const emit = defineEmits(["close"]);
             </div>
           </div>
 
-          <div class="relative z-10 w-full flex-shrink-0" style="height: 38%">
-            <img
-              :src="data.imageSrc"
-              class="absolute w-[85%] max-w-125 object-contain"
-              :style="{ left: `calc(50% + ${data.imageOffsetX ?? 0}%)`, top: '50%', transform: `translateX(-50%) translateY(${data.imageOffsetY ?? -50}%)` }"
-            />
-          </div>
-
           <div
-            class="relative z-10 flex flex-col flex-1 overflow-y-auto px-6 sm:px-10 pb-6"
+            ref="scrollArea"
+            class="relative z-10 flex flex-col flex-1 overflow-y-auto min-h-0"
           >
-            <div
-              class="poem-display italic text-[#472809] leading-[1.9] font-medium mt-5 sm:mt-16" style="font-size: clamp(13px, 1.5vw, 17px)"
-              v-html="data.poem"
-            />
-            <div class="mt-4 text-[#472809]">
-              <p class="text-[16px] leading-relaxed">
-                <span class="font-medium border-b border-[#472809] mr-2"
-                  >ความหมาย:</span
-                >
-                <span v-html="data.meaning"></span>
-              </p>
+            <div class="w-full flex-shrink-0" style="height: 45%; min-height: 200px">
+              <img
+                :src="data.imageSrc"
+                class="absolute w-[85%] max-w-125 object-contain"
+                :style="{ left: `calc(50% + ${data.imageOffsetX ?? 0}%)`, top: '50%', transform: `translateX(-50%) translateY(${data.imageOffsetY ?? -50}%)` }"
+              />
+            </div>
+
+            <div class="px-6 sm:px-10 pb-6">
+              <div
+                class="poem-display italic text-[#472809] leading-[1.9] font-medium mt-5 sm:mt-16" style="font-size: clamp(13px, 1.5vw, 17px)"
+                v-html="data.poem"
+              />
+              <div class="mt-4 text-[#472809]">
+                <p class="text-[16px] leading-relaxed">
+                  <span class="font-medium border-b border-[#472809] mr-2"
+                    >ความหมาย:</span
+                  >
+                  <span v-html="data.meaning"></span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
