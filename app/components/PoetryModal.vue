@@ -94,6 +94,7 @@ watch(
           <div
             ref="scrollArea"
             class="relative z-10 flex flex-col flex-1 overflow-y-auto min-h-0 px-6 sm:px-10 pb-6"
+            style="-webkit-overflow-scrolling: touch;"
           >
             <div
               class="poem-display italic text-[#472809] leading-[1.9] font-medium mt-5 sm:mt-16" style="font-size: clamp(13px, 1.5vw, 17px)"

@@ -95,6 +95,7 @@ function getPopupImageStyle(data: Flower) {
           <div
             ref="scrollArea"
             class="relative z-10 flex flex-1 flex-col overflow-y-auto min-h-0 px-6 pb-6 sm:px-10"
+            style="-webkit-overflow-scrolling: touch;"
           >
             <div class="mt-2 text-[#472809]">
               <p class="text-[15px] leading-relaxed font-light">
