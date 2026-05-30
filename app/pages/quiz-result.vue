@@ -341,7 +341,7 @@ async function saveResultAsImage() {
     </main>
 
     <!-- Boat footer -->
-    <div class="w-full mt-auto">
+    <div class="w-full mt-auto md:mt-auto sm:-mt-auto lg:-mt-110">
       <img
         src="/poetry/ท่าเรือ.png"
         class="w-full h-auto object-cover  pointer-events-none"
