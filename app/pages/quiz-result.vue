@@ -2,7 +2,11 @@
 import NavigationBar from "~/layouts/NavigationBar.vue";
 import { quizResultsByLanguage } from "@/data/quizResultData";
 import { answerTypes, findBloomQuizByLanguage } from "~/data/findBloomQuiz";
-import type { AnswerType } from "~/data/findBloomQuiz";
+import type { AnswerType, QuizLanguage } from "~/data/findBloomQuiz";
+
+definePageMeta({
+  scrollToTop: true,
+});
 
 const answers = useState<Record<string, string>>(
   "find-bloom-answers",
@@ -15,6 +19,21 @@ const finalResultType = useState<AnswerType | null>(
 );
 
 const quizLanguage = useFindBloomLanguage();
+const resultSaveImageByLanguage: Record<QuizLanguage, Record<AnswerType, string>> = {
+  th: {
+    love: "/Result/result love 1.png",
+    sadness: "/Result/result sad 1.png",
+    family: "/Result/result fam 1.png",
+    warning: "/Result/result warn 1.png",
+  },
+  // Replace these paths with dedicated English result cards when they are available.
+  en: {
+    love: "/Result/result love 1.png",
+    sadness: "/Result/result sad 1.png",
+    family: "/Result/result fam 1.png",
+    warning: "/Result/result warn 1.png",
+  },
+};
 
 const activeQuiz = computed(() => {
   return findBloomQuizByLanguage[quizLanguage.value];
@@ -43,6 +62,21 @@ const result = computed(() => {
   }
 
   return resultByType.value[finalResultType.value] ?? null;
+});
+
+const saveImagePath = computed(() => {
+  if (!result.value) {
+    return "";
+  }
+
+  return (
+    resultSaveImageByLanguage[quizLanguage.value]?.[result.value.id] ??
+    result.value.flowerImage
+  );
+});
+
+const saveImageLabel = computed(() => {
+  return quizLanguage.value === "en" ? "Save as image" : "บันทึกเป็นภาพ";
 });
 
 const resultPageText = computed(() => {
@@ -133,6 +167,61 @@ async function playAgain() {
     query: { step: "0" },
   });
 }
+
+function createResultImageFilename(
+  answerType: AnswerType,
+  language: QuizLanguage,
+  imagePath: string,
+) {
+  const extensionMatch = imagePath.match(/\.([a-zA-Z0-9]+)(?:$|\?)/);
+  const extension = extensionMatch?.[1] ?? "png";
+
+  return `find-your-bloom-${answerType}-${language}.${extension}`;
+}
+
+function triggerImageDownload(imageUrl: string, filename: string) {
+  const link = document.createElement("a");
+
+  link.href = imageUrl;
+  link.download = filename;
+  link.rel = "noopener";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+}
+
+async function saveResultAsImage() {
+  if (!import.meta.client || !result.value || !saveImagePath.value) {
+    return;
+  }
+
+  const encodedImagePath = encodeURI(saveImagePath.value);
+  const filename = createResultImageFilename(
+    result.value.id,
+    quizLanguage.value,
+    encodedImagePath,
+  );
+
+  try {
+    const response = await fetch(encodedImagePath);
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch image: ${response.status}`);
+    }
+
+    const blob = await response.blob();
+    const objectUrl = URL.createObjectURL(blob);
+
+    triggerImageDownload(objectUrl, filename);
+
+    setTimeout(() => {
+      URL.revokeObjectURL(objectUrl);
+    }, 0);
+  } catch (error) {
+    console.error("[Find Your Bloom] Unable to download result image.", error);
+    triggerImageDownload(encodedImagePath, filename);
+  }
+}
 </script>
 
 <template>
@@ -198,10 +287,37 @@ async function playAgain() {
 
         <button
           type="button"
-          class="inline-flex h-[26px] w-[72px] mt-[71px] cursor-pointer items-center font-readmore justify-center rounded-full border border-black bg-[#E86686] text-xs leading-none text-white hover:brightness-90 active:brightness-75 transition-colors duration-150 sm:h-[36px] sm:w-[104px] sm:text-[1rem] lg:h-[37px] lg:w-[108px] lg:text-lg"
+          class="inline-flex h-[26px] w-[148px] mt-[71px] cursor-pointer items-center justify-center rounded-full border border-black bg-[#E86686] font-readmore text-xs leading-none text-white hover:brightness-90 active:brightness-75 transition-colors duration-150 sm:h-[36px] sm:w-[172px] sm:text-[1rem] lg:h-[37px] lg:w-[184px] lg:text-lg"
           @click="playAgain"
         >
           {{ resultPageText.playAgain }}
+        </button>
+
+        <button
+          type="button"
+          class="inline-flex h-[26px] w-[148px] mt-[20px] cursor-pointer items-center justify-center gap-1.5 rounded-full border border-black bg-[#E86686] font-readmore text-xs leading-none text-white hover:brightness-90 active:brightness-75 transition-colors duration-150 sm:h-[36px] sm:w-[172px] sm:text-[1rem] lg:h-[37px] lg:w-[184px] lg:text-lg"
+          :aria-label="saveImageLabel"
+          :title="saveImageLabel"
+          @click="saveResultAsImage"
+        >
+          <span>{{ saveImageLabel }}</span>
+          <svg
+            class="h-[13px] w-[13px] sm:h-[18px] sm:w-[18px]"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <rect x="3.5" y="4.5" width="17" height="11" rx="2" />
+            <circle cx="8" cy="8.5" r="1" />
+            <path d="m6.5 13 2.7-2.7a1 1 0 0 1 1.4 0l2.4 2.4" />
+            <path d="m12.5 13 1.7-1.7a1 1 0 0 1 1.4 0l1.9 1.9" />
+            <path d="M12 17v3.5" />
+            <path d="m9.75 18.75 2.25 2.25 2.25-2.25" />
+          </svg>
         </button>
       </template>
 

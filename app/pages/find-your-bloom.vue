@@ -6,7 +6,16 @@ import {
 } from "~/data/findBloomQuiz";
 import type { AnswerType, QuizLanguage } from "~/data/findBloomQuiz";
 
+definePageMeta({
+  scrollToTop: true,
+});
+
+const STEP_SCROLL_OFFSET_PX = 96;
+const STEP_SCROLL_DURATION_MS = 520;
+
 const route = useRoute();
+const stepContent = ref<HTMLElement | null>(null);
+let scrollAnimationFrame = 0;
 const {
   isEnabled: isBackgroundMusicEnabled,
   enableQuizBackgroundMusic,
@@ -75,6 +84,89 @@ const currentStep = computed(() => {
   return activeQuiz.value[currentIndex.value];
 });
 
+function stopScrollAnimation() {
+  if (!scrollAnimationFrame) {
+    return;
+  }
+
+  cancelAnimationFrame(scrollAnimationFrame);
+  scrollAnimationFrame = 0;
+}
+
+function animateWindowScroll(targetTop: number) {
+  if (import.meta.server) {
+    return;
+  }
+
+  stopScrollAnimation();
+
+  const clampedTargetTop = Math.max(targetTop, 0);
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (prefersReducedMotion) {
+    window.scrollTo({ top: clampedTargetTop, behavior: "auto" });
+    return;
+  }
+
+  const startTop = window.scrollY;
+  const distance = clampedTargetTop - startTop;
+
+  if (Math.abs(distance) < 2) {
+    window.scrollTo({ top: clampedTargetTop, behavior: "auto" });
+    return;
+  }
+
+  const startTime = performance.now();
+
+  const easeInOutCubic = (progress: number) => {
+    if (progress < 0.5) {
+      return 4 * progress * progress * progress;
+    }
+
+    return 1 - Math.pow(-2 * progress + 2, 3) / 2;
+  };
+
+  const step = (currentTime: number) => {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / STEP_SCROLL_DURATION_MS, 1);
+    const easedProgress = easeInOutCubic(progress);
+
+    window.scrollTo({
+      top: startTop + distance * easedProgress,
+      behavior: "auto",
+    });
+
+    if (progress < 1) {
+      scrollAnimationFrame = requestAnimationFrame(step);
+      return;
+    }
+
+    scrollAnimationFrame = 0;
+  };
+
+  scrollAnimationFrame = requestAnimationFrame(step);
+}
+
+function scrollStepIntoView() {
+  if (import.meta.server) {
+    return;
+  }
+
+  nextTick(() => {
+    requestAnimationFrame(() => {
+      const stepTop = stepContent.value?.getBoundingClientRect().top;
+
+      if (stepTop === undefined) {
+        return;
+      }
+
+      animateWindowScroll(window.scrollY + stepTop - STEP_SCROLL_OFFSET_PX);
+    });
+  });
+}
+
 async function goToStep(index: number) {
   const nextIndex =
     index >= 0 && index < activeQuiz.value.length ? index : 0;
@@ -101,6 +193,18 @@ watchEffect(() => {
       { replace: true }
     );
   }
+});
+
+watch(currentIndex, (newIndex, oldIndex) => {
+  if (newIndex === oldIndex) {
+    return;
+  }
+
+  scrollStepIntoView();
+});
+
+onBeforeUnmount(() => {
+  stopScrollAnimation();
 });
 
 function setQuizLanguage(language: QuizLanguage) {
@@ -237,6 +341,10 @@ async function next() {
 
     <!-- Main content -->
     <main class="flex-1 flex flex-col items-center pt-[40vw] sm:pt-[20vw] md:pt-[20vw] lg:pt-[5vw] pb-[8vw] md:pb-[6vw] px-[6vw] sm:px-[5vw]">
+      <div
+        ref="stepContent"
+        class="w-full flex flex-col items-center"
+      >
       <!-- Page Start -->
       <template v-if="currentStep?.type === 'start'">
         <!-- Title + vase section -->
@@ -436,23 +544,23 @@ async function next() {
 
           <div
             v-if="currentStep.poemRows?.length"
-            class="mb-[3vw] w-full max-w-[760px]"
+            class="mb-[3vw] w-full max-w-[1120px] px-4 md:px-0"
           >
             <div
-              class="grid grid-cols-1 md:grid-cols-2 gap-x-[5vw] gap-y-[0.6vw] "
+              class="grid grid-cols-1 gap-y-2 lg:grid-cols-[max-content_max-content] lg:justify-center lg:gap-x-10 lg:gap-y-[0.6vw]"
             >
               <template
                 v-for="(row, index) in currentStep.poemRows"
                 :key="index"
               >
                 <p
-                  class="text-[#472809] font-kanit font-medium italic text-[clamp(16px,1.6vw,26px)] leading-relaxed text-center md:text-left md:whitespace-nowrap"
+                  class="text-pretty text-[#472809] font-kanit font-medium italic text-[clamp(16px,1.45vw,24px)] leading-relaxed text-center lg:text-left lg:whitespace-nowrap"
                 >
                   {{ row.left }}
                 </p>
 
                 <p
-                  class="text-[#472809] font-kanit font-medium italic text-[clamp(16px,1.6vw,26px)] leading-relaxed text-center md:text-left md:whitespace-nowrap"
+                  class="text-pretty text-[#472809] font-kanit font-medium italic text-[clamp(16px,1.45vw,24px)] leading-relaxed text-center lg:text-left lg:whitespace-nowrap"
                 >
                   {{ row.right }}
                 </p>
@@ -493,6 +601,7 @@ async function next() {
           </button>
         </div>
       </template>
+      </div>
     </main>
 
     <!-- Bottom dock image -->
